@@ -11,7 +11,7 @@ import Skills from './skills/page';
 
 export default function Home() {
   return (
-<NextUIProvider >
+<NextUIProvider className="max-w-8xl my-0 mx-auto">
       <NextThemesProvider attribute="class" defaultTheme="dark">
     <NavbarComponent></NavbarComponent>
     <Presentation></Presentation>

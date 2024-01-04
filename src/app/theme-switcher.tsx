@@ -32,6 +32,9 @@ const ThemeSwitcher = () => {
     size="lg"
   >
     {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+    <span className='d-no'>
+
+    </span>
   </Button>
     
   )

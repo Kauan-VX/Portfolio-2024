@@ -1,5 +1,5 @@
 "use client"
-import CardSkill from './card-skills/index';
+import CardSkill from '../components/card-skills/index';
 
 export default function Skills(){
 const skillsCurrent = [

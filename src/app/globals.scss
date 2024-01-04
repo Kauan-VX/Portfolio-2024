@@ -14,8 +14,12 @@
 
 @layer components {
   body{
-    @apply  dark:bg-dark-background bg-light-background
-  }
+     @apply  transition ease-in-out duration-700  dark:bg-dark-background bg-light-background max-w-8xl my-0 mx-auto;
+
+     section {
+      @apply transition ease-in-out duration-700;
+     }
+}
   .link-skills {
     @apply flex items-center rounded-3xl py-[0.2rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl;
  Image{
@@ -31,5 +35,9 @@
       }  
     }
    } 
+  }
+
+  .icon-skill{
+    @apply w-full max-w-6
   }
 }

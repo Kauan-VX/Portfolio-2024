@@ -1,16 +1,68 @@
-export const MoonIcon = (props) => (
-  <svg
+import { motion } from "framer-motion";
+
+const icon = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+    fill: "rgba(255, 255, 255, 1)"
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    fill: "#000000",
+    transition : {
+      duration: 2,
+    }
+  },
+  star:{
+    opacity: 0,
+    transition: {
+      duration: 3 ,
+      repeat: Infinity,
+                }
+  }
+};
+
+export const MoonIcon = () => (
+  <motion.svg
     aria-hidden="true"
-    focusable="false"
+    width="2rem"
     height="2em"
-    role="presentation"
-    viewBox="0 0 24 24"
-    width="2em"
-    {...props}
+    viewBox="0 0 16 16"
   >
-    <path
-      d="M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z"
-      fill="currentColor"
+    <motion.path
+      d="M8,16c1.257,0,2.442-0.298,3.5-0.815C8.838,13.886,7,11.161,7,8s1.838-5.886,4.5-7.185C10.442,0.298,9.257,0,8,0  C3.582,0,0,3.582,0,8S3.582,16,8,16z"
+
     />
-  </svg>
+    <motion.path
+      d="M14,3c0,1.105-0.895,2-2,2c1.105,0,2,0.895,2,2c0-1.105,0.895-2,2-2C14.895,5,14,4.105,14,3z"
+      variants={icon}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        default: { duration: 2, ease: "easeInOut" },
+        fill: { duration: 2, ease: [1, 0, 0.8, 1] },
+      }}
+    />
+    <motion.path
+      d="M10,6c0,1.105-0.895,2-2,2c1.105,0,2,0.895,2,2c0-1.105,0.895-2,2-2C10.895,8,10,7.105,10,6z"
+   variants={icon}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        default: { duration: 2, ease: "easeInOut" },
+        fill: { duration: 2, ease: [1, 0, 0.8, 1] },
+      }}
+    />
+    <motion.path
+      d="M13,13c0-1.105,0.895-2,2-2c-1.105,0-2-0.895-2-2c0,1.105-0.895,2-2,2C12.105,11,13,11.895,13,13z"
+   variants={icon}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        default: { duration: 2, ease: "easeInOut" },
+        fill: { duration: 2, ease: [1, 0, 0.8, 1] },
+      }}
+    />
+  </motion.svg>
 );

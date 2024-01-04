@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: ["class"],
   theme: {
     extend: {
+            maxWidth:{
+"8xl" : "1440px"
+      },
       boxShadow: {
         "3xl": "0px 0px 9px 1px rgba(0,0,0,0.10)",
       },
@@ -26,6 +29,10 @@ const config: Config = {
           background: "#000",
           primary: "#052659",
           text: "#ffffff",
+          sky: "#052659",
+          sun: "#fff",
+          "monitor-brightness" : "rgba(0,0,0,0.10)"
+
         },
         light: {
           "background-transparent": "#ffffff",
@@ -33,6 +40,12 @@ const config: Config = {
           primary: "#c1e8ff",
           "box-shadow": "0px 0px 2px 0px rgba(0,0,0,0.75)",
           text: "#000",
+          sky: "#0070f0",
+          sun: "#FCFF82",
+          "monitor-brightness" : "rgba(0,0,0,1)"
+
+
+
         },
       },
       backgroundImage: {

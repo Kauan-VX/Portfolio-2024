@@ -1,7 +1,6 @@
 "use client"
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Dev from '/public/presentation/dev.jpeg';
+import { DevIcon } from "../components/icons/presentation/dev";
 
 export default function Presentation(){
 
@@ -49,7 +48,7 @@ export default function Presentation(){
       {/* <p className="dark:text-dark-text text-light-text">tenho <span>1 ano(s)</span> de experiência</p>  */}
       </motion.header>
       <motion.div className="flex justify-center w-2/4 " variants={textVariants} initial="initialRight" animate="animateRight">
-      <Image className="w-full max-w-[40rem]" src={Dev} alt="Dev"/>
+      <DevIcon/>
       </motion.div>
       </div>
 
