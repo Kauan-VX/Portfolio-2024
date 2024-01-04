@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+@layer components {
+  body{
+    @apply  dark:bg-dark-background bg-light-background
+  }
+  .link-skills {
+    @apply flex items-center rounded-3xl py-[0.2rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl;
+ Image{
+  @apply w-full max-w-[48px]
+ }
+  }
+  
+  .header-presentation{
+   h1{
+    b{
+      .Typewriter{
+        @apply text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient
+      }  
+    }
+   } 
+  }
+}
