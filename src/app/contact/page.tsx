@@ -1,9 +1,9 @@
 import { Input, Textarea } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { MailIcon } from './mail'
 import Linkedin from '/public/contact/linkedin.svg'
 import Mail from '/public/contact/mail.svg'
-import MailSection from '/public/contact/mailSection.svg'
 import Telegram from '/public/contact/telegram.svg'
 
 export default function Connect() {
@@ -33,7 +33,7 @@ export default function Connect() {
       </ul>
       <div className="contact flex w-full">
         <div className="left flex w-1/2 justify-center">
-          <Image src={MailSection} alt="Mail" />
+        <MailIcon/>
         </div>
         <div className="right flex w-1/2 justify-center">
           <div className="card-mail w-full max-w-[40rem] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent">

@@ -32,10 +32,14 @@ const config: Config = {
           star: "#fff",
           shoe: "#385583",
           table:"#000",
+          blur: "#8449B4",
+          "elastic": "",
+          "star-mail": "#ff6ec7",
           "box-shadow": "0px 0px 2px 0px rgba(0,0,0,0.75)",
           "background-transparent": "#2b2828bf",
           "monitor-brightness" : "url(#paint10_linear_272_98)",
           "detail": "#000000",
+          "mail-color": "#8a00c2",
      
         },
         light: {
@@ -47,12 +51,14 @@ const config: Config = {
           star: "rgba(0,0,0,0)",
           shoe: "#052659",
           table:"#684337",
+          blur:"#FC9925",
+          "star-mail": "#EE6909",
           "box-shadow": "0px 0px 2px 0px rgba(0,0,0,0.75)",
           "background-transparent": "#ffffff",
           "monitor-brightness" : "rgba(0,0,0,0)",
           "detail": "#808080",
-       
-                },
+          "mail-color": "#FF8A00",
+                       },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

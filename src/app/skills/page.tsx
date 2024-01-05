@@ -17,10 +17,10 @@ const skillsCurrent = [
 ]
 
 const skillsProductivity = [
-  { imageSrc: "/skills/vscode.svg" , altText: "Visual Studio Code", link: "https://code.visualstudio.com/" , skillName : "Vs Code"},
+  { imageSrc: "/skills/vscode.svg" , altText: "Visual Studio Code", link: "https://code.visualstudio.com/" , skillName : "VS Code"},
   { imageSrc: "/skills/bitbucket.svg" , altText: "BitBucket", link: "https://bitbucket.org/" , skillName : "Bit Bucket"},
   { imageSrc: "/skills/github.svg" , altText: "GitHub", link: "https://github.com/" , skillName : "GitHub"},
-  { imageSrc: "/skills/postman.svg" , altText: "Postman", link: "https://www.postman.com/" , skillName : "Vs Code"},
+  { imageSrc: "/skills/postman.svg" , altText: "Postman", link: "https://www.postman.com/" , skillName : "Postman"},
   { imageSrc: "/skills/hoppscotch.svg" , altText: "Hoppscotch", link: "https://docs.hoppscotch.io/" , skillName : "Hoppscotch"},
   { imageSrc: "/skills/jira.svg" , altText: "Jira", link: "https://www.atlassian.com/br/software/jira" , skillName : "Jira"},
 

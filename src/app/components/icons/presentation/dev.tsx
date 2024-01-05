@@ -95,7 +95,7 @@ export const DevIcon = ({  }) => {
 <use xlinkHref="#image0_272_98" transform="scale(0.00236967 0.00325733)"/>
 </pattern>
 <linearGradient id="paint0_linear_272_98" x1="410.635" y1="-1.336" x2="410.635" y2="600.908" gradientUnits="userSpaceOnUse">
-<stop  className="animation" stop-color={theme === 'dark' ? `${skyNight}` : `${skyDay}`}/>
+<stop className="animation" stop-color={theme === 'dark' ? `${skyNight}` : `${skyDay}`}/>
 <stop className="animation" offset="1"  stop-color={theme === 'dark' ?  '#000' : "#fff"}/>
 </linearGradient>
 <linearGradient id="paint1_linear_272_98" x1="641.158" y1="489.084" x2="644.282" y2="489.084" gradientUnits="userSpaceOnUse">

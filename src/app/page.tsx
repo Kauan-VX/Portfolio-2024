@@ -2,7 +2,7 @@
 import { NextUIProvider } from '@nextui-org/react';
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import About from './about-me/about';
-import Connect from './contact/connect';
+import Connect from './contact/page';
 import Education from './education/page';
 import NavbarComponent from './navbar/page';
 import Presentation from './presentation/page';
