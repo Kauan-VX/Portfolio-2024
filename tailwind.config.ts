@@ -45,7 +45,7 @@ const config: Config = {
           sky: "#0070f0",
           sun: "#FCFF82",
           star: "rgba(0,0,0,0)",
-          shoe: "#8a00c2",
+          shoe: "#052659",
           table:"#684337",
           "box-shadow": "0px 0px 2px 0px rgba(0,0,0,0.75)",
           "background-transparent": "#ffffff",

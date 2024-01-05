@@ -18,6 +18,13 @@
 
      section {
       @apply transition ease-in-out duration-700;
+
+    
+     }
+
+     .animation-text {
+      @apply transition ease-in-out duration-100;
+
      }
 
      svg{

@@ -9,12 +9,13 @@ export const DevIcon = ({  }) => {
   const pink = '#ff6ec7'
   const yellow = '#e6cc00'
   const purple = '#8a00c2'
+  const skinColor = '#905d4d'
 
 
   return (
-    <svg className="animation-100" width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg className="animation-100 " width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
 <g clip-path="url(#clip0_272_98)">
-<path d="M745.2 339.56C745.2 154.79 595.41 5 410.63 5C225.86 5 76.0703 154.79 76.0703 339.56C76.0703 444.96 124.83 538.96 201 600.28H620.27C696.44 538.96 745.2 444.96 745.2 339.56Z" fill="url(#paint0_linear_272_98)"/>
+<path className="shadow-3xl" d="M745.2 339.56C745.2 154.79 595.41 5 410.63 5C225.86 5 76.0703 154.79 76.0703 339.56C76.0703 444.96 124.83 538.96 201 600.28H620.27C696.44 538.96 745.2 444.96 745.2 339.56Z" fill="url(#paint0_linear_272_98)"/>
 <path opacity="0.4" d="M503.67 209.55C503.67 211.61 503.02 213.27 502.22 213.27H419.97C419.17 213.27 418.52 211.6 418.52 209.55C418.52 207.49 419.17 205.83 419.97 205.83H502.22C503.02 205.83 503.67 207.5 503.67 209.55Z" fill="white"/>
 <g opacity="0.8">
 {/* <rect x="200" y="294" width="422" height="307" fill="url(#pattern0)"/> */}
@@ -22,17 +23,21 @@ export const DevIcon = ({  }) => {
 <path opacity="0.4" d="M667.1 175.99C667.1 178.05 665.2 179.71 662.86 179.71H422.76C420.42 179.71 418.52 178.04 418.52 175.99C418.52 173.93 420.42 172.27 422.76 172.27H662.86C665.2 172.27 667.1 173.94 667.1 175.99ZM583.11 191.81C583.11 193.87 581.85 195.53 580.3 195.53H421.32C419.77 195.53 418.51 193.86 418.51 191.81C418.51 189.75 419.77 188.09 421.32 188.09H580.3C581.85 188.09 583.11 189.75 583.11 191.81Z" fill="white"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M300.72 582.47V581.61H355.79L300.72 582.47ZM283.53 582.47L236.15 581.61H283.53V582.47Z" fill="white"/>
 {/* Detalhe do Pé da Mesa */}
-<path fill-rule="evenodd" clip-rule="evenodd" d="M554.68 371.79H566.26V600.03H554.68V371.79Z" fill={detailTable}/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M548.99 371.79H560.57V600.03H548.99V371.79Z" fill="black"/>
+<path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M554.68 371.79H566.26V600.03H554.68V371.79Z" fill="currentColor"/>
+{/* Pé da mesa */}
+<path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M548.99 371.79H560.57V600.03H548.99V371.79Z" fill="currentColor"/>
 {/* Detalhe do Pé da Mesa */}
-<path fill-rule="evenodd" clip-rule="evenodd" d="M592.05 371.79H603.58V600.03H592.05V371.79Z" fill={detailTable}/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M586.36 371.79H597.89V600.03H586.36V371.79Z" fill="black"/>
+<path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M592.05 371.79H603.58V600.03H592.05V371.79Z" fill="currentColor"/>
+{/* Pé da mesa */}
+<path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M586.36 371.79H597.89V600.03H586.36V371.79Z" fill="currentColor"/>
 {/* Detalhe do Pé da Mesa */}
-<path fill-rule="evenodd" clip-rule="evenodd" d="M309.53 371.79H321.11V600.03H309.53V371.79Z" fill={detailTable}/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M303.85 371.79H315.43V600.03H303.85V371.79Z" fill="black"/>
+<path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M309.53 371.79H321.11V600.03H309.53V371.79Z" fill="currentColor"/>
+{/* Pé da mesa */}
+<path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M303.85 371.79H315.43V600.03H303.85V371.79Z" fill="currentColor"/>
 {/* Detalhe do Pé da Mesa */}
-<path fill-rule="evenodd" clip-rule="evenodd" d="M346.9 371.79H358.43V600.03H346.9V371.79Z" fill={detailTable}/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M341.22 371.79H352.75V600.03H341.22V371.79Z" fill="black"/>
+<path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M346.9 371.79H358.43V600.03H346.9V371.79Z" fill="currentColor"/>
+{/* Pé da mesa */}
+<path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M341.22 371.79H352.75V600.03H341.22V371.79Z" fill="currentColor"/>
 {/* Tampo da Mesa */}
 <path className="animation-300 dark:fill-dark-table fill-light-table" fill-rule="evenodd" clip-rule="evenodd" d="M261.49 362.32H625.94V384.93H261.49V362.32Z" fill="black"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M424.23 280.97L536.39 273.07L538.18 277L523.47 357.25H518.3L407.44 364.05L424.23 280.97Z" fill="url(#paint2_linear_272_98)"/>
@@ -40,11 +45,14 @@ export const DevIcon = ({  }) => {
 <path fill-rule="evenodd" clip-rule="evenodd" d="M487.79 356.05H519.54V362.31H487.79V356.05Z" fill="url(#paint3_linear_272_98)"/>
 <path  fill-rule="evenodd" clip-rule="evenodd" d="M380.85 356.05H487.79V362.31H380.85V356.05Z" fill="#431CA3"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M424.23 277.89L409.37 351.33H515.22L530.08 277.89H424.23Z" fill="#3F2759"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M443.71 362.32C447.29 362.76 454.84 361.62 460.21 358.15C465.53 354.67 469.75 351.37 469.75 351.37C469.75 351.37 481.34 352.88 482.08 350.23C482.4 346.69 467.06 342.5 464.93 342.25C462.74 342 444.76 344.53 442.92 346.37C441.08 348.2 443.71 362.32 443.71 362.32ZM383.78 352.23C387.36 352.68 394.91 351.54 400.23 348.06C405.55 344.58 410.62 339.51 410.62 339.51C410.62 339.51 422.2 340.6 421.95 339.51C421.65 338.47 407.14 332.4 404.95 332.16C402.81 331.91 384.78 334.45 382.94 336.29C381.1 338.11 383.78 352.23 383.78 352.23Z" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M404.8 338.22C405.94 339.66 413.2 345.08 411.81 347.16C410.42 349.3 407.09 350.19 403.46 347.56C399.83 344.93 397.55 341.84 398.54 340.8C399.54 339.76 404.8 338.22 404.8 338.22Z" fill="white"/>
+{/* Mãos */}
+<path fill-rule="evenodd" clip-rule="evenodd" d="M443.71 362.32C447.29 362.76 454.84 361.62 460.21 358.15C465.53 354.67 469.75 351.37 469.75 351.37C469.75 351.37 481.34 352.88 482.08 350.23C482.4 346.69 467.06 342.5 464.93 342.25C462.74 342 444.76 344.53 442.92 346.37C441.08 348.2 443.71 362.32 443.71 362.32ZM383.78 352.23C387.36 352.68 394.91 351.54 400.23 348.06C405.55 344.58 410.62 339.51 410.62 339.51C410.62 339.51 422.2 340.6 421.95 339.51C421.65 338.47 407.14 332.4 404.95 332.16C402.81 331.91 384.78 334.45 382.94 336.29C381.1 338.11 383.78 352.23 383.78 352.23Z" fill={skinColor}/>
+{/* Polegar esquerdo */}
+<path fill-rule="evenodd" clip-rule="evenodd" d="M404.8 338.22C405.94 339.66 413.2 345.08 411.81 347.16C410.42 349.3 407.09 350.19 403.46 347.56C399.83 344.93 397.55 341.84 398.54 340.8C399.54 339.76 404.8 338.22 404.8 338.22Z" fill={skinColor}/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M250.31 266.61C239.28 271.08 241.91 292.35 246.93 307.61C251.9 322.87 303.43 358.89 318.69 362.87C333.95 366.8 393.13 348.31 393.13 348.31C397.15 340.11 393.68 331.41 386.37 333.3C386.37 333.3 328.68 342.34 320.03 332.36C313.07 324.35 261.99 261.89 250.31 266.61Z" fill="url(#paint4_linear_272_98)"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M297.02 238.98C278.98 275.3 241.91 263.18 233.17 228.45C224.42 193.76 222.14 163.8 252.55 158.53C285.59 152.81 315.11 202.65 297.02 238.98Z" fill="url(#paint5_linear_272_98)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M240.57 239.78C244 250.56 242.95 279.48 242.95 279.48C242.95 279.48 291.75 293.69 290.26 287.13C284.3 260.54 281.27 237.29 275.8 232.42C271.28 228.44 260.15 241.81 240.57 239.78Z" fill="white"/>
+{/* Nuca */}
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240.57 239.78C244 250.56 242.95 279.48 242.95 279.48C242.95 279.48 291.75 293.69 290.26 287.13C284.3 260.54 281.27 237.29 275.8 232.42C271.28 228.44 260.15 241.81 240.57 239.78Z" fill={skinColor}/>
 {/* Sapato Esquerdo */}
 <path  className="animation-100 dark:fill-dark-shoe fill-light-shoe" fill-rule="evenodd" clip-rule="evenodd" d="M340 567.15C340 567.15 350.48 579.82 364.05 585.49C377.62 591.16 383.73 593.59 381.54 597.07C379.35 600.55 361.96 598.91 348.84 599.36C335.77 599.81 326.93 600.8 326.48 596.63C326.03 592.51 328.12 569.6 328.12 569.6L340 567.15Z" fill="currentColor"/>
 {/* Perna Esquerda */}
@@ -96,10 +104,12 @@ export const DevIcon = ({  }) => {
 </linearGradient>
 <linearGradient id="paint2_linear_272_98" x1="407.438" y1="318.561" x2="538.178" y2="318.561" gradientUnits="userSpaceOnUse">
 <stop stop-color="#A1BAFF"/>
+{/* Lateral do monitor */}
 <stop offset="0.433" stop-color="white"/>
 </linearGradient>
 <linearGradient id="paint3_linear_272_98" x1="487.791" y1="359.186" x2="519.543" y2="359.186" gradientUnits="userSpaceOnUse">
 <stop stop-color="#A1BAFF"/>
+{/* Lateral do monitor */}
 <stop offset="0.433" stop-color="white"/>
 </linearGradient>
 <linearGradient id="paint4_linear_272_98" x1="242.597" y1="314.881" x2="394.824" y2="314.881" gradientUnits="userSpaceOnUse">
@@ -107,7 +117,7 @@ export const DevIcon = ({  }) => {
 <stop offset="0.23" stop-color="#3113C2"/>
 <stop offset="0.348" stop-color="#2F18C5"/>
 {/* Cotovelo Esquerdo */}
-<stop offset="0.493" stop-color="#2927"/>
+<stop offset="0.493" stop-color="#2927ff"/>
 <stop offset="0.652" stop-color="#1F40D8"/>
 {/* Antebraço Esquerdo */}
 <stop offset="0.822" stop-color="#126"/>
@@ -116,7 +126,8 @@ export const DevIcon = ({  }) => {
 </linearGradient>
 <linearGradient id="paint5_linear_272_98" x1="260.194" y1="196.16" x2="287.175" y2="267.796" gradientUnits="userSpaceOnUse">
 <stop stop-color="#A1BAFF"/>
-<stop offset="0.433" stop-color="white"/>
+{/* Rosto */}
+<stop  stop-color={skinColor}/>
 </linearGradient>
 <linearGradient id="paint6_linear_272_98" x1="340.829" y1="474.88" x2="345.481" y2="581.868" gradientUnits="userSpaceOnUse">
   {/* Perna esquerda Gradient */}
