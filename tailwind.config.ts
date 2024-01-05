@@ -15,7 +15,6 @@ const config: Config = {
       boxShadow: {
         "3xl": "0px 0px 9px 1px rgba(0,0,0,0.10)",
       },
-      transitionProperty: {},
       colors: {
         "navy-blue": "#052659",
         "cerenity-blue": "#7DA0CA",
@@ -25,28 +24,35 @@ const config: Config = {
         yellow: "#e6cc00",
         blue: "#0070f0",
         dark: {
-          "background-transparent": "#2b2828bf",
           background: "#000",
           primary: "#052659",
           text: "#ffffff",
           sky: "#052659",
           sun: "#fff",
-          "monitor-brightness" : "rgba(0,0,0,0.10)"
-
+          star: "#fff",
+          shoe: "#385583",
+          table:"#000",
+          "box-shadow": "0px 0px 2px 0px rgba(0,0,0,0.75)",
+          "background-transparent": "#2b2828bf",
+          "monitor-brightness" : "url(#paint10_linear_272_98)",
+          "detail": "#000000",
+     
         },
         light: {
-          "background-transparent": "#ffffff",
           background: "#fff",
           primary: "#c1e8ff",
-          "box-shadow": "0px 0px 2px 0px rgba(0,0,0,0.75)",
           text: "#000",
           sky: "#0070f0",
           sun: "#FCFF82",
-          "monitor-brightness" : "rgba(0,0,0,1)"
-
-
-
-        },
+          star: "rgba(0,0,0,0)",
+          shoe: "#8a00c2",
+          table:"#684337",
+          "box-shadow": "0px 0px 2px 0px rgba(0,0,0,0.75)",
+          "background-transparent": "#ffffff",
+          "monitor-brightness" : "rgba(0,0,0,0)",
+          "detail": "#808080",
+       
+                },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

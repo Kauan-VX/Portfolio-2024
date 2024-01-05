@@ -19,6 +19,22 @@
      section {
       @apply transition ease-in-out duration-700;
      }
+
+     svg{
+
+       .animation-100{
+       @apply transition ease-in-out duration-1000 delay-100;
+      }
+
+      .animation-300{
+        @apply transition ease-in-out duration-1000 delay-300 ;
+       }
+
+       .animation-500{
+        @apply transition ease-in-out duration-1000 delay-500 ;
+       }
+     }
+
 }
   .link-skills {
     @apply flex items-center rounded-3xl py-[0.2rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl;
