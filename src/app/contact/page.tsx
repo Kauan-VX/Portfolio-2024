@@ -18,8 +18,7 @@ export default function Connect() {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 1,
-        staggerChildren:1,
+        duration: 1.5,
       }
     },
     initialRight: {
@@ -30,8 +29,7 @@ export default function Connect() {
       x : 0,
       opacity: 1,
       transition: {
-        duration: 2,
-        staggerChildren:2,
+        duration: 1.5,
       }
     },
  
