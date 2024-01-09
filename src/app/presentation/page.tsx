@@ -5,9 +5,6 @@ import { ScrollIcon } from "../components/icons/presentation/scroll";
 
 export default function Presentation(){
 
-  const screenWidth = window.innerWidth
-  
-
 
   const textVariants = {
     initialLeft: {

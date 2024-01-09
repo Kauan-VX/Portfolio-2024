@@ -1,14 +1,43 @@
-import { Input, Textarea } from '@nextui-org/react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { MailIcon } from './mail'
-import Linkedin from '/public/contact/linkedin.svg'
-import Mail from '/public/contact/mail.svg'
-import Telegram from '/public/contact/telegram.svg'
+import { Button } from '@nextui-org/react';
+import { motion } from "framer-motion";
+import Image from 'next/image';
+import Link from 'next/link';
+import { MailIcon } from './mail';
+import Linkedin from '/public/contact/linkedin.svg';
+import Mail from '/public/contact/mail.svg';
+import Telegram from '/public/contact/telegram.svg';
 
 export default function Connect() {
+
+  const textVariants = {
+    initialLeft: {
+      x : -500,
+      opacity: 0,
+    },
+    animateLeft: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren:1,
+      }
+    },
+    initialRight: {
+      x: 500,
+      opacity: 0,
+    },
+    animateRight: {
+      x : 0,
+      opacity: 1,
+      transition: {
+        duration: 2,
+        staggerChildren:2,
+      }
+    },
+ 
+  }
   return (
-    <section className="min-h-[100vh]  w-full bg-light-background pt-12 dark:bg-dark-background">
+    <section className="min-h-[100vh] w-full overflow-hidden bg-light-background pt-20 dark:bg-dark-background">
       <header className="flex justify-center ">
         <h1 className="animate-gradient bg-gradient-to-b from-[#FF6F5B] to-[#FFB457] bg-clip-text text-5xl font-bold text-transparent">
           Conecte-se a mim:
@@ -32,26 +61,37 @@ export default function Connect() {
         </li>
       </ul>
       <div className="contact flex w-full">
-        <div className="left flex w-1/2 justify-center">
+        <motion.div variants={textVariants} initial='initialLeft'     whileInView="animateLeft"
+      viewport={{
+        once: true,
+      }} className="left flex w-1/2 justify-center">
         <MailIcon/>
-        </div>
-        <div className="right flex w-1/2 justify-center">
+        </motion.div>
+        <motion.div  variants={textVariants} initial='initialRight'     whileInView="animateRight"
+      viewport={{
+        once: true,
+      }} className="right flex w-1/2 justify-center p-8">
           <div className="card-mail w-full max-w-[40rem] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent">
-            <h1 className="text-2xl font-semibold text-light-text dark:text-dark-text">
+            <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               Entre em contato comigo
             </h1>
-            <span className='flex w-full items-center gap-6'>
-              <Input type="Nome" placeholder='Nome' />
-              <Input type="Nome" placeholder='Nome' />
+            
+            <span className='flex w-full items-center justify-between gap-4 mb-4'>
+              <input className='dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl' type="Nome" placeholder='Nome' />
+              <input className='dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl' type="Nome" placeholder='Nome' />
             </span>
 
-            <Textarea
-              label="Descrição"
+            <textarea
               placeholder="Escreva uma mensagem aqui"
-              className="max-w-xs"
+              className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
             />
+            <span className='w-full flex justify-end'>
+             <Button className='dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl ' color="primary" variant="shadow">
+        Enviar
+      </Button> 
+      </span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
