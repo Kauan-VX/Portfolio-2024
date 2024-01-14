@@ -4,6 +4,7 @@ import { LocationIcon } from "../../components/icons/card-education/location";
 import { UnivercityIcon } from "../../components/icons/card-education/univercity";
 
 export default function CardEducation(){
+  
   return(
     <div className="relative w-[30rem] dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl p-3 rounded-3xl ">
       {/* <span className="h-16 w-4 bg-blue-600 shadow right-[50%] top-[50%] absolute shadow-cyan-500/100"></span> */}

@@ -25,11 +25,9 @@ const ThemeSwitcher = () => {
 
   return (
     <Button
-    color="primary" 
-    variant="bordered"
-    className='outline-0 '
+    className='outline-0  dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl p-3 rounded-full'
     onClick={handleSwitchChange}
-    size="lg"
+    size="sm"
   >
     {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
     <span className='d-no'>

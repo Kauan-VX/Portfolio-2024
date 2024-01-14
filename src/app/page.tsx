@@ -6,6 +6,7 @@ import Connect from './contact/page';
 import Education from './education/page';
 import NavbarComponent from './navbar/page';
 import Presentation from './presentation/page';
+import Project from './project/page';
 import Skills from './skills/page';
 
 
@@ -18,6 +19,7 @@ export default function Home() {
     <About></About>
     <Education></Education>
     <Skills></Skills>
+    <Project></Project>
     <Connect></Connect>
       </NextThemesProvider>
     </NextUIProvider>

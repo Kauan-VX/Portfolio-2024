@@ -41,6 +41,7 @@ export default function NavbarComponent() {
 
       <NavbarContent className="navbar-itens hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
+          
         <Image width={48} height={48} alt="Logo" className="w-full max-w-[4rem]" src="/logo/kx.svg"></Image>
         </NavbarBrand>
         <NavbarItem>

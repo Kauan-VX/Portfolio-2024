@@ -26,8 +26,8 @@ const icon = {
 export const MoonIcon = () => (
   <motion.svg
     aria-hidden="true"
-    width="2rem"
-    height="2em"
+    width="1.5rem"
+    height="1.5em"
     viewBox="0 0 16 16"
   >
     <motion.path
