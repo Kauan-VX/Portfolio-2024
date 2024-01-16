@@ -15,7 +15,7 @@ const CardProject : React.FC<IProject> = ({ imageBg , name , index}) => {
 const TiltCard: React.FC<IProject> = ({ imageBg , name , index}) => {
   const fadeInAnimationsVariants = {
     initial: {
-      opacity: 0,
+     opacity: 0,
       y: 100,
     },
     animate: (index: number) => ( {
@@ -89,7 +89,8 @@ const TiltCard: React.FC<IProject> = ({ imageBg , name , index}) => {
       className="relative h-[32rem] w-[26rem] rounded-xl bg-gradient-to-br from-[#5ea2ef] to-[#0072f5]"
     >
       <div
-        style={{
+      
+             style={{
           transform: "translateZ(75px)",
           transformStyle: "preserve-3d",
           backgroundImage : `url(${imageBg})`
