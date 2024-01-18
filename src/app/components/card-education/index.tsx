@@ -16,10 +16,10 @@ export default function CardEducation(){
         <span className="flex items-center font-semibold text-cerenity-blue gap-2  bg-white rounded-2xl p-1">   <GraduationIcon/> Graduação</span>
       </div>
       <div>
-        <span>Bacharelado</span>
+        <span className=" dark:bg-dark-background-transparent bg-light-background-transparent">Bacharelado</span>
       </div>
       <header>
-        <h1>Ciências da Computação</h1>
+        <h1 className="font-semibold text-xl">Ciências da Computação</h1>
       </header>
       <div className="flex flex-col">
         <span  className="flex items-center gap-2">    <UnivercityIcon/>Unifeso (Centro Universitário Serra dos Órgãos)</span>

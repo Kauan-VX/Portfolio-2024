@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Fira_Code, Poppins } from 'next/font/google';
 import './globals.scss';
 
 const poppins = Poppins({
@@ -7,6 +7,12 @@ const poppins = Poppins({
   display: 'swap',
   variable: '--font-poppins',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
+const fira = Fira_Code({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fira',
+  weight: [ '300', '400', '500', '600', '700']
 });
 
 export const metadata: Metadata = {

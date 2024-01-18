@@ -66,8 +66,11 @@
   "errorLens.excludeBySource": ["ts(1238)", "ts(2349)"],
   "workbench.colorTheme": "Min Dark",
   "[scss]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "eslint.codeActionsOnSave.rules": null,
-  "window.zoomLevel": -1
+  "window.zoomLevel": -1,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }

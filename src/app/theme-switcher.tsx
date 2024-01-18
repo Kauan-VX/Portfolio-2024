@@ -25,7 +25,7 @@ const ThemeSwitcher = () => {
 
   return (
     <Button
-    className='outline-0  dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl p-3 rounded-full'
+    className='outline-0 bg-transparent  p-3 rounded-full'
     onClick={handleSwitchChange}
     size="sm"
   >

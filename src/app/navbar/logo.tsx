@@ -1,8 +1,8 @@
+
 export const Logo = () => {
+  const tag = '<Kauan/>'
   return(
-  <h1></h1>
-  //  <Typewriter>
-    
-  //  </Typewriter>
+
+    <h1 className="font-fira font-medium text-2xl">{tag}</h1>
   )
 }

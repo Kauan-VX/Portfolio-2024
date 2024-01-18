@@ -35,7 +35,7 @@ export default function Connect() {
  
   }
   return (
-    <section className="min-h-[100vh] w-full overflow-hidden bg-light-background pt-20 dark:bg-dark-background">
+    <section className="min-h-[100vh] w-full  bg-light-background pt-20 dark:bg-dark-background">
       <header className="flex justify-center ">
         <h1 className="animate-gradient bg-gradient-to-b from-[#FF6F5B] to-[#FFB457] bg-clip-text
          text-5xl font-bold text-transparent">
@@ -85,7 +85,7 @@ export default function Connect() {
               className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
             />
             <span className='w-full flex justify-end'>
-             <Button className='dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl ' color="primary" variant="shadow">
+             <Button className='dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none'  variant="shadow">
         Enviar
       </Button> 
       </span>

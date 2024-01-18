@@ -8,59 +8,50 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
-
-
-
 @layer components {
-  body{
-     @apply  transition ease-in-out duration-700  dark:bg-dark-background bg-light-background max-w-8xl my-0 mx-auto;
+  body {
+    @apply overflow-x-hidden transition ease-in-out duration-700  dark:bg-dark-background bg-light-background max-w-8xl my-0 mx-auto;
 
-     section {
+    section {
       @apply transition ease-in-out duration-700;
+    }
 
-    
-     }
-
-     .animation-text {
+    .animation-text {
       @apply transition ease-in-out duration-100;
+    }
 
-     }
-
-     svg{
-
-       .animation-100{
-       @apply transition ease-in-out duration-1000 delay-100;
+    svg {
+      .animation-100 {
+        @apply transition ease-in-out duration-1000 delay-100;
       }
 
-      .animation-300{
-        @apply transition ease-in-out duration-1000 delay-300 ;
-       }
+      .animation-300 {
+        @apply transition ease-in-out duration-1000 delay-300;
+      }
 
-       .animation-500{
-        @apply transition ease-in-out duration-1000 delay-500 ;
-       }
-     }
-
-}
+      .animation-500 {
+        @apply transition ease-in-out duration-1000 delay-500;
+      }
+    }
+  }
   .link-skills {
     @apply flex items-center rounded-3xl py-[0.2rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl;
- Image{
-  @apply w-full max-w-[48px]
- }
-  }
-  
-  .header-presentation{
-   h1{
-    b{
-      .Typewriter{
-        @apply text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient
-      }  
+    Image {
+      @apply w-full max-w-[48px];
     }
-   } 
   }
 
-  .icon-skill{
-    @apply w-full max-w-6
+  .header-presentation {
+    h1 {
+      b {
+        .Typewriter {
+          @apply text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient;
+        }
+      }
+    }
+  }
+
+  .icon-skill {
+    @apply w-full max-w-6;
   }
 }

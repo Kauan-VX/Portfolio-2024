@@ -12,6 +12,7 @@ import {
 import Image from 'next/image'
 import React from 'react'
 import ThemeSwitcher from '../theme-switcher'
+import { Logo } from './logo'
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -44,7 +45,7 @@ export default function NavbarComponent() {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <Image width={48} height={48} src="/logo/kx.svg" alt="Logo"></Image>
+      <Logo/>
         </NavbarBrand>
       </NavbarContent>
 
@@ -53,13 +54,8 @@ export default function NavbarComponent() {
         justify="center"
       >
         <NavbarBrand>
-          <Image
-            width={48}
-            height={48}
-            alt="Logo"
-            className="w-full max-w-[4rem]"
-            src="/logo/kx.svg"
-          ></Image>
+        <Logo/>
+
         </NavbarBrand>
         <NavbarItem>
           <Link color="foreground" href="#">

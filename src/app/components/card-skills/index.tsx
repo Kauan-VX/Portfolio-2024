@@ -46,15 +46,18 @@ const CardSkill: React.FC<ISkills> = ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.05 * index,
+        delay: 0.09 * index,
       },
     }),
   }
 
   return (
+    // onMouseMove={mouseMove}
+    // onMouseLeave={mouseLeave}
+    // ref={ref}
+    // animate={{ x, y }}
+    // transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
     <motion.div
-      onMouseMove={mouseMove}
-      onMouseLeave={mouseLeave}
       variants={fadeInAnimationsVariants}
       initial="initial"
       whileInView="animate"
@@ -62,9 +65,6 @@ const CardSkill: React.FC<ISkills> = ({
         once: true,
       }}
       custom={index}
-      ref={ref}
-      animate={{ x, y }}
-      transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
     >
       <a className="link-skills whitespace-nowrap" target="_blank" href={link}>
         <Image
