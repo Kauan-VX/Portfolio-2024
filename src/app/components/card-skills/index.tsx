@@ -70,7 +70,7 @@ const CardSkill: React.FC<ISkills> = ({
         <Image
           className="w-full"
           src={imageSrc}
-          alt={altText}
+          alt={skillName}
           width={48}
           height={48}
         />
