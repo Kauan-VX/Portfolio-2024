@@ -1,48 +1,186 @@
-import { motion } from "framer-motion";
-
+import { motion } from 'framer-motion'
 
 const icon = {
   hidden: {
     opacity: 0,
     pathLength: 0,
-    fill: "#000000"
+    fill: '#000000',
   },
   visible: {
     opacity: 1,
     pathLength: 1,
-    fill: "rgba(255, 255, 255, 1)",
-    transition : {
+    fill: 'rgba(255, 255, 255, 1)',
+    transition: {
       duration: 2,
-      staggerChildren:2,
-    }
+      staggerChildren: 2,
+    },
   },
-  star:{
+  star: {
     opacity: 0,
     transition: {
-      duration: 3 ,
+      duration: 3,
       repeat: Infinity,
-                }
-  }
-};
+    },
+  },
+}
 
 export const SunIcon = () => (
-  <motion.svg
-    width="2em"
-    height="2em"
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
+    class="w-full h-auto fill-dark"
   >
-    <motion.g fill="currentColor">
-      <motion.path d="M19 12a7 7 0 11-7-7 7 7 0 017 7z" />
-      <motion.path   
-       d="M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z"    
-      variants={icon}
-      initial="hidden"
-      animate="visible"
-      transition={{
-        default: { duration: 2, ease: "easeInOut" },
-        fill: { duration: 2, ease: [1, 0, 0.8, 1] },
-      }} 
-      />
-    </motion.g>
-  </motion.svg>
-);
+    <rect
+      x="0"
+      y="0"
+      width="24"
+      height="24"
+      fill="rgba(255, 255, 255, 0)"
+    ></rect>
+    <g
+      fill="none"
+      stroke="currentColor"
+      stroke-dasharray="2"
+      stroke-dashoffset="2"
+      stroke-linecap="round"
+      stroke-width="2"
+    >
+      <path d="M0 0">
+        <animate
+          fill="freeze"
+          attributeName="d"
+          begin="1.2s"
+          dur="0.2s"
+          values="M12 19v1M19 12h1M12 5v-1M5 12h-1;M12 21v1M21 12h1M12 3v-1M3 12h-1"
+        ></animate>
+        <animate
+          fill="freeze"
+          attributeName="stroke-dashoffset"
+          begin="1.2s"
+          dur="0.2s"
+          values="2;0"
+        ></animate>
+      </path>
+      <path d="M0 0">
+        <animate
+          fill="freeze"
+          attributeName="d"
+          begin="1.5s"
+          dur="0.2s"
+          values="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5;M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5"
+        ></animate>
+        <animate
+          fill="freeze"
+          attributeName="stroke-dashoffset"
+          begin="1.5s"
+          dur="1.2s"
+          values="2;0"
+        ></animate>
+      </path>
+      <animateTransform
+        attributeName="transform"
+        dur="30s"
+        repeatCount="indefinite"
+        type="rotate"
+        values="0 12 12;360 12 12"
+      ></animateTransform>
+    </g>
+    <g fill="currentColor">
+      <path d="M15.22 6.03L17.75 4.09L14.56 4L13.5 1L12.44 4L9.25 4.09L11.78 6.03L10.87 9.09L13.5 7.28L16.13 9.09L15.22 6.03Z">
+        <animate
+          fill="freeze"
+          attributeName="fill-opacity"
+          dur="0.4s"
+          values="1;0"
+        ></animate>
+      </path>
+      <path d="M19.61 12.25L21.25 11L19.19 10.95L18.5 9L17.81 10.95L15.75 11L17.39 12.25L16.8 14.23L18.5 13.06L20.2 14.23L19.61 12.25Z">
+        <animate
+          fill="freeze"
+          attributeName="fill-opacity"
+          begin="0.2s"
+          dur="0.4s"
+          values="1;0"
+        ></animate>
+      </path>
+    </g>
+    <g
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+    >
+      <path d="M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z"></path>
+      <set attributeName="opacity" begin="0.6s" to="0"></set>
+    </g>
+    <mask id="lineMdMoonFilledToSunnyFilledLoopTransition0">
+      <circle cx="12" cy="12" r="12" fill="#fff"></circle>
+      <circle cx="18" cy="6" r="12" fill="#fff">
+        <animate
+          fill="freeze"
+          attributeName="cx"
+          begin="0.6s"
+          dur="0.4s"
+          values="18;22"
+        ></animate>
+        <animate
+          fill="freeze"
+          attributeName="cy"
+          begin="0.6s"
+          dur="0.4s"
+          values="6;2"
+        ></animate>
+        <animate
+          fill="freeze"
+          attributeName="r"
+          begin="0.6s"
+          dur="0.4s"
+          values="12;3"
+        ></animate>
+      </circle>
+      <circle cx="18" cy="6" r="10">
+        <animate
+          fill="freeze"
+          attributeName="cx"
+          begin="0.6s"
+          dur="0.4s"
+          values="18;22"
+        ></animate>
+        <animate
+          fill="freeze"
+          attributeName="cy"
+          begin="0.6s"
+          dur="0.4s"
+          values="6;2"
+        ></animate>
+        <animate
+          fill="freeze"
+          attributeName="r"
+          begin="0.6s"
+          dur="0.4s"
+          values="10;1"
+        ></animate>
+      </circle>
+    </mask>
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+      fill="currentColor"
+      mask="url(#lineMdMoonFilledToSunnyFilledLoopTransition0)"
+      opacity="0"
+    >
+      <set attributeName="opacity" begin="0.6s" to="1"></set>
+      <animate
+        fill="freeze"
+        attributeName="r"
+        begin="0.6s"
+        dur="0.4s"
+        values="10;6"
+      ></animate>
+    </circle>
+  </svg>
+)

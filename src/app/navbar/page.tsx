@@ -98,7 +98,7 @@ export default function NavbarComponent() {
         <ThemeSwitcher></ThemeSwitcher>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className='bg-orange-600' >
+      <NavbarMenu  className='bg-orange-600' >
         {menuItems.map((item, index) => (
           <NavbarMenuItem  key={`${item}-${index}`}>
             <Link
