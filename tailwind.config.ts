@@ -11,6 +11,9 @@ const config: Config = {
   darkMode: ["class"],
   theme: {
     extend: {
+      screens:{
+        'smMax': {'max': '640px'},
+      },
             maxWidth:{
 "8xl" : "1440px"
       },

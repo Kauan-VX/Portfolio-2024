@@ -1,4 +1,3 @@
-
 export const Logo = () => {
   const tag = '<Kauan/>'
   return(

@@ -9,13 +9,27 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react'
-import Image from 'next/image'
 import React from 'react'
 import ThemeSwitcher from '../theme-switcher'
 import { Logo } from './logo'
+import { animate , motion } from 'framer-motion'
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+
+
+
+  const menuVars = {
+    initial : {
+      scaleY: 0,
+    },
+    animate:{
+      scaleY: 1
+    },
+    exit: {
+      scaleY: 0
+    }
+  }
 
   const menuItems = [
     'Profile',
@@ -30,82 +44,68 @@ export default function NavbarComponent() {
     'Log Out',
   ]
 
+ 
+
   return (
-    <Navbar
-      isBordered
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-      className="dark:text-dark-text text-light-text font-medium flex z-40 w-full h-auto items-center p-2 justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl backdrop-saturate-150 bg-background/70"
-    >
-      <NavbarContent className="sm:hidden flex justify-between ">
+    <Navbar onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent>
         <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
         />
+        <NavbarBrand className='smMax:hidden'>
+        <Logo/>
+        </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
-        <NavbarBrand>
-      <Logo/>
-        </NavbarBrand>
-      </NavbarContent>
+       <NavbarBrand>
+     <Logo/>
+       </NavbarBrand>
+     </NavbarContent>
 
-      <NavbarContent
-        className="navbar-itens hidden sm:flex gap-4"
-        justify="center"
-      >
-        <NavbarBrand>
-        <Logo/>
-
-        </NavbarBrand>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Apresentação
-          </Link>
-        </NavbarItem>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+    
         <NavbarItem isActive>
           <Link href="#" aria-current="page">
+            Sobre
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
             Educação
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Experiência
-          </Link>
-        </NavbarItem>{' '}
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Skills
-          </Link>
-        </NavbarItem>{' '}
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Projetos
+         Skills
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Contato
+           Projetos
           </Link>
         </NavbarItem>
-        <NavbarItem></NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+     Conecte-se
+          </Link>
+        </NavbarItem>
       </NavbarContent>
-
       <NavbarContent justify="end">
+   
+        <NavbarItem>
         <ThemeSwitcher></ThemeSwitcher>
+        </NavbarItem>
       </NavbarContent>
-
-      <NavbarMenu>
+      <NavbarMenu className='bg-orange-600' >
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem  key={`${item}-${index}`}>
             <Link
-              className="w-full"
               color={
-                index === 2
-                  ? 'warning'
-                  : index === menuItems.length - 1
-                    ? 'danger'
-                    : 'foreground'
+                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
               }
+              className="w-full"
               href="#"
               size="lg"
             >
@@ -115,5 +115,5 @@ export default function NavbarComponent() {
         ))}
       </NavbarMenu>
     </Navbar>
-  )
+  );
 }
