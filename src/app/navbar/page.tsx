@@ -1,4 +1,8 @@
 'use client'
+
+
+import logo from '../../../public/logo/logoIA.png'
+
 import {
   Link,
   Navbar,
@@ -9,10 +13,9 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react'
+import Image from 'next/image'
 import React from 'react'
 import ThemeSwitcher from '../theme-switcher'
-import { Logo } from './logo'
-import { animate , motion } from 'framer-motion'
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -54,13 +57,16 @@ export default function NavbarComponent() {
           className="sm:hidden"
         />
         <NavbarBrand className='smMax:hidden'>
-        <Logo/>
+        {/* <Logo/> */}
+        <Image width={100} height={100} alt='' src={logo}/>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
        <NavbarBrand>
-     <Logo/>
+     {/* <Logo/> */}
+     <Image width={80} height={80} alt='' src={logo}/>
+
        </NavbarBrand>
      </NavbarContent>
 
@@ -98,7 +104,7 @@ export default function NavbarComponent() {
         <ThemeSwitcher></ThemeSwitcher>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu  className='bg-orange-600' >
+      <NavbarMenu  >
         {menuItems.map((item, index) => (
           <NavbarMenuItem  key={`${item}-${index}`}>
             <Link

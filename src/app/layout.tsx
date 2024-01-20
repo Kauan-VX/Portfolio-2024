@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Fira_Code, Poppins } from 'next/font/google';
+import { Fira_Code, Montserrat, Poppins } from 'next/font/google';
 import './globals.scss';
 
 const poppins = Poppins({
@@ -9,6 +9,13 @@ const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 });
 const fira = Fira_Code({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fira',
+  weight: [ '300', '400', '500', '600', '700']
+});
+
+const montSerrate = Montserrat({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-fira',
@@ -27,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={poppins.className}>{children}</body>
+      <body className={fira.className}>{children}</body>
     </html>
   )
 }
