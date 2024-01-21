@@ -1,30 +1,3 @@
-'use client'
-import { motion } from 'framer-motion'
-
-const icon = {
-  hidden: {
-    opacity: 0,
-    pathLength: 0,
-    fill: 'rgba(255, 255, 255, 1)',
-  },
-  visible: {
-    opacity: 1,
-    pathLength: 1,
-    fill: '#000000',
-    transition: {
-      duration: 2,
-    },
-  },
-  star: {
-    opacity: 0,
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      repeatDelay: 5,
-    },
-  },
-}
-
 export const MoonIcon = () => {
   
 

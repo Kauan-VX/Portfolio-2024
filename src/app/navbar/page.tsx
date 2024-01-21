@@ -17,6 +17,8 @@ import Image from 'next/image'
 import React from 'react'
 import ThemeSwitcher from '../theme-switcher'
 
+import { motion } from 'framer-motion'
+
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
@@ -35,10 +37,10 @@ export default function NavbarComponent() {
   }
 
   const menuItems = [
-    'Profile',
-    'Dashboard',
-    'Activity',
-    'Analytics',
+    'Sobre',
+    'Educação',
+    'Skills',
+    'Projetos',
     'System',
     'Deployments',
     'My Settings',
@@ -73,9 +75,11 @@ export default function NavbarComponent() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
     
         <NavbarItem isActive>
+          <motion.div>
           <Link href="#" aria-current="page">
             Sobre
           </Link>
+          </motion.div>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">

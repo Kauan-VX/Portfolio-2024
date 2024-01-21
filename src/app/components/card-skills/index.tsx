@@ -1,41 +1,38 @@
 'use client'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { useRef, useState } from 'react'
+import { ReactNode } from 'react'
 
 interface ISkills {
-  imageSrc: string
-  altText: string
+  component: ReactNode
   link: string
   skillName: string
   index: number
 }
 
 const CardSkill: React.FC<ISkills> = ({
-  imageSrc,
-  altText,
+  component,
   link,
   skillName,
   index,
 }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  // const ref = useRef<HTMLDivElement>(null)
+  // const [position, setPosition] = useState({ x: 0, y: 0 })
 
-  const mouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (ref.current) {
-      const { clientX, clientY } = e
-      const { width, height, left } = ref.current.getBoundingClientRect()
-      const x = clientX - (left + width / 2)
-      const y = clientY - (left + height / 2)
-      setPosition({ x, y })
-    }
-  }
+  // const mouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   if (ref.current) {
+  //     const { clientX, clientY } = e
+  //     const { width, height, left } = ref.current.getBoundingClientRect()
+  //     const x = clientX - (left + width / 2)
+  //     const y = clientY - (left + height / 2)
+  //     setPosition({ x, y })
+  //   }
+  // }
 
-  const mouseLeave = () => {
-    setPosition({ x: 0, y: 0 })
-  }
+  // const mouseLeave = () => {
+  //   setPosition({ x: 0, y: 0 })
+  // }
 
-  const { x, y } = position
+  // const { x, y } = position
 
   const fadeInAnimationsVariants = {
     initial: {
@@ -67,13 +64,7 @@ const CardSkill: React.FC<ISkills> = ({
       custom={index}
     >
       <a className="link-skills whitespace-nowrap" target="_blank" href={link}>
-        <Image
-          className="w-full"
-          src={imageSrc}
-          alt={skillName}
-          width={48}
-          height={48}
-        />
+{component}
         {skillName}
       </a>
     </motion.div>

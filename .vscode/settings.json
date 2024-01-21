@@ -69,7 +69,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "eslint.codeActionsOnSave.rules": null,
-  "window.zoomLevel": -1,
+  "window.zoomLevel": -2,
   "[typescriptreact]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   }
