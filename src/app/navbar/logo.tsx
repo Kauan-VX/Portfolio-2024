@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 
-export const Logo9= () => {
+export const Logo= () => {
   const icon = {
     hidden: {
       opacity: 1,

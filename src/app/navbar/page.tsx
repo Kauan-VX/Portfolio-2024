@@ -16,7 +16,7 @@ import React from 'react'
 import ThemeSwitcher from '../theme-switcher'
 
 import { motion } from 'framer-motion'
-import { Logo9 } from './logo9'
+import { Logo } from './logo'
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -58,14 +58,14 @@ export default function NavbarComponent() {
           className="sm:hidden"
         />
         <NavbarBrand className='smMax:hidden'>
-        <Logo9/>
+        <Logo/>
         {/* <Image width={100} height={100} alt='' src={logo}/> */}
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
        <NavbarBrand>
-     <Logo9/>
+     <Logo/>
      {/* <Image width={80} height={80} alt='' src={logo}/> */}
 
        </NavbarBrand>

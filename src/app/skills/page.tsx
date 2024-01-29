@@ -1,47 +1,37 @@
 "use client"
-import { BitbucketIcon } from '../../../public/skills/BitbucketIcon';
-import { CssIcon } from '../../../public/skills/CssIcon';
-import { DockerIcon } from '../../../public/skills/DockerIcon';
-import { GithubIcon } from '../../../public/skills/GithubIcon';
-import { HoppscotchIcon } from '../../../public/skills/HoppscotchIcon';
-import { NextjsIcon } from '../../../public/skills/NextjsIcon';
-import { SassIcon } from '../../../public/skills/SassIcon';
-import { SwiftIcon } from '../../../public/skills/SwiftIcon';
-import { TailwindIcon } from '../../../public/skills/TailwindIcon';
-import { TypescriptIcon } from '../../../public/skills/TypescriptIcon';
 import CardSkill from '../components/card-skills/index';
 
 export default function Skills(){
 const skillsCurrent = [
-  // { component: {},  link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML" , skillName : "Html"},
-  { component: <CssIcon/> ,  link: "https://developer.mozilla.org/pt-BR/docs/Web/CSS" , skillName : "Css3"},
-  // { component: "/skills/javascript.svg" , link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" , skillName : "JavaScript"},
-  { component: <TypescriptIcon/> , link: "https://www.typescriptlang.org/docs/" , skillName : "TypeScript"},
-  { component: <SassIcon/> ,  link: "https://sass-lang.com/" , skillName : "Sass/Scss"}, 
-  // { component: "/skills/styled.svg" , link: "https://styled-components.com/" , skillName : "Styled Component"},
-  // { component: "/skills/react.svg" ,  link: "https://react.dev/" , skillName : "React"},
-  { component: <NextjsIcon/> ,  link: "https://nextjs.org/" , skillName : "NextJs"},
-  // { component: "/skills/angular.svg" ,  link: "https://angular.io/" , skillName : "Angular"},
-  { component: <TailwindIcon/> , link: "https://tailwindcss.com/" , skillName : "Tailwind CSS"},
-  // { component: "/skills/git.svg" ,  link: "https://git-scm.com/" , skillName : "Git"},
+  { imageSrc: "/skills/html.svg" ,  link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML" , skillName : "Html"},
+  { imageSrc: "/skills/css.svg" ,  link: "https://developer.mozilla.org/pt-BR/docs/Web/CSS" , skillName : "Css3"},
+  { imageSrc: "/skills/javascript.svg" , link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" , skillName : "JavaScript"},
+  { imageSrc: "/skills/typescript.svg" , link: "https://www.typescriptlang.org/docs/" , skillName : "TypeScript"},
+  { imageSrc: "/skills/sass.svg" ,  link: "https://sass-lang.com/" , skillName : "Sass/Scss"}, 
+  { imageSrc: "/skills/styled.svg" , link: "https://styled-components.com/" , skillName : "Styled Component"},
+  { imageSrc: "/skills/react.svg" ,  link: "https://react.dev/" , skillName : "React"},
+  { imageSrc: "/skills/nextjs.svg" ,  link: "https://nextjs.org/" , skillName : "NextJs"},
+  { imageSrc: "/skills/angular.svg" ,  link: "https://angular.io/" , skillName : "Angular"},
+  { imageSrc: "/skills/tailwind.svg" , link: "https://tailwindcss.com/" , skillName : "Tailwind CSS"},
+  { imageSrc: "/skills/git.svg" ,  link: "https://git-scm.com/" , skillName : "Git"},
 ]
 
 const skillsProductivity = [
-  // { component: "/skills/vscode.svg" , link: "https://code.visualstudio.com/" , skillName : "VS Code"},
-  { component: <BitbucketIcon/> , link: "https://bitbucket.org/" , skillName : "Bit Bucket"},
-  { component: <GithubIcon/>,  link:"https://github.com/" , skillName : "GitHub"},
-  // { component: "/skills/postman.svg" ,  link: "https://www.postman.com/" , skillName : "Postman"},
-  { component: <HoppscotchIcon/> , link: "https://docs.hoppscotch.io/" , skillName : "Hoppscotch"},
-  // { component: "/skills/jira.svg" ,  link: "https://www.atlassian.com/br/software/jira" , skillName : "Jira"},
+  { imageSrc: "/skills/vscode.svg" , link: "https://code.visualstudio.com/" , skillName : "VS Code"},
+  { imageSrc: "/skills/bitbucket.svg" , link: "https://bitbucket.org/" , skillName : "Bit Bucket"},
+  { imageSrc: "/skills/github.svg" ,  link:"https://github.com/" , skillName : "GitHub"},
+  { imageSrc: "/skills/postman.svg" ,  link: "https://www.postman.com/" , skillName : "Postman"},
+  { imageSrc: "/skills/hoppscotch.svg" , link: "https://docs.hoppscotch.io/" , skillName : "Hoppscotch"},
+  { imageSrc: "/skills/jira.svg" ,  link: "https://www.atlassian.com/br/software/jira" , skillName : "Jira"},
 
 ]
 
 const skillsFuture = [
-  // { component: "/skills/node.svg" ,  link: "https://nodejs.org/en" , skillName : "Node"},
-  // { component: "/skills/mysql.svg" ,  link: "https://www.mysql.com/" , skillName : "MySql"},
-  { component: <DockerIcon/> ,  link: "https://docker.com" , skillName : "Docker"},
-  // { component: "/skills/figma.svg" ,  link: "https://www.figma.com/" , skillName : "Figma"},
-  { component: <SwiftIcon/> ,  link: "https://www.swift.org/" , skillName : "Swift"},
+  { imageSrc: "/skills/node.svg" ,  link: "https://nodejs.org/en" , skillName : "Node"},
+  { imageSrc: "/skills/mysql.svg" ,  link: "https://www.mysql.com/" , skillName : "MySql"},
+  { imageSrc: "/skills/docker.svg" ,  link: "https://docker.com" , skillName : "Docker"},
+  { imageSrc: "/skills/figma.svg" ,  link: "https://www.figma.com/" , skillName : "Figma"},
+  { imageSrc: "/skills/swift.svg" ,  link: "https://www.swift.org/" , skillName : "Swift"},
 
 ]
 return(
@@ -55,7 +45,7 @@ return(
       {skillsCurrent.map((skill, index) => (
         <CardSkill
           key={index}
-          component={skill.component}
+          imageSrc={skill.imageSrc}
               link={skill.link}
           skillName={skill.skillName}
           index={index}
@@ -71,7 +61,7 @@ return(
       {skillsProductivity.map((skill, index) => (
         <CardSkill
           key={index}
-          component={skill.component}
+          imageSrc={skill.imageSrc}
               link={skill.link}
           skillName={skill.skillName}
           index={index}
@@ -88,7 +78,7 @@ return(
       {skillsFuture.map((skill, index) => (
         <CardSkill
           key={index}
-          component={skill.component}
+          imageSrc={skill.imageSrc}
               link={skill.link}
           skillName={skill.skillName}
           index={index}

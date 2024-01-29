@@ -2,7 +2,6 @@ import { Button } from '@nextui-org/react';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import Link from 'next/link';
-import { GithubIcon } from '../../../public/skills/GithubIcon';
 import { TelegramIcon } from './TelegramIcon';
 import { MailIcon } from './mail';
 import Linkedin from '/public/contact/linkedin.svg';
@@ -54,7 +53,6 @@ export default function Connect() {
           <TelegramIcon/> Telegram
           </Link>
         </li>
-        <GithubIcon></GithubIcon>
         <li>
           <Link className="link-skills" href="#">
             <Image src={Mail} alt="Email" /> Email

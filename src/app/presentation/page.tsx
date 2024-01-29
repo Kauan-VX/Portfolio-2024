@@ -1,8 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
-import { DevIcon } from '../components/icons/presentation/dev'
-import { ScrollIcon } from '../components/icons/presentation/scroll'
+import Image from 'next/image'
 import Typewriter from 'typewriter-effect'
+import { ScrollIcon } from '../components/icons/presentation/scroll'
 
 export default function Presentation() {
   const textVariants = {
@@ -39,9 +39,9 @@ export default function Presentation() {
   }
   return (
     <section className=" h-[100vh]  dark:bg-dark-background bg-light-background p-6">
-      <div className="flex">
+      <div className="flex items-center mt-10">
         <motion.header
-          className="px-8  header-presentation flex w-full justify-center flex-col"
+          className="px-8  header-presentation flex w-full justify-center  flex-col"
           variants={textVariants}
           initial="initialLeft"
           animate="animateLeft"
@@ -83,12 +83,13 @@ export default function Presentation() {
           {/* <p className="dark:text-dark-text text-light-text">tenho <span>1 ano(s)</span> de experiência</p>  */}
         </motion.header>
         <motion.div
-          className="flex justify-center w-2/4 "
+          className="flex justify-center w-2/4 mr-8"
           variants={textVariants}
           initial="initialRight"
           animate="animateRight"
         >
-          <DevIcon />
+          {/* <DevIcon /> */}
+          <Image src="/presentation/dev3.png" width={600} height={600}/>
         </motion.div>
       </div>
     </section>

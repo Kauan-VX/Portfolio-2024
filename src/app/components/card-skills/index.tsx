@@ -1,16 +1,16 @@
 'use client'
 import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import Image from 'next/image'
 
 interface ISkills {
-  component: ReactNode
+  imageSrc: string
   link: string
   skillName: string
   index: number
 }
 
 const CardSkill: React.FC<ISkills> = ({
-  component,
+  imageSrc,
   link,
   skillName,
   index,
@@ -64,7 +64,13 @@ const CardSkill: React.FC<ISkills> = ({
       custom={index}
     >
       <a className="link-skills whitespace-nowrap" target="_blank" href={link}>
-{component}
+        <Image
+          className="w-full"
+          src={imageSrc}
+          alt={skillName}
+          width={48}
+          height={48}
+        />
         {skillName}
       </a>
     </motion.div>
