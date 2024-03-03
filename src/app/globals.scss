@@ -15,9 +15,9 @@
       width: 56%;
       overflow: visible;
       stroke: #ffffff4b;
-      stroke-width: 1;
-      stroke-linejoin: round;
-      stroke-linecap: round;
+      strokewidth: 1;
+      strokelinejoin: round;
+      strokelinecap: round;
     }
     section {
       @apply transition ease-in-out duration-700;

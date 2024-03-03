@@ -21,20 +21,6 @@ import { Logo } from './logo'
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
-
-
-  const menuVars = {
-    initial : {
-      scaleY: 0,
-    },
-    animate:{
-      scaleY: 1
-    },
-    exit: {
-      scaleY: 0
-    }
-  }
-
   const menuItems = [
     'Sobre',
     'Educação',
@@ -59,15 +45,12 @@ export default function NavbarComponent() {
         />
         <NavbarBrand className='smMax:hidden'>
         <Logo/>
-        {/* <Image width={100} height={100} alt='' src={logo}/> */}
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden pr-3" justify="center">
+      <NavbarContent className="sm:hidden pr-3 justify-center">
        <NavbarBrand>
      <Logo/>
-     {/* <Image width={80} height={80} alt='' src={logo}/> */}
-
        </NavbarBrand>
      </NavbarContent>
 
@@ -75,28 +58,28 @@ export default function NavbarComponent() {
     
         <NavbarItem isActive>
           <motion.div>
-          <Link href="#" aria-current="page">
+          <Link className='text-lg' href="#" aria-current="page">
             Sobre
           </Link>
           </motion.div>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link className='text-lg' color="foreground" href="#">
             Educação
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link className='text-lg' color="foreground" href="#">
          Skills
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link className='text-lg' color="foreground" href="#">
            Projetos
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link className='text-lg' color="foreground" href="#">
      Conecte-se
           </Link>
         </NavbarItem>

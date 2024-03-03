@@ -59,25 +59,25 @@ export default function Connect() {
           </Link>
         </li>
       </ul>
-      <div className="contact flex w-full">
+      <div className="contact flex w-full lgMax:flex-col lgMax:justify-center lgMax:items-center">
         <motion.div variants={textVariants} initial='initialLeft'     whileInView="animateLeft"
       viewport={{
         once: true,
       }} className="left flex w-1/2 justify-center">
         <MailIcon/>
         </motion.div>
-        <motion.div  variants={textVariants} initial='initialRight'     whileInView="animateRight"
+        <motion.div  variants={textVariants} initial='initialRight' whileInView="animateRight"
       viewport={{
         once: true,
-      }} className="right flex w-1/2 justify-center p-8">
-          <div className="card-mail w-full max-w-[40rem] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent">
+      }} className="right flex w-1/2 justify-center p-8 lgMax:w-full">
+          <div className="card-mail w-full max-w-[40rem] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent ">
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               Entre em contato comigo
             </h1>
             
-            <span className='flex w-full items-center justify-between gap-4 mb-4'>
-              <input className='dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl' type="Nome" placeholder='Nome' />
-              <input className='dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl' type="Nome" placeholder='Nome' />
+            <span className='flex w-full items-center justify-between gap-4 mb-4 smMax:flex-col'>
+              <input className='dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl smMax:w-full' type="Nome" placeholder='Nome' />
+              <input className='dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl smMax:w-full' type="Nome" placeholder='E-mail para contato' />
             </span>
 
             <textarea

@@ -13,6 +13,7 @@ const config: Config = {
     extend: {
       screens: {
         smMax: { max: '640px' },
+        lgMax: { max: '1024px' },
       },
       maxWidth: {
         '8xl': '1440px',
