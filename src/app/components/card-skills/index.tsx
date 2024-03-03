@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 
 interface ISkills {
@@ -15,24 +15,9 @@ const CardSkill: React.FC<ISkills> = ({
   skillName,
   index,
 }) => {
-  // const ref = useRef<HTMLDivElement>(null)
-  // const [position, setPosition] = useState({ x: 0, y: 0 })
+  
 
-  // const mouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-  //   if (ref.current) {
-  //     const { clientX, clientY } = e
-  //     const { width, height, left } = ref.current.getBoundingClientRect()
-  //     const x = clientX - (left + width / 2)
-  //     const y = clientY - (left + height / 2)
-  //     setPosition({ x, y })
-  //   }
-  // }
-
-  // const mouseLeave = () => {
-  //   setPosition({ x: 0, y: 0 })
-  // }
-
-  // const { x, y } = position
+  const controls = useAnimation();
 
   const fadeInAnimationsVariants = {
     initial: {
@@ -46,18 +31,19 @@ const CardSkill: React.FC<ISkills> = ({
         delay: 0.09 * index,
       },
     }),
+    exit: {
+      opacity: 0,
+      y: 100,
+    },
   }
 
   return (
-    // onMouseMove={mouseMove}
-    // onMouseLeave={mouseLeave}
-    // ref={ref}
-    // animate={{ x, y }}
-    // transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
+
     <motion.div
       variants={fadeInAnimationsVariants}
       initial="initial"
       whileInView="animate"
+            exit="exit"
       viewport={{
         once: true,
       }}

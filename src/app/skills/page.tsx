@@ -41,7 +41,7 @@ return(
         <h1 className="text-5xl text-transparent font-bold bg-gradient-to-b from-[#FF1BF7] to-[#b249f8]  bg-clip-text animate-gradient">Skills</h1>
         <h2 className="dark:text-dark-text text-light-text font-semibold text-2xl">A seguir as tecnologias que uso:</h2>
       </header>
-      <ul className="w-full flex justify-center items-center flex-wrap gap-[1rem] my-10 px-4">
+      <div className="w-full  max-w-[80%] m-auto flex justify-center items-center flex-wrap gap-[1rem] my-10 px-4">
       {skillsCurrent.map((skill, index) => (
         <CardSkill
           key={index}
@@ -51,13 +51,13 @@ return(
           index={index}
         />
       ))}
-      </ul>
+      </div>
       <header className="flex justify-center flex-col items-center
      ">
         <h2 className="dark:text-dark-text text-light-text font-semibold text-2xl">Ferramentas para produtividade:</h2>
       </header>
-      <ul className="w-full flex justify-center items-center flex-wrap gap-[1rem] my-10  px-4">
-     
+                        <div className="w-full flex max-w-[80%] m-auto justify-center items-center flex-wrap gap-[1rem] my-10  px-4">
+       
       {skillsProductivity.map((skill, index) => (
         <CardSkill
           key={index}
@@ -68,13 +68,13 @@ return(
         />
       ))}
       
-      </ul>
+      </div>
 
       <header className="flex justify-center flex-col items-center
      ">
-        <h2 className="dark:text-dark-text text-light-text font-semibold text-2xl">Planos de estudos futuros:</h2>
+          <h2 className="dark:text-dark-text text-light-text font-semibold text-2xl">Planos de estudos futuros:</h2>
       </header>
-      <ul className="w-full flex justify-center items-center flex-wrap gap-[1rem] my-10  px-4">
+      <div className="w-full max-w-[80%] m-auto flex justify-center items-center flex-wrap gap-[1rem] my-10  px-4">
       {skillsFuture.map((skill, index) => (
         <CardSkill
           key={index}
@@ -85,7 +85,7 @@ return(
         />
       ))}
       
-      </ul>
+      </div>
   </section>
 )
   }

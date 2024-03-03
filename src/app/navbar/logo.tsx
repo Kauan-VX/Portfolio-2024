@@ -37,7 +37,6 @@ export const Logo= () => {
       variants={icon}
       initial="hidden"
       animate="visible"
-
        />
        {/* K */}
         <motion.path
