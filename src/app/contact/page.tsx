@@ -63,7 +63,7 @@ export default function Connect() {
         <motion.div variants={textVariants} initial='initialLeft'     whileInView="animateLeft"
       viewport={{
         once: true,
-      }} className="left flex w-1/2 justify-center">
+      }} className="left flex w-1/2 justify-center lgMax:w-full">
         <MailIcon/>
         </motion.div>
         <motion.div  variants={textVariants} initial='initialRight' whileInView="animateRight"

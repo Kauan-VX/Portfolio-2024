@@ -18,45 +18,45 @@ export default function Presentation() {
   const words = [
     {
       text: "Olá",
-      className: "text-6xl"
+      className: "text-6xl  md:text-5xl smMax:text-4xl"
           },
     {
       text: "eu",
-      className: "text-6xl"
+      className: "text-6xl  md:text-5xl smMax:text-4xl"
     },
     {
       text: "sou",
-      className: "text-6xl"
+      className: "text-6xl  md:text-5xl smMax:text-4xl"
     },
     {
       text: "Kauan",
-       className: "text-blue-500 dark:text-blue-500",
+       className: "text-blue-500 dark:text-blue-500 text-6xl  md:text-5xl smMax:text-4xl",
 
     },
     {
       text: "Vieira",
-       className: "text-blue-500 dark:text-blue-500",
+       className: "text-blue-500 dark:text-blue-500 text-6xl  md:text-5xl smMax:text-4xl",
 
     },
     {
       text: "Xavier",
-       className: "text-blue-500 dark:text-blue-500",
+       className: "text-blue-500 dark:text-blue-500 text-6xl  md:text-5xl smMax:text-4xl",
     },
   ];
   return (
     <section className=" h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-6">
       <div className="flex flex-col justify-center items-center mt-10">
         <header
-          className="px-8  header-presentation flex w-full justify-center items-center flex-col"
+          className="px-8 smMax:px-0 header-presentation flex w-full justify-center items-center flex-col"
         >
             <b className=" flex  items-center gap-2 text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient ml-2">
             <TypewriterEffect words={words} />
             </b>{' '}
          
           <h2
-            className="dark:text-dark-text text-light-text text-"
+            className="dark:text-dark-text text-light-text text-center"
           >
-            <strong className="text-5xl">Desenvolvedor Frond-End</strong>
+            <strong className="md:text-5xl smMax:text-3xl ">Desenvolvedor Frond-End</strong>
           </h2>
           <motion.span
             className="w-full max-w-10"
