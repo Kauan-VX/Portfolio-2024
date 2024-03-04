@@ -1,13 +1,16 @@
 import { Button } from '@nextui-org/react';
 import { motion } from "framer-motion";
-import Image from 'next/image';
-import Link from 'next/link';
-import { TelegramIcon } from './TelegramIcon';
+import CardSkill from '../components/card-skills';
 import { MailIcon } from './mail';
-import Linkedin from '/public/contact/linkedin.svg';
-import Mail from '/public/contact/mail.svg';
 
 export default function Connect() {
+
+  const contact = [
+    { imageSrc: "/contact/mail.svg" ,  link: "https://nodejs.org/en" , skillName : "E-mail"},
+    { imageSrc: "/contact/linkedin.svg" ,  link: "https://www.mysql.com/" , skillName : "Linkedin"},
+    { imageSrc: "/skills/github.svg" ,  link: "https://github.com/Kauan-VX" , skillName : "GitHub"},
+  
+  ]
 
   const textVariants = {
     initialLeft: {
@@ -42,24 +45,18 @@ export default function Connect() {
           Conecte-se a mim:
         </h1>
       </header>
-      <ul className="my-10 flex w-full flex-wrap items-center justify-center gap-[1rem] px-4">
-          <li>
-            <Link className="link-skills" href="#">
-              <Image src={Linkedin} alt="Linkedin" /> Linkedin
-            </Link>
-          </li>
-        <li>
-          <Link className="link-skills" href="#">
-          <TelegramIcon/> Telegram
-          </Link>
-        </li>
-        <li>
-          <Link className="link-skills" href="#">
-            <Image src={Mail} alt="Email" /> Email
-          </Link>
-        </li>
-      </ul>
-      <div className="contact flex w-full lgMax:flex-col lgMax:justify-center lgMax:items-center">
+      <div className="flex flex-row items-center justify-center gap-10 my-10 w-full">
+      {contact.map((skill, index) => (
+        <CardSkill
+          key={index}
+          imageSrc={skill.imageSrc}
+              link={skill.link}
+          skillName={skill.skillName}
+          index={index}
+        />
+      ))}
+    </div>
+      <div className="contact mt-28 flex w-full lgMax:flex-col lgMax:justify-center lgMax:items-center">
         <motion.div variants={textVariants} initial='initialLeft'     whileInView="animateLeft"
       viewport={{
         once: true,

@@ -42,7 +42,7 @@
     }
   }
   .link-skills {
-    @apply flex items-center rounded-3xl py-[0.2rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl;
+    @apply flex items-center rounded-3xl py-[0.5rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl;
     Image {
       @apply w-full max-w-[48px];
     }

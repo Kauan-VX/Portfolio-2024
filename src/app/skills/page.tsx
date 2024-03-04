@@ -19,7 +19,7 @@ const skillsCurrent = [
 const skillsProductivity = [
   { imageSrc: "/skills/vscode.svg" , link: "https://code.visualstudio.com/" , skillName : "VS Code"},
   { imageSrc: "/skills/bitbucket.svg" , link: "https://bitbucket.org/" , skillName : "Bit Bucket"},
-  { imageSrc: "/skills/github.svg" ,  link:"https://github.com/" , skillName : "GitHub"},
+  { imageSrc: "/skills/github.svg" ,  link:"https://github.com/Kauan-VX" , skillName : "GitHub"},
   { imageSrc: "/skills/postman.svg" ,  link: "https://www.postman.com/" , skillName : "Postman"},
   { imageSrc: "/skills/hoppscotch.svg" , link: "https://docs.hoppscotch.io/" , skillName : "Hoppscotch"},
   { imageSrc: "/skills/jira.svg" ,  link: "https://www.atlassian.com/br/software/jira" , skillName : "Jira"},

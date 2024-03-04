@@ -1,114 +1,45 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import Image from "next/image";
 
-interface IProject{
-  imageBg?: string,
-  name: string,
-  index: number,
+export interface IProject{
+  link: string,
+  image: string,
+  title: string,
+  description: string,
+  stacks: string[],
 }
 
-const CardProject : React.FC<IProject> = ({ imageBg , name , index}) => {
+
+
+const CardProject = ({image , title , description  , stacks}: IProject) => {
   return (
-      <TiltCard imageBg={imageBg} name={name} index={index}/>
-  );
-};
+    <div className="rounded-[22px]  flex flex-col max-w-3xl dark:bg-dark-background-transparent bg-light-background-transparent shadow-3xl">
+   <Image
+          src={image}
+          width={250}
+          height={250}
+          alt={title}
+          className="object-cover w-full h-full"
+        />
 
-const TiltCard: React.FC<IProject> = ({ imageBg , name , index}) => {
-  const fadeInAnimationsVariants = {
-    initial: {
-     opacity: 0,
-      y: 100,
-    },
-    animate: (index: number) => ( {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.05 * index,
-      
-      },
-    }),
-  };
-
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(
-    mouseYSpring,
-    [-0.5, 0.5],
-    ["17.5deg", "-17.5deg"]
-  );
-  const rotateY = useTransform(
-    mouseXSpring,
-    [-0.5, 0.5],
-    ["-17.5deg", "17.5deg"]
-  );
-
-  const handleMouseMove = (e : any) => {
-    const rect = e.target.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-
-
-  return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      variants={fadeInAnimationsVariants}
-      initial="initial"
-      whileInView="animate"
-      viewport={{
-        once: true,
-      }}
-      custom={index}
-      style={{
-        rotateY,
-        rotateX,
-        transformStyle: "preserve-3d",
-      }}
-      
-      className="relative h-[32rem] w-[26rem] rounded-xl bg-gradient-to-br from-[#5ea2ef] to-[#0072f5]"
-    >
-      <div
-      
-             style={{
-          transform: "translateZ(75px)",
-          transformStyle: "preserve-3d",
-          backgroundImage : `url(${imageBg})`
-        }}
-        className="absolute inset-4 grid place-content-center rounded-xl bg-cover bg-center bg-no-repeat  shadow-lg"
-      >
-       
-        <p
-          style={{
-            transform: "translateZ(50px)",
-          }}
-          className="text-center text-2xl font-bold"
-        >
-        {name}
+<div className="h-72">
+<p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+        {title}
         </p>
-      </div>
-    </motion.div>
-  );
-};
-
-export default CardProject;
+ 
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+         {description}
+        </p>
+        <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
+          <span> Tecnologias usadas: </span>
+          <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
+        {stacks.map((stack, index) =>(
+          <div key={index}>{stack}</div>
+        ))}
+          </span>
+        </button>
+        </div>
+  </div>
+ 
+  )
+}
+export default CardProject

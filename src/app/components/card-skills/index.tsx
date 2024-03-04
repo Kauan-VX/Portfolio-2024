@@ -1,5 +1,5 @@
 'use client'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 interface ISkills {
@@ -16,8 +16,6 @@ const CardSkill: React.FC<ISkills> = ({
   index,
 }) => {
   
-
-  const controls = useAnimation();
 
   const fadeInAnimationsVariants = {
     initial: {
