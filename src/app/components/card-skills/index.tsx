@@ -2,11 +2,11 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-interface ISkills {
+export interface ISkills {
   imageSrc: string
   link: string
   skillName: string
-  index: number
+  index?: number
 }
 
 const CardSkill: React.FC<ISkills> = ({
@@ -52,6 +52,7 @@ const CardSkill: React.FC<ISkills> = ({
           className="w-full"
           src={imageSrc}
           alt={skillName}
+          title={skillName}
           width={48}
           height={48}
         />

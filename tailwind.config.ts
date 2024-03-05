@@ -11,6 +11,24 @@ const config: Config = {
   darkMode: ['class'],
   theme: {
     extend: {
+      animation: {
+        'meteor-effect': 'meteor 5s linear infinite',
+        gradient: 'gradient 6s linear infinite',
+      },
+      keyframes: {
+        meteor: {
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': {
+            transform: 'rotate(215deg) translateX(-500px)',
+            opacity: '0',
+          },
+        },
+        gradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' },
+        },
+      },
       screens: {
         smMax: { max: '640px' },
         lgMax: { max: '1024px' },
@@ -72,15 +90,6 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-      keyframes: {
-        gradient: {
-          '0%': { backgroundPosition: '0% 50%' },
-          '100%': { backgroundPosition: '100% 50%' },
-        },
-      },
-      animation: {
-        gradient: 'gradient 6s linear infinite',
       },
     },
   },

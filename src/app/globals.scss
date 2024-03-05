@@ -10,7 +10,7 @@
 
 @layer components {
   body {
-    @apply overflow-x-hidden transition ease-in-out duration-700  dark:bg-dark-background bg-light-background max-w-8xl my-0 mx-auto;
+    @apply transition ease-in-out duration-700  dark:bg-dark-background bg-light-background  my-0;
     .item {
       width: 56%;
       overflow: visible;
