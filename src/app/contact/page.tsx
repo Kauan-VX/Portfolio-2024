@@ -38,7 +38,7 @@ export default function Connect() {
  
   }
   return (
-    <section className="min-h-[100vh] w-full  bg-light-background pt-20 dark:bg-dark-background">
+    <section className="min-h-[100vh] w-full  bg-light-background pt-20 dark:bg-dark-background overflow-hidden">
       <header className="flex justify-center ">
         <h1 className="animate-gradient bg-gradient-to-b from-[#FF6F5B] to-[#FFB457] bg-clip-text
          text-5xl font-bold text-transparent">

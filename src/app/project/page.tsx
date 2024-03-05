@@ -38,25 +38,12 @@ export default function Project(){
       { imageSrc: "/skills/tailwind.svg" , link: "https://tailwindcss.com/" , skillName : "Tailwind CSS"}
     
     ]},
-    { image: "/project/mockup-docente.svg" ,  link: "https://nodejs.org/en" , title : "Contratação de Docentes" , description : `
-    Um site web foi desenvolvido para simplificar a contratação de docentes, promovendo eficiência e praticidade no processo de recrutamento educacional. Ele oferece uma interface intuitiva para postagem de vagas, gerenciamento de candidatos e comunicação entre recrutadores e candidatos.` , 
+
+    { image: "/project/mackup-login-animate.svg" ,  link: "https://nodejs.org/en" , title : "Tela de Login Animado" , description : `
+    Esta tela de login apresenta um design animado e harmonioso, tornando-a mais atraente para o usuário.` , 
     stacks : [
-      { imageSrc: "/skills/nextjs.svg" ,  link: "https://nextjs.org/" , skillName : "NextJs" },
-      { imageSrc: "/skills/tailwind.svg" , link: "https://tailwindcss.com/" , skillName : "Tailwind CSS"}
-    
-    ]},
-    { image: "/project/mockup-docente.svg" ,  link: "https://nodejs.org/en" , title : "Contratação de Docentes" , description : `
-    Um site web foi desenvolvido para simplificar a contratação de docentes, promovendo eficiência e praticidade no processo de recrutamento educacional. Ele oferece uma interface intuitiva para postagem de vagas, gerenciamento de candidatos e comunicação entre recrutadores e candidatos.` , 
-    stacks : [
-      { imageSrc: "/skills/nextjs.svg" ,  link: "https://nextjs.org/" , skillName : "NextJs" },
-      { imageSrc: "/skills/tailwind.svg" , link: "https://tailwindcss.com/" , skillName : "Tailwind CSS"}
-    
-    ]},
-    { image: "/project/mockup-docente.svg" ,  link: "https://nodejs.org/en" , title : "Contratação de Docentes" , description : `
-    Um site web foi desenvolvido para simplificar a contratação de docentes, promovendo eficiência e praticidade no processo de recrutamento educacional. Ele oferece uma interface intuitiva para postagem de vagas, gerenciamento de candidatos e comunicação entre recrutadores e candidatos.` , 
-    stacks : [
-      { imageSrc: "/skills/nextjs.svg" ,  link: "https://nextjs.org/" , skillName : "NextJs" },
-      { imageSrc: "/skills/tailwind.svg" , link: "https://tailwindcss.com/" , skillName : "Tailwind CSS"}
+      { imageSrc: "/skills/angular.svg" ,  link: "https://angular.io/" , skillName : "Angular" },
+      { imageSrc: "/skills/sass.svg" , link: "https://sass-lang.com/" , skillName : "Sass/Scss"}
     
     ]},
   
@@ -72,19 +59,20 @@ export default function Project(){
       <div className='w-full h-full mt-10'>
       <Swiper
         effect={'coverflow'}
-        spaceBetween={10}
+        spaceBetween={80}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={'auto'}
         loop={true}
+        freeMode={true}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
           depth: 100,
-          modifier: 1,
-          slideShadows: true,
+          modifier: 0.5,
+          slideShadows: false,
         }}
-        
+   
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="mySwiper overflow-visible h-full w-full bg-gradient-to-left from-black to-transparent bg-none"
       >

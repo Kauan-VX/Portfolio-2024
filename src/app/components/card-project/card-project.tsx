@@ -17,8 +17,8 @@ const CardProject = ({image , title , description  , stacks}: IProject) => {
   return (
 <div className="">
 <div className=" w-full relative max-w-xl h-full">
-  <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-[#5ea2ef] transform scale-[0.80] bg-[#0072f5] rounded-full blur-3xl" />
-  <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8  h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
+  <div className="transition ease-in-out duration-700 absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 dark:to-dark-meteors to-light-meteors transform scale-[0.80] dark:bg-dark-meteors bg-light-meteors rounded-full blur-3xl" />
+  <div className="transition ease-in-out duration-700 relative shadow-xl  dark:bg-dark-background bg-light-background border border-gray-800  px-4 py-8  max-h-[800px] overflow-hidden rounded-2xl flex flex-col justify-between items-start">
     <Image
        src={image}
        width={1000}

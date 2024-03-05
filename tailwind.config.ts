@@ -48,6 +48,7 @@ const config: Config = {
         yellow: '#e6cc00',
         blue: '#0070f0',
         dark: {
+          meteors: '#0070f0',
           background: '#000',
           primary: '#052659',
           text: '#ffffff',
@@ -67,6 +68,7 @@ const config: Config = {
           'mail-color': '#8a00c2',
         },
         light: {
+          meteors: '#8a00c2',
           background: '#fff',
           primary: '#c1e8ff',
           text: '#000',
