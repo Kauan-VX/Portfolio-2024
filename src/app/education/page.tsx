@@ -6,7 +6,7 @@ export default function Education(){
       <header className="flex justify-center ">
         <h1 className="text-5xl text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient">Educação</h1>
       </header>
-      <div className="card p-7 flex justify-center">
+      <div className="card flex justify-center">
       <CardEducation></CardEducation>
       </div>
     </section>

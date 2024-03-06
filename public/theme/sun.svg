@@ -1,13 +1,9 @@
-
-
-
-export const SunIcon = () => (
-  <svg
+ <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    className="w-full h-auto fill-dark"
+    className="w-full h-auto "
   >
     <rect
       x="0"
@@ -18,7 +14,7 @@ export const SunIcon = () => (
     ></rect>
     <g
       fill="none"
-      stroke="currentColor"
+      stroke="#fff"
       stroke-dasharray="2"
       stroke-dashoffset="2"
       stroke-linecap="round"
@@ -64,7 +60,7 @@ export const SunIcon = () => (
         values="0 12 12;360 12 12"
       ></animateTransform>
     </g>
-    <g fill="currentColor">
+    <g fill="#fff">
       <path d="M15.22 6.03L17.75 4.09L14.56 4L13.5 1L12.44 4L9.25 4.09L11.78 6.03L10.87 9.09L13.5 7.28L16.13 9.09L15.22 6.03Z">
         <animate
           fill="freeze"
@@ -84,8 +80,8 @@ export const SunIcon = () => (
       </path>
     </g>
     <g
-      fill="currentColor"
-      stroke="currentColor"
+      fill="#fff"
+      stroke="#fff"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="2"
@@ -146,7 +142,7 @@ export const SunIcon = () => (
       cx="12"
       cy="12"
       r="10"
-      fill="currentColor"
+      fill="#fff"
       mask="url(#lineMdMoonFilledToSunnyFilledLoopTransition0)"
       opacity="0"
     >
@@ -160,4 +156,3 @@ export const SunIcon = () => (
       ></animate>
     </circle>
   </svg>
-)

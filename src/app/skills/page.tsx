@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import CardSkill from '../components/card-skills/index';
 import { SKILLS_CURRENT, SKILLS_FUTURE, SKILLS_PRODUCTIVITY } from '../constants/skills-obj';
 

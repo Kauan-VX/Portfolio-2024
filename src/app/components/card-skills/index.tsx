@@ -1,3 +1,4 @@
+'use client'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -50,7 +51,7 @@ const CardSkill: React.FC<ISkills> = ({
         <Image
           className="w-full"
           src={imageSrc}
-          alt={skillName ? skillName : "icon"}
+          alt='icon-skill'
           title={skillName}
           width={48}
           height={48}

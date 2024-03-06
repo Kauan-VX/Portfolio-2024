@@ -38,15 +38,20 @@ export default function NavbarComponent() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
+          <NavbarItem>
         <NavbarBrand className='smMax:hidden  '>
         <Logo/>
         </NavbarBrand>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden w-full !justify-center">
+       <NavbarItem>
        <NavbarBrand className='!justify-center'>
+
      <Logo/>
        </NavbarBrand>
+     </NavbarItem>
      </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">

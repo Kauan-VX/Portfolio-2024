@@ -1,3 +1,4 @@
+'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import CardProject from '../components/card-project/card-project'
 
@@ -79,8 +80,9 @@ export default function Project() {
           ))}
         </Swiper>
       </div>
-       )}
-           {isSmallScreen && (
+      )}
+      {isSmallScreen && (
+
       <div className="w-full h-full flex justify-center">
         
         <Swiper
@@ -107,7 +109,7 @@ export default function Project() {
           ))}
         </Swiper>
       </div>
-       )}
+      )}
     </section>
   )
 }

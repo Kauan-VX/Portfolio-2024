@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '@nextui-org/react';
 import { motion } from "framer-motion";
 import CardSkill from '../components/card-skills';

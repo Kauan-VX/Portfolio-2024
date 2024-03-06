@@ -25,7 +25,7 @@
     }
 
     .animation-text {
-      @apply transition ease-in-out duration-100;
+      @apply transition ease-in-out duration-700;
     }
 
     svg {
@@ -52,9 +52,6 @@
   .header-presentation {
     h1 {
       b {
-        .Typewriter {
-          @apply text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient;
-        }
       }
     }
   }

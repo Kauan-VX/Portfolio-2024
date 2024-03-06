@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="41.17935999145508" style="">
   <rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
   <g class="currentLayer" style="">
-    <g stroke="#61dafb" stroke-width="1" fill="none" id="svg_2" class="">
+    <g stroke="#61dafb" strokeWidth="1" fill="none" id="svg_2" class="">
       <ellipse rx="22" ry="8.399999618530273" id="svg_3" cy="20.463479042053223" cx="24" class=""/>
       <ellipse rx="22" ry="8.399999618530273" transform="rotate(60 24,20.46347999572754) " id="svg_4" cy="20.463479042053223" cx="24" class=""/>
       <ellipse rx="22" ry="8.399999618530273" transform="rotate(120 24,20.46347999572754) " id="svg_5" cy="20.463479042053223" cx="24" class=""/>

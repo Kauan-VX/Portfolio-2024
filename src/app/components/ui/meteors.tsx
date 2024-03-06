@@ -1,4 +1,4 @@
-"use-client"
+'use client'
 import { cn } from "@/utils/cn";
 
 export const Meteors = ({

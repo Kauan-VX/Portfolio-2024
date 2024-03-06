@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { cn } from "@/utils/cn";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
@@ -41,7 +41,7 @@ export const TypewriterEffect = ({
         }
       );
     }
-  }, [isInView]);
+  }, [animate, isInView]);
 
   const renderWords = () => {
     return (

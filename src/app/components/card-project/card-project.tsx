@@ -1,4 +1,4 @@
-"use-client"
+'use client'
 import Image from "next/image";
 import CardSkill, { ISkills } from "../card-skills";
 import { Meteors } from "../ui/meteors";
