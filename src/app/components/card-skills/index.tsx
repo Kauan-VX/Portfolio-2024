@@ -1,12 +1,11 @@
-'use client'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export interface ISkills {
-  imageSrc: string
-  link: string
-  skillName: string
-  index?: number
+  imageSrc: string;
+  link: string;
+  skillName: string;
+  index?: number;
 }
 
 const CardSkill: React.FC<ISkills> = ({
@@ -15,8 +14,6 @@ const CardSkill: React.FC<ISkills> = ({
   skillName,
   index,
 }) => {
-  
-
   const fadeInAnimationsVariants = {
     initial: {
       opacity: 0,
@@ -33,15 +30,14 @@ const CardSkill: React.FC<ISkills> = ({
       opacity: 0,
       y: 100,
     },
-  }
+  };
 
   return (
-
     <motion.div
+      key={index} // Adicionando key para reiniciar a animação quando o componente é montado novamente
       variants={fadeInAnimationsVariants}
       initial="initial"
       whileInView="animate"
-            exit="exit"
       viewport={{
         once: true,
       }}
@@ -59,6 +55,7 @@ const CardSkill: React.FC<ISkills> = ({
         {skillName}
       </a>
     </motion.div>
-  )
-}
-export default CardSkill
+  );
+};
+
+export default CardSkill;

@@ -52,11 +52,11 @@ export default function Project(){
 
   return (
 
-          <section className="h-full w-full  dark:bg-dark-background bg-light-background  pt-12">
-      <header className="flex justify-center ">
-        <h1 className="text-5xl text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient">Projetos</h1>
+          <section className="min-h-[100vh] w-full  bg-light-background pt-20 dark:bg-dark-background p-4">
+      <header className="flex justify-center">
+        <h1 className="text-5xl text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient text-center">Projetos</h1>
       </header>
-      <div className='w-full h-full mt-10'>
+      <div className='w-full h-full mt-10 smMax:'>
       <Swiper
         effect={'coverflow'}
         spaceBetween={80}

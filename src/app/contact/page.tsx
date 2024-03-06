@@ -38,14 +38,14 @@ export default function Connect() {
  
   }
   return (
-    <section className="min-h-[100vh] w-full  bg-light-background pt-20 dark:bg-dark-background overflow-hidden">
+    <section className="min-h-[100vh] w-full  bg-light-background pt-20 dark:bg-dark-background overflow-hidden p-4">
       <header className="flex justify-center ">
         <h1 className="animate-gradient bg-gradient-to-b from-[#FF6F5B] to-[#FFB457] bg-clip-text
-         text-5xl font-bold text-transparent">
+         text-5xl font-bold text-transparent text-center">
           Conecte-se a mim:
         </h1>
       </header>
-      <div className="flex flex-row items-center justify-center gap-10 my-10 w-full">
+      <div className="flex flex-row items-center justify-center flex-wrap  gap-10 my-10 w-full">
       {contact.map((skill, index) => (
         <CardSkill
           key={index}

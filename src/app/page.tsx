@@ -5,8 +5,8 @@ import Connect from './contact/page';
 import Education from './education/page';
 import NavbarComponent from './navbar/page';
 import Presentation from './presentation/page';
-import Skills from './skills/page';
 import Project from './project/page';
+import Skills from './skills/page';
 
 
 export default function Home() {
@@ -18,7 +18,9 @@ export default function Home() {
     {/* <About></About> */}
     <Education></Education>
     <Skills></Skills>
+    <div className='max-w-max'>
     <Project></Project>
+    </div>
     <Connect></Connect>
       </NextThemesProvider>
     </NextUIProvider>
