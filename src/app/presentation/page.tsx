@@ -44,7 +44,7 @@ export default function Presentation() {
     },
   ];
   return (
-    <section className=" h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-6">
+    <section id="about" className=" h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-6">
       <div className="flex flex-col justify-center items-center mt-10">
         <header
           className="px-8 smMax:px-0 header-presentation flex w-full justify-center items-center flex-col"

@@ -1,28 +1,5 @@
-import { motion } from 'framer-motion'
 
-const icon = {
-  hidden: {
-    opacity: 0,
-    pathLength: 0,
-    fill: '#000000',
-  },
-  visible: {
-    opacity: 1,
-    pathLength: 1,
-    fill: 'rgba(255, 255, 255, 1)',
-    transition: {
-      duration: 2,
-      staggerChildren: 2,
-    },
-  },
-  star: {
-    opacity: 0,
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-    },
-  },
-}
+
 
 export const SunIcon = () => (
   <svg
@@ -30,7 +7,7 @@ export const SunIcon = () => (
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    class="w-full h-auto fill-dark"
+    className="w-full h-auto fill-dark"
   >
     <rect
       x="0"

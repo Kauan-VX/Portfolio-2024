@@ -11,16 +11,14 @@ import Skills from './skills/page';
 
 export default function Home() {
   return (
-<NextUIProvider className="max-w-8xl my-0 mx-auto">
+<NextUIProvider className="">
       <NextThemesProvider attribute="class" defaultTheme="dark">
     <NavbarComponent></NavbarComponent>
     <Presentation></Presentation>
     {/* <About></About> */}
     <Education></Education>
     <Skills></Skills>
-    <div className='max-w-max'>
     <Project></Project>
-    </div>
     <Connect></Connect>
       </NextThemesProvider>
     </NextUIProvider>

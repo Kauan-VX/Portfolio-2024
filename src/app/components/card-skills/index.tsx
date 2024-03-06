@@ -31,11 +31,14 @@ const CardSkill: React.FC<ISkills> = ({
       y: 100,
     },
   };
+  const noAnimations = {
+    
+  };
 
   return (
     <motion.div
       key={index} // Adicionando key para reiniciar a animação quando o componente é montado novamente
-      variants={fadeInAnimationsVariants}
+      variants={skillName ? fadeInAnimationsVariants : noAnimations}
       initial="initial"
       whileInView="animate"
       viewport={{
@@ -47,7 +50,7 @@ const CardSkill: React.FC<ISkills> = ({
         <Image
           className="w-full"
           src={imageSrc}
-          alt={skillName}
+          alt={skillName ? skillName : "icon"}
           title={skillName}
           width={48}
           height={48}

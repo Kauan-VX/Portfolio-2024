@@ -31,6 +31,7 @@ const config: Config = {
       },
       screens: {
         smMax: { max: '640px' },
+        mdMax: { max: '768px' },
         lgMax: { max: '1024px' },
       },
       maxWidth: {

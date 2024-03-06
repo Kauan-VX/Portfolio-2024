@@ -10,9 +10,10 @@
 
 @layer components {
   body {
-    @apply h-full w-full m-0 p-0 transition ease-in-out duration-700  dark:bg-dark-background bg-light-background overflow-x-hidden;
+    scroll-behavior: smooth;
+    @apply h-full w-full m-0 p-0 transition ease-in-out duration-700  dark:bg-dark-background  bg-light-background scroll-smooth overflow-x-hidden;
     .item {
-      width: 56%;
+      width: 100%;
       overflow: visible;
       stroke: #ffffff4b;
       // strokewidth: 1;

@@ -26,12 +26,7 @@ export default function NavbarComponent() {
     'Educação',
     'Skills',
     'Projetos',
-    'System',
-    'Deployments',
-    'My Settings',
-    'Team Settings',
-    'Help & Feedback',
-    'Log Out',
+    'Conecte-se',
   ]
 
  
@@ -43,13 +38,13 @@ export default function NavbarComponent() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand className='smMax:hidden'>
+        <NavbarBrand className='smMax:hidden  '>
         <Logo/>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden pr-3 justify-center">
-       <NavbarBrand>
+      <NavbarContent className="sm:hidden w-full !justify-center">
+       <NavbarBrand className='!justify-center'>
      <Logo/>
        </NavbarBrand>
      </NavbarContent>
@@ -58,28 +53,28 @@ export default function NavbarComponent() {
     
         <NavbarItem isActive>
           <motion.div>
-          <Link className='text-lg' href="#" aria-current="page">
+          <Link className='text-lg' href="#about" aria-current="page">
             Sobre
           </Link>
           </motion.div>
         </NavbarItem>
         <NavbarItem>
-          <Link className='text-lg' color="foreground" href="#">
+          <Link className='text-lg' color="foreground" href="#education">
             Educação
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className='text-lg' color="foreground" href="#">
+          <Link className='text-lg' color="foreground" href="#skills">
          Skills
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className='text-lg' color="foreground" href="#">
+          <Link className='text-lg' color="foreground" href="#projects">
            Projetos
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className='text-lg' color="foreground" href="#">
+          <Link className='text-lg' color="foreground" href="#conect">
      Conecte-se
           </Link>
         </NavbarItem>

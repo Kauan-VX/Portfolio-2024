@@ -28,7 +28,7 @@ export const Logo= () => {
     <motion.svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 55 12"
-    className="item size-16"
+    className="size-28 smMax:size-32"
   >
     {/* / */}
     <motion.path
