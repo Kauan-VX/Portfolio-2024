@@ -22,13 +22,18 @@ export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   const menuItems = [
-    'Sobre',
-    'Educação',
-    'Skills',
-    'Projetos',
-    'Conecte-se',
+    {name : 'Sobre' , link : '#about'},
+    {name : 'Educação' , link : '#education'},
+    {name : 'Skills' , link : '#skills'},
+    {name : 'Projetos' , link : '#projects'},
+    {name : 'Conecte-se' , link : '#conect'},
+
   ]
 
+  const closeNav = () => {
+    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+    console.log("Menu fechado");
+  };
  
 
   return (
@@ -36,7 +41,7 @@ export default function NavbarComponent() {
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="sm:hidden bg-red-500"
         />
           <NavbarItem>
         <NavbarBrand className='smMax:hidden  '>
@@ -91,20 +96,19 @@ export default function NavbarComponent() {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu  >
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem  key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+      {menuItems.map((item, index) => (
+  <NavbarMenuItem key={`${item}-${index}`}>
+      <Link
+       
+        className="w-full"
+        href={item.link}
+        size="lg"
+        onClick={closeNav} // Alteração aqui
+      >
+        {item.name}
+      </Link>
+  </NavbarMenuItem>
+))}
       </NavbarMenu>
     </Navbar>
   );

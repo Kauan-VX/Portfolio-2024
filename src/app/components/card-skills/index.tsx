@@ -44,6 +44,7 @@ const CardSkill: React.FC<ISkills> = ({
       whileInView="animate"
       viewport={{
         once: true,
+        amount: 0.5
       }}
       custom={index}
     >
