@@ -3,7 +3,7 @@ export default function About(){
 const currentYear = currentDate.getFullYear()
 const age = currentYear - 2003
   return (
-    <section className=" h-[100vh] pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-250 group-hover:opacity-100" >
+    <section className=" h-[100vh] pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-250 group-hover:opacity-100  dark:bg-dark-background bg-light-background" >
  <header className="flex justify-center ">
         <h1 className="text-5xl text-transparent font-bold bg-gradient-to-b from-[#FF705B] to-[#FFB457] bg-clip-text animate-gradient"></h1>
 Sobre mim

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export interface ISkills {
+  id: number;
   imageSrc: string;
   link: string;
   skillName: string;
@@ -15,6 +16,7 @@ const CardSkill: React.FC<ISkills> = ({
   skillName,
   index,
 }) => {
+
   const fadeInAnimationsVariants = {
     initial: {
       opacity: 0,
