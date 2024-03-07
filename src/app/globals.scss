@@ -20,8 +20,22 @@
       // strokelinejoin: round;
       // strokelinecap: round;
     }
+    #root {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      /* Prevents overflow on the x-axis */
+      overflow-x: hidden;
+    }
     section {
       @apply transition ease-in-out duration-700;
+
+      header {
+        .title {
+          @apply text-6xl;
+        }
+      }
     }
 
     .animation-text {

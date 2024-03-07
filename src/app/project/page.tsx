@@ -1,17 +1,20 @@
 'use client'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import CardProject from '../components/card-project/card-project'
+import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import CardProject from '../components/card-project/card-project';
+
 
 // Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
-import '../../app/globals.scss'
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import '../../app/globals.scss';
 
 // import required modules
-import { useEffect, useState } from 'react'
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
-import { PROJECTS } from '../constants/projects-obj'
+import { fadeIn } from '@/utils/motion';
+import { useEffect, useState } from 'react';
+import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import { PROJECTS } from '../constants/projects-obj';
 
 export default function Project() {
   const [windowSize, setWindowSize] = useState({
@@ -38,11 +41,11 @@ export default function Project() {
   const isSmallScreen = windowSize.width < 768;
   return (
     <section id='projects' className="min-h-[100vh] w-full  bg-light-background pt-20 dark:bg-dark-background p-4">
-      <header className="flex justify-center">
-        <h1 className="text-5xl text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient text-center">
+      <motion.header variants={fadeIn('up' , 0.5)} initial='hidden' whileInView={'show'} viewport={{ once: false , amount : 0.7}} className="flex justify-center">
+        <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient text-center">
           Projetos
         </h1>
-      </header>
+      </motion.header>
       {!isSmallScreen && (
       <div className="w-full h-full flex justify-center">
         <Swiper
@@ -93,7 +96,6 @@ export default function Project() {
         >
           {PROJECTS.map((project, index) => (
             <SwiperSlide
-            
               key={index}
               className="md:basis-1/2 mdMax:!mr-0 mdMax:!flex mdMax:!justify-center lg:basis-1/3 mt-20 my-9 "
             >

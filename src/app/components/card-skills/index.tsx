@@ -8,6 +8,7 @@ export interface ISkills {
   link: string;
   skillName: string;
   index?: number;
+
 }
 
 const CardSkill: React.FC<ISkills> = ({
@@ -40,7 +41,7 @@ const CardSkill: React.FC<ISkills> = ({
 
   return (
     <motion.div
-      key={index} // Adicionando key para reiniciar a animação quando o componente é montado novamente
+      key={index} 
       variants={skillName ? fadeInAnimationsVariants : noAnimations}
       initial="initial"
       whileInView="animate"
@@ -65,4 +66,6 @@ const CardSkill: React.FC<ISkills> = ({
   );
 };
 
-export default CardSkill;
+
+export default CardSkill
+

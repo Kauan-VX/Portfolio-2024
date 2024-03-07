@@ -27,7 +27,7 @@ const CardProject = ({image , title , description  , stacks}: IProject) => {
        className="object-cover w-full z-10"
      />
 
-    <h1 className="dark:text-dark-text text-light-text font-semibold text-3xl z-10">
+    <h1 className="dark:text-dark-text t600xt-light-text font-semibold text-3xl z-10">
      {title}
      </h1>
 
@@ -39,7 +39,7 @@ const CardProject = ({image , title , description  , stacks}: IProject) => {
        <h2 className="dark:text-dark-text text-light-text font-semibold text-xl"> Tecnologias usadas: </h2>
        <span   className="w-full  m-auto flex justify-start items-center flex-wrap gap-[1rem] ">
      {stacks.map((stack, index) =>(
-       <CardSkill key={index} imageSrc={stack.imageSrc} link={stack.link} skillName={stack.skillName}/>
+       <CardSkill key={index} id={stack.id} imageSrc={stack.imageSrc} link={stack.link} skillName={stack.skillName}/>
      ))}
        </span>
      </div>

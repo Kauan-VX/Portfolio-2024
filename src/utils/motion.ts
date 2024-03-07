@@ -1,6 +1,6 @@
 // import { Variant } from 'framer-motion'
 
-// type Direction = 'left' | 'right' | 'down' | 'up'
+type Direction = 'left' | 'right' | 'down' | 'up'
 
 // export const navVariants = {
 //   hidden: {
@@ -177,11 +177,11 @@
 //   },
 // }
 
-export const fadeIn = (direction: any, delay: any) => {
+export const fadeIn = (direction: Direction, delay: number) => {
   return {
     hidden: {
-      y: direction === 'up' ? 40 : direction === 'down' ? -40 : 0,
-      x: direction === 'left' ? 40 : direction === 'right' ? -40 : 0,
+      y: direction === 'up' ? 40 : direction === 'down' ? -20 : 0,
+      x: direction === 'left' ? 40 : direction === 'right' ? -20 : 0,
     },
     show: {
       y: 0,
@@ -196,3 +196,25 @@ export const fadeIn = (direction: any, delay: any) => {
     },
   }
 }
+
+export const slideIn = (
+  direction: Direction,
+  type: string,
+  delay: number,
+  duration: number
+) => ({
+  hidden: {
+    x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
+    y: direction === 'up' ? '100%' : direction === 'down' ? '100%' : 0,
+  },
+  show: {
+    x: 0,
+    y: 0,
+    transition: {
+      type,
+      delay,
+      duration,
+      ease: 'easeOut',
+    },
+  },
+})

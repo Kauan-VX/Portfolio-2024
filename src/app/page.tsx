@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import About from './about-me/about';
+import About from './about-me/page';
 import Connect from './contact/page';
 import Education from './education/page';
 import NavbarComponent from './navbar/page';

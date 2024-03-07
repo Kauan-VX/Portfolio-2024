@@ -30,18 +30,15 @@ export default function NavbarComponent() {
 
   ]
 
-  const closeNav = () => {
-    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
-    console.log("Menu fechado");
-  };
+
  
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar       isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden bg-red-500"
+          className="sm:hidden"
         />
           <NavbarItem>
         <NavbarBrand className='smMax:hidden  '>
@@ -63,29 +60,29 @@ export default function NavbarComponent() {
     
         <NavbarItem isActive>
           <motion.div>
-          <Link className='text-lg' href="#about" aria-current="page">
+          <Link className='text-lg smMax:text-sm' href="#about" aria-current="page">
             Sobre
           </Link>
           </motion.div>
         </NavbarItem>
         <NavbarItem>
-          <Link className='text-lg' color="foreground" href="#education">
+          <Link className='text-lg smMax:text-sm'  color="foreground" href="#education">
             Educação
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className='text-lg' color="foreground" href="#skills">
+          <Link className='text-lg smMax:text-sm' color="foreground" href="#skills">
          Skills
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className='text-lg' color="foreground" href="#projects">
+          <Link className='text-lg smMax:text-sm' color="foreground" href="#projects">
            Projetos
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className='text-lg' color="foreground" href="#conect">
-     Conecte-se
+          <Link className='text-lg smMax:text-sm' color="foreground" href="#conect">
+          Contato
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -99,11 +96,10 @@ export default function NavbarComponent() {
       {menuItems.map((item, index) => (
   <NavbarMenuItem key={`${item}-${index}`}>
       <Link
-       
         className="w-full"
         href={item.link}
         size="lg"
-        onClick={closeNav} // Alteração aqui
+        onClick={() => setIsMenuOpen(false)} 
       >
         {item.name}
       </Link>
