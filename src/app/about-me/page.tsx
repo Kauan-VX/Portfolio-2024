@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from "react";
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
+import { TypingText } from '../components/ui/custom-texts';
 
 
 
@@ -35,9 +36,10 @@ const age = currentYear - 2003
 const timeExperience = currentYear - 2023
   return (
     <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
-    <section className="min-h-[100vh] w-full dark:bg-dark-background bg-light-background p-4" >
- <motion.header variants={fadeIn('up' , 0.5)} initial='hidden' whileInView={'show'} viewport={{ once: false , amount : 0.7}} className="flex justify-center ">
+    <section className="h-heightLessNav  w-full dark:bg-dark-background bg-light-background p-4" >
+ <motion.header variants={fadeIn('up' , 0.5)} initial='hidden' whileInView={'show'} viewport={{ once: false , amount : 0.7}} className="flex justify-center flex-col items-center">
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#00bcf2] to-[#00b294] bg-clip-text animate-gradient">Sobre mim</h1>
+        <TypingText title="| Um pouco sobre mim |" textStyles="dark:text-dark-text text-light-text font-semibold text-3xl bg- text-center" />
       </motion.header>
       <div className="w-full justify-center items-center my-8">
         <ul className="flex w-full justify-center gap-6 flex-wrap">

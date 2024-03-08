@@ -23,7 +23,7 @@ export const PROJECTS: IProject[] = [
   {
     image: '/project/mackup-church-app.svg',
     link: 'https://nodejs.org/en',
-    title: 'Facilitando a Administração na Igreja',
+    title: 'Administração na Igreja',
     description: `
   
 

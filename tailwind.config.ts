@@ -11,6 +11,9 @@ const config: Config = {
   darkMode: ['class'],
   theme: {
     extend: {
+      height: {
+        heightLessNav: 'h-[calc(100vh-64px)]',
+      },
       animation: {
         'meteor-effect': 'meteor 5s linear infinite',
         gradient: 'gradient 6s linear infinite',
@@ -30,7 +33,7 @@ const config: Config = {
         },
       },
       screens: {
-        phone: { max: '420px' },
+        phoneMax: { max: '500px' },
         smMax: { max: '640px' },
         mdMax: { max: '768px' },
         lgMax: { max: '1024px' },
