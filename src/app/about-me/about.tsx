@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import CountUp from 'react-countup'
 import ScrollTrigger from 'react-scroll-trigger'
+import { TypingText } from '../components/ui/custom-texts'
 
 export default function About() {
   const [repos, setRepos] = useState([])
@@ -41,11 +42,15 @@ export default function About() {
           initial="hidden"
           whileInView={'show'}
           viewport={{ once: false, amount: 0.7 }}
-          className="flex justify-center "
+          className="flex justify-center flex-col items-center"
         >
           <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#00bcf2] to-[#00b294] bg-clip-text animate-gradient">
             Sobre mim
           </h1>
+          <TypingText
+            title="| Um breve resumo sobre mim |"
+            textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
+          />
         </motion.header>
         <div className="w-full justify-center items-center my-8">
           <ul className="flex w-full justify-center gap-6 flex-wrap">
