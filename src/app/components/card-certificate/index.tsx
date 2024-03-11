@@ -13,7 +13,6 @@ type PlatformIcons = {
 export default function CardCertificate({ platform, title }: ICertificate) {
   const platformIcons: PlatformIcons = {
     Udemy: <UdemyIcon />,
-    // Adicione outros ícones conforme necessário
   }
 
   const platformIcon =
