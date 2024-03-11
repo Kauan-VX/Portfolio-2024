@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import About from './about-me/about'
 import Connect from './contact/page'
-import Education from './education/page'
 import NavbarComponent from './navbar/page'
 import Presentation from './presentation/page'
 import Project from './project/page'
 import Skills from './skills/page'
+import Education from './education/page'
 
 export const metadata: Metadata = {
   title: 'Kauan Portfólio',

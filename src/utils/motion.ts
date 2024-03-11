@@ -45,7 +45,10 @@ type Direction = 'left' | 'right' | 'down' | 'up'
 //   },
 // })
 
-export const staggerContainer = (staggerChildren: any, delayChildren: any) => ({
+export const staggerContainer = (
+  staggerChildren: string,
+  delayChildren: number
+) => ({
   hidden: {},
   show: {
     transition: {
@@ -123,7 +126,7 @@ export const textVariant2 = {
 
 export const fadeIn2 = (
   direction: Direction,
-  type: any,
+  type: string,
   delay: number,
   duration: number
 ) => ({
@@ -148,14 +151,12 @@ export const fadeIn2 = (
 export const planetVariants = (direction: Direction) => ({
   hidden: {
     x: direction === 'left' ? '-100%' : '100%',
-    rotate: 120,
   },
   show: {
     x: 0,
-    rotate: 0,
     transition: {
-      type: 'spring',
-      duration: 1.8,
+      type: 'tween',
+      duration: 3,
       delay: 0.5,
     },
   },
