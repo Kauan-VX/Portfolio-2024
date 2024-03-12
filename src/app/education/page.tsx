@@ -5,6 +5,7 @@ import CardCertificate from '../components/card-certificate'
 import CardEducation from '../components/card-education'
 import CardExperience from '../components/card-experience'
 import { CERTIFICATE } from '../constants/certificate'
+import { EXPERIENCE } from '../constants/experience'
 
 export default function Education() {
   return (
@@ -38,12 +39,16 @@ export default function Education() {
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center ">
-        <CardExperience
-          company_name="Noclaf"
-          initial_date="03/2023"
-          finish_date="Presente"
-          job_title="Desenvolvedor Front-End"
-        />
+        {EXPERIENCE.map((experience, index) => (
+          <CardExperience
+            key={index}
+            company_name={experience.company_name}
+            initial_date={experience.initial_date}
+            finish_date={experience.finish_date}
+            job_title={experience.job_title}
+            job_description={experience.job_description}
+          />
+        ))}
       </div>
       <motion.header
         variants={fadeIn('up', 0.5)}

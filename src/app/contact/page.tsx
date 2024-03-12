@@ -9,27 +9,10 @@ import { Button } from '@nextui-org/react'
 import { motion } from 'framer-motion'
 import CardSkill from '../components/card-skills'
 import { TypingText } from '../components/ui/custom-texts'
+import { CONTACT } from '../constants/contact'
 import { MailIcon } from './mail'
 
 export default function Connect() {
-  const contact = [
-    {
-      imageSrc: '/contact/mail.svg',
-      link: 'https://nodejs.org/en',
-      skillName: 'E-mail',
-    },
-    {
-      imageSrc: '/contact/linkedin.svg',
-      link: 'https://www.mysql.com/',
-      skillName: 'Linkedin',
-    },
-    {
-      imageSrc: '/skills/github.svg',
-      link: 'https://github.com/Kauan-VX',
-      skillName: 'GitHub',
-    },
-  ]
-
   return (
     <section
       id="conect"
@@ -54,7 +37,7 @@ export default function Connect() {
         />
       </motion.header>
       <div className="flex flex-row items-center justify-center flex-wrap  gap-10 my-10 w-full">
-        {contact.map((skill, index) => (
+        {CONTACT.map((skill, index) => (
           <CardSkill
             id={index}
             key={index}
@@ -66,7 +49,7 @@ export default function Connect() {
         ))}
       </div>
       <motion.div
-        variants={staggerContainer}
+        variants={staggerContainer(1, 2)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
