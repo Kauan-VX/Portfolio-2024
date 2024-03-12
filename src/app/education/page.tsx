@@ -38,7 +38,12 @@ export default function Education() {
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center ">
-        <CardExperience></CardExperience>
+        <CardExperience
+          company_name="Noclaf"
+          initial_date="03/2023"
+          finish_date="Presente"
+          job_title="Desenvolvedor Front-End"
+        />
       </div>
       <motion.header
         variants={fadeIn('up', 0.5)}

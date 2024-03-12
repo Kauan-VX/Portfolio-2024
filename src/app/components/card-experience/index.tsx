@@ -23,7 +23,7 @@ export default function CardExperience({
   }
 
   const platformIcon =
-    platform in platformIcons ? platformIcons[platform] : null
+    company_name in platformIcons ? platformIcons[company_name] : null
   return (
     <div className="relative w-[50rem] dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl p-3 rounded-3xl ">
       {/* <span className="h-16 w-4 bg-blue-600 shadow right-[50%] top-[50%] absolute shadow-cyan-500/100"></span> */}
