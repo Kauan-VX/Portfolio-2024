@@ -34,10 +34,12 @@ export default function NavbarComponent() {
       className="shadow-sm"
     >
       <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="sm:hidden"
-        />
+        <NavbarItem>
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            className="sm:hidden"
+          />
+        </NavbarItem>
         <NavbarItem>
           <NavbarBrand className="smMax:hidden  ">
             <Logo />

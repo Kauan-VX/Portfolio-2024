@@ -88,7 +88,7 @@ export default function About() {
           </ul>
         </div>
         <div className="flex w-full max-w-[60rem] justify-center my-12 mx-auto dark:bg-dark-background-transparent bg-light-background-transparent shadow-3xl p-8 rounded-3xl">
-          <p className=" text-lg">
+          <p className="text-base smMax:text-sm">
             Com {age} anos de idade e uma paixão ardente pela criação de
             experiências visuais envolventes, sou um desenvolvedor Front-end
             dedicado com um ano de experiência sólida. Busco incessantemente
