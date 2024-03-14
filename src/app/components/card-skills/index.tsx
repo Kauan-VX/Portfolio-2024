@@ -47,6 +47,7 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
           className="w-full"
           src={imageSrc}
           alt="icon-skill"
+          loading='lazy'
           title={skillName}
           width={48}
           height={48}

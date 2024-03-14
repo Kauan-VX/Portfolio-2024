@@ -11,11 +11,17 @@ import '../../app/globals.scss'
 
 // import required modules
 import { fadeIn } from '@/utils/motion'
+import { useEffect, useState } from 'react'
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
 import { TypingText } from '../components/ui/custom-texts'
 import { PROJECTS } from '../constants/projects-obj'
 
 export default function Project() {
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
   return (
     <section
       id="projects"
@@ -37,6 +43,7 @@ export default function Project() {
         />
       </motion.header>
       <div className="w-full h-full flex justify-center mdMax:hidden">
+      {domLoaded && (
         <Swiper
           effect={'coverflow'}
           spaceBetween={80}
@@ -71,6 +78,7 @@ export default function Project() {
             </SwiperSlide>
           ))}
         </Swiper>
+             )}
       </div>
 
       <div className="w-full h-full flex flex-col items-center justify-center flex-wrap gap-4 mt-10 md:hidden">
