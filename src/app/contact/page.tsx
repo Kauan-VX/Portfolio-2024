@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import {
   fadeIn,
   fadeIn2,
@@ -7,16 +7,50 @@ import {
 } from '@/utils/motion'
 import { Button } from '@nextui-org/react'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { sendEmail } from '../api/email/send/route'
 import CardSkill from '../components/card-skills'
 import { TypingText } from '../components/ui/custom-texts'
 import { CONTACT } from '../constants/contact'
 import { MailIcon } from './mail'
 
 export default function Connect() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
+
+  const handleChange = (event: any) => {
+    const { name, value } = event.target
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+  }
+
+  const handleSubmit = async (event: any) => {
+    console.log('clicou');
+    
+    event.preventDefault()
+    // Aqui você pode enviar os dados do formulário para a função de envio de email
+    try {
+      await sendEmail(formData)
+      // Resetar os campos do formulário após o envio bem-sucedido, se necessário
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      })
+    } catch (error) {
+      console.error('Erro ao enviar email:', error)
+    }
+  }
+
   return (
     <section
       id="conect"
-      className="h-heightLessNav  w-full  bg-light-background pt-20 dark:bg-dark-background p-4"
+      // className="h-heightLessNav  w-full  bg-light-background pt-20 dark:bg-dark-background p-4 overflow-x-hidden"
     >
       <motion.header
         variants={fadeIn('up', 0.5)}
@@ -63,38 +97,48 @@ export default function Connect() {
         </motion.div>
         <motion.div
           variants={fadeIn2('left', 'tween', 0.2, 1)}
-          className="right flex w-1/2 justify-center p-8 lgMax:w-full"
+          className="right flex w-1/2 justify-center p-8 lgMax:w-full lgMax:p-0"
         >
           <div className="card-mail w-full max-w-[40rem] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent ">
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               Entre em contato comigo
             </h1>
-
-            <span className="flex w-full items-center justify-between gap-4 mb-4 smMax:flex-col">
-              <input
-                className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl smMax:w-full"
-                type="Nome"
-                placeholder="Nome"
+            <form onSubmit={handleSubmit}>
+              <span className="flex w-full items-center justify-between gap-4 mb-4 smMax:flex-col">
+                <input
+                  className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl smMax:w-full"
+                  name="name"
+                  type="text"
+                  placeholder="Nome"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+                <input
+                  className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl smMax:w-full"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail para contato"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </span>
+              <textarea
+                placeholder="Escreva uma mensagem aqui"
+                name="message"
+                className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
+                value={formData.message}
+                onChange={handleChange}
               />
-              <input
-                className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl smMax:w-full"
-                type="Nome"
-                placeholder="E-mail para contato"
-              />
-            </span>
-
-            <textarea
-              placeholder="Escreva uma mensagem aqui"
-              className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
-            />
-            <span className="w-full flex justify-end">
-              <Button
-                className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none"
-                variant="shadow"
-              >
-                Enviar
-              </Button>
-            </span>
+              <span className="w-full flex justify-end">
+                <Button
+                  type="submit"
+                  className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none"
+                  variant="shadow"
+                >
+                  Enviar
+                </Button>
+              </span>
+            </form>
           </div>
         </motion.div>
       </motion.div>

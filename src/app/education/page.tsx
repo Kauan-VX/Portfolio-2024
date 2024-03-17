@@ -11,14 +11,14 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="h-heightLessNav  w-full flex-col justify-center items-center dark:bg-dark-background bg-light-background p-4"
+      // className="h-heightLessNav  w-full flex-col justify-center items-center dark:bg-dark-background bg-light-background p-4"
     >
       <motion.header
         variants={fadeIn('up', 0.5)}
         initial="hidden"
         whileInView={'show'}
         viewport={{ once: false, amount: 0.7 }}
-        className="flex justify-center "
+        className="flex justify-center p-"
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#e81123] to-[#fff100] bg-clip-text animate-gradient my-12">
           Educação

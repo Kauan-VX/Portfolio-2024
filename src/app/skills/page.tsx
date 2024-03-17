@@ -13,7 +13,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="h-heightLessNav   w-full dark:bg-dark-background bg-light-background p-4"
+      // className="h-heightLessNav   w-full dark:bg-dark-background bg-light-background p-4"
     >
       <motion.header
         variants={fadeIn('up', 0.5)}

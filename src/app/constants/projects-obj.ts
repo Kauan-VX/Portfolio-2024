@@ -87,4 +87,24 @@ Site simplifica contratação de docentes, promovendo eficiência.`,
       },
     ],
   },
+
+  {
+    image: '/project/mackup-polvi.svg',
+    link: 'https://nodejs.org/en',
+    title: 'Polvi',
+    description: 
+    `Durante um hackathon, surgiu a ideia de facilitar às empresas identificar e localizar problemas de forma eficiente.`,
+  stacks: [
+    {
+      imageSrc: '/skills/nextjs.svg',
+      link: 'https://nextjs.org/',
+      skillName: '',
+    },
+    {
+      imageSrc: '/skills/tailwind.svg',
+      link: 'https://tailwindcss.com/',
+      skillName: '',
+    },
+  ],
+  },
 ]

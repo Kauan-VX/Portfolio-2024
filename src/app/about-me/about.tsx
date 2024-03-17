@@ -1,42 +1,50 @@
 'use client'
-import { fadeIn } from '@/utils/motion'
-import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import CountUp from 'react-countup'
-import ScrollTrigger from 'react-scroll-trigger'
-import { TypingText } from '../components/ui/custom-texts'
+
+import { fadeIn } from '@/utils/motion';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import CountUp from 'react-countup';
+import ScrollTrigger from 'react-scroll-trigger';
+import { TypingText } from '../components/ui/custom-texts';
 
 export default function About() {
-  const [repos, setRepos] = useState([])
-  const [counterOn, setCounterOn] = useState(false)
+  const [repos, setRepos] = useState([]);
+  const [counterOn, setCounterOn] = useState(false);
+  const [age, setAge] = useState(0);
 
   useEffect(() => {
     async function fetchRepos() {
       try {
         const response = await fetch(
           'https://api.github.com/users/Kauan-VX/repos'
-        )
-        const data = await response.json()
-        setRepos(data)
-        console.log(data)
+        );
+        const data = await response.json();
+        setRepos(data);
+        console.log(data);
       } catch (error) {
-        console.error('Error fetching repos:', error)
+        console.error('Error fetching repos:', error);
       }
     }
 
-    fetchRepos()
-  }, [])
+    fetchRepos();
 
-  const currentDate = new Date()
-  const currentYear = currentDate.getFullYear()
-  const age = currentYear - 2003
-  const timeExperience = currentYear - 2023
+    // Calculating age
+    const currentDate = new Date();
+    const birthDate = new Date('2003-03-29');
+    const diffInMilliseconds = currentDate.getTime() - birthDate.getTime();
+    const ageDate = new Date(diffInMilliseconds);
+    const calculatedAge = Math.abs(ageDate.getUTCFullYear() - 1970);
+    setAge(calculatedAge);
+
+    
+  }, []);
+
   return (
     <ScrollTrigger
       onEnter={() => setCounterOn(true)}
       onExit={() => setCounterOn(false)}
     >
-      <section className="min-h-[100vh] w-full dark:bg-dark-background bg-light-background p-4">
+      <section>
         <motion.header
           variants={fadeIn('up', 0.5)}
           initial="hidden"
@@ -61,14 +69,14 @@ export default function About() {
                     <CountUp
                       scrollSpyDelay={0}
                       start={0}
-                      end={timeExperience}
+                      end={1}
                       duration={5}
                     />
                   )}
                   +
                 </h1>
                 <h2 className="text-center font-semibold">
-                  Ano(s) de experiência
+                Ano(s) de experiência
                 </h2>
               </span>
             </li>
@@ -76,12 +84,17 @@ export default function About() {
               <span className="flex flex-col items-center justify-center gap-2">
                 <h1 className="font-bold text-4xl text-[#00b294]">
                   {counterOn && (
-                    <CountUp start={0} end={repos.length} duration={8} />
+                    <CountUp
+                      scrollSpyDelay={0}
+                      start={0}
+                      end={repos.length}
+                      duration={5}
+                    />
                   )}
                   +
                 </h1>
                 <h2 className="text-center font-semibold">
-                  Projetos concluídos
+                Projetos concluídos
                 </h2>
               </span>
             </li>
@@ -104,5 +117,5 @@ export default function About() {
         </div>
       </section>
     </ScrollTrigger>
-  )
+  );
 }

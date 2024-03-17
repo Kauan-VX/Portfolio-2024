@@ -22,7 +22,7 @@ export default function CardExperience({
   job_description,
 }: IExperience) {
   const platformIcons: PlatformIcons = {
-    Noclaf: <NoclafIcon />,
+    Noclaf: <NoclafIcon/>,
   }
 
   const platformIcon =

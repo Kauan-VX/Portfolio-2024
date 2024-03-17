@@ -7,7 +7,7 @@ import CardProject from '../components/card-project/card-project'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
-import '../../app/globals.scss'
+import '../../app/[locale]/globals.scss'
 
 // import required modules
 import { fadeIn } from '@/utils/motion'
@@ -25,7 +25,7 @@ export default function Project() {
   return (
     <section
       id="projects"
-      className="h-heightLessNav  w-full  bg-light-background pt-20 dark:bg-dark-background p-4"
+      // className="h-heightLessNav  w-full  bg-light-background pt-20 dark:bg-dark-background p-4"
     >
       <motion.header
         variants={fadeIn('up', 0.5)}

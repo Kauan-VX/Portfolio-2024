@@ -34,7 +34,7 @@ export default function NavbarComponent() {
       className="shadow-sm"
     >
       <NavbarContent>
-        <NavbarItem>
+        <NavbarItem className='z-10 size-10'>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             className="sm:hidden"

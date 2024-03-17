@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { UdemyIcon } from '../icons/certificate/udemy'
+import { UdemyIcon } from '../icons/certificate'
 
 export interface ICertificate {
   platform: 'Udemy' | 'RocketSeat' | 'Alura'
@@ -12,7 +12,7 @@ type PlatformIcons = {
 
 export default function CardCertificate({ platform, title }: ICertificate) {
   const platformIcons: PlatformIcons = {
-    Udemy: <UdemyIcon />,
+    Udemy: <UdemyIcon/>,
   }
 
   const platformIcon =

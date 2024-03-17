@@ -19,10 +19,12 @@
     .item {
       width: 100%;
       overflow: visible;
-      stroke: #ffffff4b;
+      // stroke: #0000006e;
       // strokewidth: 1;
       // strokelinejoin: round;
       // strokelinecap: round;
+      @apply dark:stroke-[#ffffff4b] light:stroke-[#0000006e]
+
     }
     #root {
       height: 100%;
@@ -33,11 +35,11 @@
       overflow-x: hidden;
     }
     section {
-      @apply transition ease-in-out duration-700;
+      @apply transition ease-in-out duration-700 h-heightLessNav  w-full  bg-light-background  dark:bg-dark-background p-4 overflow-hidden;
 
       header {
         .title {
-          @apply text-6xl;
+          @apply text-6xl phoneMax:text-5xl;
         }
       }
     }

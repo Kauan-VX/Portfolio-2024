@@ -1,11 +1,17 @@
+'use client'
 import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
 
 export const Logo = () => {
+  const { theme, setTheme } = useTheme()
+
+
+
   const icon = {
     hidden: {
       opacity: 1,
       pathLength: 0,
-      fill: 'rgba(255, 255, 255, 0)',
+      fill: theme === 'dark' ? 'rgba(255, 255, 255, 0)' : 'rgba(0, 0, 0, 0)' ,
       transition: {
         default: {
           duration: 2,
@@ -24,7 +30,7 @@ export const Logo = () => {
     visible: {
       opacity: 1,
       pathLength: 1,
-      fill: 'rgba(255, 255, 255, 1)',
+      fill: theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)' ,
       transition: {
         default: {
           duration: 2,
@@ -46,7 +52,7 @@ export const Logo = () => {
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 55 12"
-      className="item size-8 smMax:size-32 bg-black box-content dark:bg-transparent p-2 rounded-md"
+      className="item size-10 smMax:size-32 p-2 rounded-md"
     >
       {/* / */}
       <motion.path
