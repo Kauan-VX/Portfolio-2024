@@ -1,9 +1,8 @@
-'use client'
-import { NextUIProvider } from '@nextui-org/react'
-import { NextIntlClientProvider } from 'next-intl'
-import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import { Fira_Code } from 'next/font/google'
-import './globals.scss'
+
+import { Fira_Code } from 'next/font/google';
+import { NextUiProvider } from './NextUiProvider';
+import './globals.scss';
+import { notFound } from 'next/navigation';
 
 const fira = Fira_Code({
   subsets: ['latin'],
@@ -20,23 +19,23 @@ interface RootLayoutProps {
 }
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params : { locale }
-}: Readonly<RootLayoutProps>) {
-  // const messages = useMessages();
-
+  params: { locale },
+}: RootLayoutProps) {
+  let messages;
+  try {
+    messages = (await import(`../../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={fira.className}>
-      <NextIntlClientProvider locale={locale}  >
-        <NextUIProvider className="">
-          <NextThemesProvider attribute="class" defaultTheme="dark">
-            {children}
-          </NextThemesProvider>
-        </NextUIProvider>
-        </NextIntlClientProvider>
+<NextUiProvider messages={messages} locale={locale}>
+{children}
+</NextUiProvider>
       </body>
     </html>
   )

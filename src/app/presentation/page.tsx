@@ -1,6 +1,7 @@
 'use client'
 import { scroolAnimation } from '@/utils/motion'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import ScrollTrigger from 'react-scroll-trigger'
 import { ScrollIcon } from '../components/icons/presentation/scroll'
@@ -12,6 +13,7 @@ import { WORDS } from '../constants/words'
 
 export default function Presentation() {
   const [textAnimation, setTextAnimation] = useState(false);
+  const t = useTranslations('Index')
   return (
     <ScrollTrigger
     onEnter={() => setTextAnimation(true)}
@@ -33,7 +35,7 @@ export default function Presentation() {
         )}
         <h2 className="dark:text-dark-text text-light-text text-center">
         <strong className="md:text-5xl smMax:text-3xl ">
-teste
+        {t("developer")}
           </strong>
         </h2>
         <motion.span
