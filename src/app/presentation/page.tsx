@@ -8,12 +8,9 @@ import { Spotlight } from '../components/ui/Spotlight'
 import { TypewriterEffect } from '../components/ui/typewriter-effect'
 import { WORDS } from '../constants/words'
 
-interface IDictionaryPresentation {
-  i_am : string,
-  developer : string
-}
 
-export default function Presentation({i_am , developer} : IDictionaryPresentation) {
+
+export default function Presentation() {
   const [textAnimation, setTextAnimation] = useState(false);
   return (
     <ScrollTrigger
@@ -36,7 +33,7 @@ export default function Presentation({i_am , developer} : IDictionaryPresentatio
         )}
         <h2 className="dark:text-dark-text text-light-text text-center">
         <strong className="md:text-5xl smMax:text-3xl ">
-            {developer} 
+teste
           </strong>
         </h2>
         <motion.span

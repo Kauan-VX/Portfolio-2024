@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={fira.className}>
-      <NextIntlClientProvider locale={locale} >
+      <NextIntlClientProvider locale={locale}  >
         <NextUIProvider className="">
           <NextThemesProvider attribute="class" defaultTheme="dark">
             {children}

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { useTranslations } from 'next-intl'
 import About from '../about-me/about'
 import Connect from '../contact/page'
 import Education from '../education/page'
@@ -15,12 +14,12 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const t = useTranslations('presentation')
+  // const t = useTranslations('presentation')
   return (
     <>
       <NavbarComponent></NavbarComponent>
       {/* <h1>{t('i_am')}</h1> */}
-      <Presentation developer={t('developer')} i_am={t('i_am')} ></Presentation>
+      <Presentation></Presentation>
       <About ></About>
       <Education></Education>
       <Skills></Skills>
