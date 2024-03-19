@@ -12,6 +12,7 @@
   },
   "About": {
     "title" : "About me",
+    "text" : "At {age} years old and with a burning passion for creating immersive visual experiences, I m a dedicated Front-end developer developer with a year of solid experience. I'm constantly improve my skills, always keeping up to date with the latest trends and technologies in the world of web development. My ultimate goal is to transcend into the Full Stack universe, combining my expertise in design and interactivity to build comprehensive and innovative web solutions. As you browse through my portfolio, you'll find a compilation of projects that reflect my passion for programming and my commitment to offering exceptional digital experiences.",
     "subtitle" : "| A brief summary of me |",
     "years_experience" : "Year(s) of experience",
     "finished_projects" : "Finished projects"
@@ -56,37 +57,48 @@
         "initial_date" : "2023/05",
         "finish_date" : "Present",
       "job_title" : "Junior Front-End Developer",
-      "job_description" : [
-        "Recreating interfaces created by the UX/UI team, whether in Figma or XdAdobe.",
-        "Using the Angular10+ framework with SCSS, RxJs and Angular Material."
-      ]
-      }
-    },
+      "job_description_1" : "Recreating interfaces created by the UX/UI team, whether in Figma or XdAdobe.",
+      "job_description_2" : "Using the Angular10+ framework with SCSS, RxJs and Angular Material."
+    }
+  },
+  "education" :{
+    "computer_science" : {
+      "initial_date" : "2022",
+    "finish_date" : "2025",
+    "higher_education" : "Graduation",
+    "institution" : "Unifeso",
+    "location" : "Teresópolis ,RJ",
+    "title" : "Computer Science",
+    "type" : "Bachelor"
+  }
+  },
     "certificate" :{
+      "react_native" : {
       "title" : "React native: Creating applications from scratch to advanced"
+    }
     },
-    "projects" : [
-      {
+    "projects" : {
+     "personal_finance" : {
       "title" :"Personal Finance Panel",
       "description" : "Website offers financial control with clear graphs and summaries."
     },
-    {
+    "church" :  {
       "title" :"Church administration",
       "description" : "Church app simplifies management, strengthens connections."
     },
-    {
+    "faculty_hiring" : {
       "title" :"Faculty Hiring",
       "description" : "Website simplifies the hiring of teachers, promoting efficiency."
     },
-    {
+   "animated_login" : {
       "title" :"Animated Login Screen",
       "description" : "This login screen has an animated and harmonious design, making it more attractive to the user."
     },
-    {
+   "polvi" : {
       "title" :"Polvi",
       "description" : "During a hackathon, the idea arose to make it easier for companies to identify and locate problems efficiently."
     }
-  ],
+  },
   "words" : 
     {
       "hello" : "Hello,",

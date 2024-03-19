@@ -1,15 +1,18 @@
 "use client"
-import { IExperience } from '../../src/app/components/card-experience'
 
-export const EXPERIENCE: IExperience[] = [
-  {
-    company_name: `Noclaf`,
-    initial_date: `05/2023`,
-    finish_date: `Presente`,
-    job_title: `Desenvolvedor Front-End Júnior`,
-    job_description: [
-      `Recriando interfaces criadas pelo time de UX/UI, seja no Figma ou XdAdobe.`,
-      `Usando o framework Angular10+ com SCSS , RxJs e Angular Material.`,
-    ],
-  },
-]
+import { IExperience } from "@/app/components/card-experience"
+
+
+
+export const translateExperience = (t : any) : IExperience[] => {
+  return [
+    {
+      company_name: `Noclaf`,
+      initial_date: t('experience.noclaf.initial_date'),
+      finish_date: t('experience.noclaf.finish_date'),
+      job_title: t('experience.noclaf.job_title'),
+      job_description_1: t('experience.noclaf.job_description_1'),
+      job_description_2: t('experience.noclaf.job_description_2'),
+    },
+  ] 
+}

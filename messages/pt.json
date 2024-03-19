@@ -12,6 +12,7 @@
   },
   "About": {
     "title" : "Sobre mim",
+    "text" : "Com {age} anos de idade e uma paixão ardente pela criação de experiências visuais envolventes, sou um desenvolvedor Front-end dedicado com um ano de experiência sólida. Busco incessantemente aprimorar minhas habilidades, sempre mantendo-me atualizado com as últimas tendências e tecnologias do mundo do desenvolvimento web. Meu objetivo final é transcender para o universo Full Stack, combinando minha expertise em design e interatividade para construir soluções web abrangentes e inovadoras. Ao navegar pelo meu portfolio, você encontrará um compilado de projetos que refletem minha paixão pela programação e meu comprometimento em oferecer experiências digitais excepcionais",
     "subtitle" : "| Um breve resumo sobre mim |",
     "years_experience" : "Ano(s) de experiência",
     "finished_projects" : "Projetos concluídos"
@@ -56,44 +57,57 @@
         "initial_date" : "05/2023",
         "finish_date" : "Presente",
       "job_title" : "Desenvolvedor Front-End Júnior",
-      "job_description" : [
-        "Recriando interfaces criadas pelo time de UX/UI, seja no Figma ou XdAdobe.",
-        "Usando o framework Angular10+ com SCSS , RxJs e Angular Material."
-      ]
-      }
+      "job_description_1" : "Recriando interfaces criadas pelo time de UX/UI, seja no Figma ou XdAdobe.",
+      "job_description_2" : "Usando o framework Angular10+ com SCSS , RxJs e Angular Material."
+    }
+    
+    },
+    "education" :{
+      "computer_science" : {
+        "initial_date" : "2022",
+      "finish_date" : "2025",
+      "higher_education" : "Graduação",
+      "institution" : "Unifeso",
+      "location" : "Teresópolis ,RJ",
+      "title" : "Ciências da Computação",
+      "type" : "Bacharelado"
+    }
     },
     "certificate" :{
+      "react_native" : {
       "title" : "React native: Criando aplicativos do zero ao avançado"
+    }
     },
-    "projects" : [
-      {
+  "projects" : {
+    "personal_finance" : {
       "title" :"Painel de Finanças Pessoais",
       "description" : "Website oferece controle financeiro com gráficos e resumos claros"
     },
-    {
+    "church" :  {
       "title" :"Administração na Igreja",
       "description" : "Aplicativo eclesiástico simplifica gestão, fortalecendo conexões."
     },
-    {
+    "faculty_hiring" : {
       "title" :"Contratação de Docentes",
       "description" : "Site simplifica contratação de docentes, promovendo eficiência."
     },
-    {
+    "animated_login" : {
       "title" :"Tela de Login Animado",
       "description" : "Esta tela de login apresenta um design animado e harmonioso, tornando-a mais atraente para o usuário."
     },
-    {
+    "polvi" : {
       "title" :"Polvi",
       "description" : "Durante um hackathon, surgiu a ideia de facilitar às empresas identificar e localizar problemas de forma eficiente."
     }
-  ],
+  },
   "words" : 
     {
-      "hello" : "Olá ,",
-      "i_m" : "eu sou",
+      "hello" : "Olá,",
+      "i_m": "sou",
       "first_name" : "Kauan",
       "last_name" : "Vieira",
       "second_last_name" : "Xavier"
     }
   }
 }
+

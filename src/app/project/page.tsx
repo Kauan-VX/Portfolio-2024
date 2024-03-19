@@ -14,12 +14,14 @@ import { fadeIn } from '@/utils/motion'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
-import { PROJECTS } from '../../../public/constants/projects-obj'
+import { translateProject } from '../../../public/constants/projects-obj'
 import { TypingText } from '../components/ui/custom-texts'
 
 export default function Project() {
   const [domLoaded, setDomLoaded] = useState(false);
   const t = useTranslations('Projects')
+  const constants = useTranslations('Constatants')
+  const translateProjectList = translateProject(constants)
 
   useEffect(() => {
     setDomLoaded(true);
@@ -64,7 +66,7 @@ export default function Project() {
           modules={[EffectCoverflow, Pagination, Navigation]}
           className="mySwiper overflow-visible h-full w-full bg-gradient-to-left from-black to-transparent bg-none"
         >
-          {PROJECTS.map((project, index) => (
+          {translateProjectList.map((project, index) => (
             <SwiperSlide
               key={index}
               className="md:basis-1/2 mdMax:!mr-0 mdMax:!flex mdMax:!justify-center lg:basis-1/3 mt-20 my-9 "
@@ -84,7 +86,7 @@ export default function Project() {
       </div>
 
       <div className="w-full h-full flex flex-col items-center justify-center flex-wrap gap-4 mt-10 md:hidden">
-        {PROJECTS.map((project, index) => (
+        {translateProjectList.map((project, index) => (
           <CardProject
             key={index}
             link={project.link}

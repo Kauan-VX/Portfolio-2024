@@ -1,8 +1,10 @@
-import { ICertificate } from '../components/card-certificate'
+import { ICertificate } from "@/app/components/card-certificate"
 
-export const CERTIFICATE: ICertificate[] = [
-  {
+export const translateCertificate = (t : any) :ICertificate[] => {
+  return [
+    {
     platform: 'Udemy',
-    title: ' React native: Criando aplicativos do zero ao avançado',
+    title: t('certificate.react_native.title'),
   },
 ]
+}

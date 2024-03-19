@@ -7,7 +7,8 @@ export interface IExperience {
   initial_date: string
   finish_date: string
   job_title: string
-  job_description: string[]
+  job_description_1: string
+  job_description_2: string 
 }
 
 type PlatformIcons = {
@@ -19,7 +20,8 @@ export default function CardExperience({
   finish_date,
   initial_date,
   job_title,
-  job_description,
+  job_description_1: job_description1,
+  job_description_2: job_description2
 }: IExperience) {
   const platformIcons: PlatformIcons = {
     Noclaf: <NoclafIcon/>,
@@ -47,12 +49,15 @@ export default function CardExperience({
       </div>
       <div className="flex justify-center flex-col gap-3 mt-2">
         <ul className="flex flex-col gap-4">
-          {job_description.map((description, index) => (
-            <li className="flex items-center gap-4" key={index}>
+        
+            <li className="flex items-center gap-4">
               <CaretRightIcon />
-              {description}
+              {job_description1}
             </li>
-          ))}
+            <li className="flex items-center gap-4">
+              <CaretRightIcon />
+              {job_description2}
+            </li>
         </ul>
       </div>
     </div>
