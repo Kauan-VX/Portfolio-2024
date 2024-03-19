@@ -1,8 +1,10 @@
 export default function NotFound(){
   return (
     <html>
-      <body>
-        <h1>Tela errada</h1>
+      <body className="h-screen w-full dark:bg-dark-background  bg-light-background">
+          <header className="flex justify-center items-center dark:text-dark-text text-light-text">
+        <h1>Oops, this route doesn't exist</h1>
+          </header>
       </body>
     </html>
   )

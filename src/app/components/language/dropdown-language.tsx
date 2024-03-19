@@ -14,24 +14,24 @@ const DropDownLanguage = () => {
   console.log(localActive);
   
 
-  // Verifica se o idioma atual é "pt"
   const isPortuguese = localActive === 'pt';
 
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button disableAnimation className="bg-transparent outline-none">
+        <Button disableAnimation className="bg-transparent outline-none" type="button">
           <TranslateIcon/>
         </Button>
       </DropdownTrigger>
       <DropdownMenu aria-label="Static Actions">
   {isPortuguese ? (
-      <DropdownItem key="en" onClick={() => onSelectChange('en')}>
+      <DropdownItem className="flex items-center justify-center gap-2 flex-row " key="en" onClick={() => onSelectChange('en')}>
         Inglês
       </DropdownItem>
   ) : (
-      <DropdownItem key="pt" onClick={() => onSelectChange('pt')}>
-        Português
+      <DropdownItem className="flex items-center justify-center gap-2 flex-row" key="pt" onClick={() => onSelectChange('pt')}>
+Português
+
       </DropdownItem>
   )}
 </DropdownMenu>

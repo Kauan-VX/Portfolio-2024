@@ -1,59 +1,39 @@
-"use client"
-import {
-  fadeIn,
-  fadeIn2,
-  planetVariants,
-  staggerContainer,
-} from '@/utils/motion'
-import { Button } from '@nextui-org/react'
-import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
-import { useState } from 'react'
-import { CONTACT } from '../../../public/constants/contact'
-import { sendEmail } from '../api/email/send/route'
-import CardSkill from '../components/card-skills'
-import { TypingText } from '../components/ui/custom-texts'
-import { MailIcon } from './mail'
+'use client'
+import { fadeIn, fadeIn2, planetVariants, staggerContainer } from '@/utils/motion';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from '@nextui-org/react';
+import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
+import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from 'zod';
+import { CONTACT } from '../../../public/constants/contact';
+import CardSkill from '../components/card-skills';
+import { TypingText } from '../components/ui/custom-texts';
+import { MailIcon } from './mail';
 
 export default function Connect() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
+  const validationSchema = z.object({
+    name: z.string().min(1, { message: "Firstname is required" }),
+    message: z.string().min(1, { message: "Lastname is required" }),
+    email: z.string().min(1, { message: "Email is required" }).email({
+      message: "Must be a valid email",
+    }),
+  });
+  type Person = z.infer<typeof validationSchema>;
   const t = useTranslations('Contact')
 
-  const handleChange = (event: any) => {
-    const { name, value } = event.target
-    setFormData({
-      ...formData,
-      [name]: value,
-    })
-  }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Person>({
+    resolver: zodResolver(validationSchema),
+  });
 
-  const handleSubmit = async (event: any) => {
-    console.log('clicou');
-    
-    event.preventDefault()
-    // Aqui você pode enviar os dados do formulário para a função de envio de email
-    try {
-      await sendEmail(formData)
-      // Resetar os campos do formulário após o envio bem-sucedido, se necessário
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      })
-    } catch (error) {
-      console.error('Erro ao enviar email:', error)
-    }
-  }
+  const onSubmit: SubmitHandler<Person> = (data) => console.log(data);
 
   return (
-    <section
-      id="conect"
-      // className="h-heightLessNav  w-full  bg-light-background pt-20 dark:bg-dark-background p-4 overflow-x-hidden"
-    >
+    <section id="connect">
       <motion.header
         variants={fadeIn('up', 0.5)}
         initial="hidden"
@@ -65,11 +45,10 @@ export default function Connect() {
           className="animate-gradient bg-gradient-to-b from-[#FF6F5B] to-[#FFB457] bg-clip-text
          title font-bold text-transparent text-center"
         >
-        {t('title')}
+          {t('title')}
         </h1>
         <TypingText
           title={t('subtitle')}
-
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -104,33 +83,28 @@ export default function Connect() {
         >
           <div className="card-mail w-full max-w-[40rem] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent ">
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
-        {t('form.contact_me')}
+              {t('form.contact_me')}
             </h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <span className="flex w-full items-center justify-between gap-4 mb-4 smMax:flex-col">
                 <input
                   className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl smMax:w-full"
-                  name="name"
                   type="text"
                   placeholder={t('form.name')}
-                  value={formData.name}
-                  onChange={handleChange}
+                  {...register("name")} 
                 />
+
                 <input
                   className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl smMax:w-full"
                   type="email"
-                  name="email"
                   placeholder={t('form.email')}
-                  value={formData.email}
-                  onChange={handleChange}
+                  {...register("email")} 
                 />
               </span>
               <textarea
-                                  placeholder={t('form.message')}
-                name="message"
+                placeholder={t('form.message')}
                 className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
-                value={formData.message}
-                onChange={handleChange}
+                {...register("message")} 
               />
               <span className="w-full flex justify-end">
                 <Button
@@ -138,7 +112,7 @@ export default function Connect() {
                   className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none"
                   variant="shadow"
                 >
-                         {t('form.submit')}
+                  {t('form.submit')}
                 </Button>
               </span>
             </form>
