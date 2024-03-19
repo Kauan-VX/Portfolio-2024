@@ -1,6 +1,99 @@
 {
-  "Index": {
+  "Navbar" : {
+    "about" : "About",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Presentation": {
     "i_am" : "Hello, I'm",
     "developer" : "Front-End Developer"
+  },
+  "About": {
+    "title" : "About me",
+    "subtitle" : "| A brief summary of me |",
+    "years_experience" : "Year(s) of experience",
+    "finished_projects" : "Finished projects"
+  },
+  "Education" : {
+    "title" : "Education",
+    "subtitle" : ""
+  },
+  "Experience" : {
+    "title" : "Experience",
+    "subtitle" : ""
+  },
+  "Certificate" : {
+    "title" : "Certificate(s)",
+    "subtitle" : ""
+  },
+  "Skills" : {
+    "title" : "Skills",
+    "subtitle" : "| My Stacks |",
+    "technologies_use": "Technologies I use:",
+    "productivity_tools": "Productivity tools:",
+    "future_study": "Future study plans:"
+  },
+  "Projects":{
+    "title" : "Projects",
+    "subtitle": "| Fun projects |"
+  },
+  "Contact":{
+    "title" : "Contact",
+    "subtitle": "| Connect |",
+    "form" : {
+      "contact_me" : "Contact me",
+      "name" : "Name",
+      "email" : "Contact email address",
+      "message" : "Write a message here",
+      "submit" : "Send"
+    }
+  },
+  "Constatants" : {
+    "experience" : {
+      "noclaf" :{
+        "initial_date" : "2023/05",
+        "finish_date" : "Present",
+      "job_title" : "Junior Front-End Developer",
+      "job_description" : [
+        "Recreating interfaces created by the UX/UI team, whether in Figma or XdAdobe.",
+        "Using the Angular10+ framework with SCSS, RxJs and Angular Material."
+      ]
+      }
+    },
+    "certificate" :{
+      "title" : "React native: Creating applications from scratch to advanced"
+    },
+    "projects" : [
+      {
+      "title" :"Personal Finance Panel",
+      "description" : "Website offers financial control with clear graphs and summaries."
+    },
+    {
+      "title" :"Church administration",
+      "description" : "Church app simplifies management, strengthens connections."
+    },
+    {
+      "title" :"Faculty Hiring",
+      "description" : "Website simplifies the hiring of teachers, promoting efficiency."
+    },
+    {
+      "title" :"Animated Login Screen",
+      "description" : "This login screen has an animated and harmonious design, making it more attractive to the user."
+    },
+    {
+      "title" :"Polvi",
+      "description" : "During a hackathon, the idea arose to make it easier for companies to identify and locate problems efficiently."
+    }
+  ],
+  "words" : 
+    {
+      "hello" : "Hello,",
+      "i_m" : "I'm",
+      "first_name" : "Kauan",
+      "last_name" : "Vieira",
+      "second_last_name" : "Xavier"
+    }
   }
 }

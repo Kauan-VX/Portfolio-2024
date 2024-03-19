@@ -2,6 +2,7 @@
 
 import { fadeIn } from '@/utils/motion';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
@@ -11,6 +12,8 @@ export default function About() {
   const [repos, setRepos] = useState([]);
   const [counterOn, setCounterOn] = useState(false);
   const [age, setAge] = useState(0);
+  const t = useTranslations('About')
+
 
   useEffect(() => {
     async function fetchRepos() {
@@ -53,10 +56,10 @@ export default function About() {
           className="flex justify-center flex-col items-center"
         >
           <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#00bcf2] to-[#00b294] bg-clip-text animate-gradient">
-            Sobre mim
+         {t('title')}
           </h1>
           <TypingText
-            title="| Um breve resumo sobre mim |"
+            title={t('subtitle')}
             textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
           />
         </motion.header>
@@ -76,7 +79,7 @@ export default function About() {
                   +
                 </h1>
                 <h2 className="text-center font-semibold">
-                Ano(s) de experiência
+                {t("years_experience")}
                 </h2>
               </span>
             </li>
@@ -94,7 +97,8 @@ export default function About() {
                   +
                 </h1>
                 <h2 className="text-center font-semibold">
-                Projetos concluídos
+                {t("finished_projects")}
+
                 </h2>
               </span>
             </li>

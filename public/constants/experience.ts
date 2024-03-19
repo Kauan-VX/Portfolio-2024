@@ -1,4 +1,5 @@
-import { IExperience } from '../components/card-experience'
+"use client"
+import { IExperience } from '../../src/app/components/card-experience'
 
 export const EXPERIENCE: IExperience[] = [
   {

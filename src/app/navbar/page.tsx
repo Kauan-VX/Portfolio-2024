@@ -14,17 +14,21 @@ import React from 'react'
 import ThemeSwitcher from '../theme-switcher'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
+import DropDownLanguage from '../components/language/dropdown-language'
 import { Logo } from './logo'
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const t = useTranslations('Navbar')
+
 
   const menuItems = [
-    { name: 'Sobre', link: '#about' },
-    { name: 'Educação', link: '#education' },
-    { name: 'Skills', link: '#skills' },
-    { name: 'Projetos', link: '#projects' },
-    { name: 'Conecte-se', link: '#conect' },
+    { name: `${t('about')}`, link: '#about' },
+    { name: `${t('education')}`, link: '#education' },
+    { name: `${t('skills')}`, link: '#skills' },
+    { name: `${t('projects')}`, link: '#projects' },
+    { name: `${t('contact')}`, link: '#conect' },
   ]
 
   return (
@@ -64,7 +68,7 @@ export default function NavbarComponent() {
               href="#about"
               aria-current="page"
             >
-              Sobre
+                 {t("about")}
             </Link>
           </motion.div>
         </NavbarItem>
@@ -74,7 +78,8 @@ export default function NavbarComponent() {
             color="foreground"
             href="#education"
           >
-            Educação
+                          {t("education")}
+
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -83,7 +88,8 @@ export default function NavbarComponent() {
             color="foreground"
             href="#skills"
           >
-            Skills
+                                   {t("skills")}
+
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -92,7 +98,8 @@ export default function NavbarComponent() {
             color="foreground"
             href="#projects"
           >
-            Projetos
+                                   {t("projects")}
+
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -101,11 +108,15 @@ export default function NavbarComponent() {
             color="foreground"
             href="#conect"
           >
-            Contato
+                                           {t("contact")}
+
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
+      <NavbarItem>
+          <DropDownLanguage></DropDownLanguage>
+        </NavbarItem>
         <NavbarItem>
           <ThemeSwitcher></ThemeSwitcher>
         </NavbarItem>

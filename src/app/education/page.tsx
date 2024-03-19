@@ -1,13 +1,17 @@
 'use client'
 import { fadeIn } from '@/utils/motion'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
+import { CERTIFICATE } from '../../../public/constants/certificate'
+import { EXPERIENCE } from '../../../public/constants/experience'
 import CardCertificate from '../components/card-certificate'
 import CardEducation from '../components/card-education'
 import CardExperience from '../components/card-experience'
-import { CERTIFICATE } from '../constants/certificate'
-import { EXPERIENCE } from '../constants/experience'
 
 export default function Education() {
+  const ed = useTranslations('Education')
+  const ex = useTranslations('Experience')
+  const ce = useTranslations('Certificate')
   return (
     <section
       id="education"
@@ -21,7 +25,7 @@ export default function Education() {
         className="flex justify-center p-"
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#e81123] to-[#fff100] bg-clip-text animate-gradient my-12">
-          Educação
+     {ed('title')}
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center ">
@@ -35,7 +39,8 @@ export default function Education() {
         className="flex justify-center "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#737dfe] to-[#ffcac9] bg-clip-text animate-gradient my-12">
-          Experiência
+        {ex('title')}
+
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center ">
@@ -58,7 +63,8 @@ export default function Education() {
         className="flex justify-center "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#df98fa] to-[#9055ff] bg-clip-text animate-gradient my-12">
-          Certificados
+        {ce('title')}
+
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center gap-8 flex-wrap">

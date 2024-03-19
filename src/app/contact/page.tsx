@@ -7,11 +7,12 @@ import {
 } from '@/utils/motion'
 import { Button } from '@nextui-org/react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
+import { CONTACT } from '../../../public/constants/contact'
 import { sendEmail } from '../api/email/send/route'
 import CardSkill from '../components/card-skills'
 import { TypingText } from '../components/ui/custom-texts'
-import { CONTACT } from '../constants/contact'
 import { MailIcon } from './mail'
 
 export default function Connect() {
@@ -20,6 +21,7 @@ export default function Connect() {
     email: '',
     message: '',
   })
+  const t = useTranslations('Contact')
 
   const handleChange = (event: any) => {
     const { name, value } = event.target
@@ -63,10 +65,11 @@ export default function Connect() {
           className="animate-gradient bg-gradient-to-b from-[#FF6F5B] to-[#FFB457] bg-clip-text
          title font-bold text-transparent text-center"
         >
-          Contato
+        {t('title')}
         </h1>
         <TypingText
-          title="| Conecte-se |"
+          title={t('subtitle')}
+
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -101,7 +104,7 @@ export default function Connect() {
         >
           <div className="card-mail w-full max-w-[40rem] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent ">
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
-              Entre em contato comigo
+        {t('form.contact_me')}
             </h1>
             <form onSubmit={handleSubmit}>
               <span className="flex w-full items-center justify-between gap-4 mb-4 smMax:flex-col">
@@ -109,7 +112,7 @@ export default function Connect() {
                   className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl smMax:w-full"
                   name="name"
                   type="text"
-                  placeholder="Nome"
+                  placeholder={t('form.name')}
                   value={formData.name}
                   onChange={handleChange}
                 />
@@ -117,13 +120,13 @@ export default function Connect() {
                   className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl smMax:w-full"
                   type="email"
                   name="email"
-                  placeholder="E-mail para contato"
+                  placeholder={t('form.email')}
                   value={formData.email}
                   onChange={handleChange}
                 />
               </span>
               <textarea
-                placeholder="Escreva uma mensagem aqui"
+                                  placeholder={t('form.message')}
                 name="message"
                 className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
                 value={formData.message}
@@ -135,7 +138,7 @@ export default function Connect() {
                   className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none"
                   variant="shadow"
                 >
-                  Enviar
+                         {t('form.submit')}
                 </Button>
               </span>
             </form>

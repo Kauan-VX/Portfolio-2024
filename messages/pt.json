@@ -1,6 +1,99 @@
 {
-  "Index": {
+  "Navbar" : {
+    "about" : "Sobre",
+    "education": "Educação",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "Presentation": {
     "i_am" : "Olá , eu sou",
     "developer" : "Desenvolvedor Front-End"
+  },
+  "About": {
+    "title" : "Sobre mim",
+    "subtitle" : "| Um breve resumo sobre mim |",
+    "years_experience" : "Ano(s) de experiência",
+    "finished_projects" : "Projetos concluídos"
+  },
+  "Education" : {
+    "title" : "Educação",
+    "subtitle" : ""
+  },
+  "Experience" : {
+    "title" : "Experiência",
+    "subtitle" : ""
+  },
+  "Certificate" : {
+    "title" : "Certificados(s)",
+    "subtitle" : ""
+  },
+  "Skills" : {
+    "title" : "Habilidades",
+    "subtitle" : "| Minhas Stacks |",
+    "technologies_use": "Tecnologias que uso:",
+    "productivity_tools": "Ferramentas de produtividade:",
+    "future_study": "Planos de estudos futuros:"
+  },
+  "Projects":{
+    "title" : "Projetos",
+    "subtitle": "| Projetos divertidos |"
+  },
+  "Contact":{
+    "title" : "Contato",
+    "subtitle": "| Conecte-se |",
+    "form" : {
+      "contact_me" : "Entre em contato comigo",
+      "name" : "Nome",
+      "email" : "E-mail para contato",
+      "message" : "Escreva uma mensagem aqui",
+      "submit" : "Enviar"
+    }
+  },
+  "Constatants" : {
+    "experience" : {
+      "noclaf" :{
+        "initial_date" : "05/2023",
+        "finish_date" : "Presente",
+      "job_title" : "Desenvolvedor Front-End Júnior",
+      "job_description" : [
+        "Recriando interfaces criadas pelo time de UX/UI, seja no Figma ou XdAdobe.",
+        "Usando o framework Angular10+ com SCSS , RxJs e Angular Material."
+      ]
+      }
+    },
+    "certificate" :{
+      "title" : "React native: Criando aplicativos do zero ao avançado"
+    },
+    "projects" : [
+      {
+      "title" :"Painel de Finanças Pessoais",
+      "description" : "Website oferece controle financeiro com gráficos e resumos claros"
+    },
+    {
+      "title" :"Administração na Igreja",
+      "description" : "Aplicativo eclesiástico simplifica gestão, fortalecendo conexões."
+    },
+    {
+      "title" :"Contratação de Docentes",
+      "description" : "Site simplifica contratação de docentes, promovendo eficiência."
+    },
+    {
+      "title" :"Tela de Login Animado",
+      "description" : "Esta tela de login apresenta um design animado e harmonioso, tornando-a mais atraente para o usuário."
+    },
+    {
+      "title" :"Polvi",
+      "description" : "Durante um hackathon, surgiu a ideia de facilitar às empresas identificar e localizar problemas de forma eficiente."
+    }
+  ],
+  "words" : 
+    {
+      "hello" : "Olá ,",
+      "i_m" : "eu sou",
+      "first_name" : "Kauan",
+      "last_name" : "Vieira",
+      "second_last_name" : "Xavier"
+    }
   }
 }

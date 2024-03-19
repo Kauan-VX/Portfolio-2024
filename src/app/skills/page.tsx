@@ -1,15 +1,17 @@
 'use client'
 import { fadeIn } from '@/utils/motion'
 import { motion } from 'framer-motion'
-import CardSkill from '../components/card-skills/index'
-import { TypingText } from '../components/ui/custom-texts'
+import { useTranslations } from 'next-intl'
 import {
   SKILLS_CURRENT,
   SKILLS_FUTURE,
   SKILLS_PRODUCTIVITY,
-} from '../constants/skills-obj'
+} from '../../../public/constants/skills-obj'
+import CardSkill from '../components/card-skills/index'
+import { TypingText } from '../components/ui/custom-texts'
 
 export default function Skills() {
+  const t = useTranslations('Skills')
   return (
     <section
       id="skills"
@@ -24,10 +26,10 @@ export default function Skills() {
      "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#FF1BF7] to-[#b249f8]  bg-clip-text animate-gradient ">
-          Skills
+         {t('title')}
         </h1>
         <TypingText
-          title="| Minhas Stacks |"
+          title={t('subtitle')}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -41,7 +43,7 @@ export default function Skills() {
      "
       >
         <TypingText
-          title="Tecnologias que uso:"
+          title={t('technologies_use')}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -66,7 +68,7 @@ export default function Skills() {
      "
       >
         <TypingText
-          title="Ferramentas de produtividade:"
+          title={t("productivity_tools")}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -92,7 +94,7 @@ export default function Skills() {
      "
       >
         <TypingText
-          title="Planos de estudos futuros:"
+          title={t("future_study")}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>

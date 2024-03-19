@@ -11,13 +11,15 @@ import '../../app/[locale]/globals.scss'
 
 // import required modules
 import { fadeIn } from '@/utils/motion'
+import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
+import { PROJECTS } from '../../../public/constants/projects-obj'
 import { TypingText } from '../components/ui/custom-texts'
-import { PROJECTS } from '../constants/projects-obj'
 
 export default function Project() {
   const [domLoaded, setDomLoaded] = useState(false);
+  const t = useTranslations('Projects')
 
   useEffect(() => {
     setDomLoaded(true);
@@ -35,10 +37,10 @@ export default function Project() {
         className="flex justify-center flex-col items-center"
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient text-center">
-          Projetos
+{t('title')}
         </h1>
         <TypingText
-          title="| Projetos divertidos |"
+          title={t('subtitle')}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
