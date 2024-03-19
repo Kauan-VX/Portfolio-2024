@@ -22,7 +22,6 @@ export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const t = useTranslations('Navbar')
 
-
   const menuItems = [
     { name: `${t('about')}`, link: '#about' },
     { name: `${t('education')}`, link: '#education' },
@@ -38,7 +37,7 @@ export default function NavbarComponent() {
       className="shadow-sm"
     >
       <NavbarContent>
-        <NavbarItem className='z-10 size-10'>
+        <NavbarItem className="z-10 size-10">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             className="sm:hidden"
@@ -68,7 +67,7 @@ export default function NavbarComponent() {
               href="#about"
               aria-current="page"
             >
-                 {t("about")}
+              {t('about')}
             </Link>
           </motion.div>
         </NavbarItem>
@@ -78,8 +77,7 @@ export default function NavbarComponent() {
             color="foreground"
             href="#education"
           >
-                          {t("education")}
-
+            {t('education')}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -88,8 +86,7 @@ export default function NavbarComponent() {
             color="foreground"
             href="#skills"
           >
-                                   {t("skills")}
-
+            {t('skills')}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -98,8 +95,7 @@ export default function NavbarComponent() {
             color="foreground"
             href="#projects"
           >
-                                   {t("projects")}
-
+            {t('projects')}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -108,13 +104,12 @@ export default function NavbarComponent() {
             color="foreground"
             href="#conect"
           >
-                                           {t("contact")}
-
+            {t('contact')}
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
-      <NavbarItem>
+      <NavbarContent className='flex items-center justify-center gap-0' >
+        <NavbarItem>
           <DropDownLanguage></DropDownLanguage>
         </NavbarItem>
         <NavbarItem>

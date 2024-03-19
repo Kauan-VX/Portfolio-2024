@@ -18,7 +18,7 @@ const DropDownLanguage = () => {
 
   return (
     <Dropdown>
-      <DropdownTrigger>
+      <DropdownTrigger className="p-2">
         <Button disableAnimation className="bg-transparent outline-none" type="button">
           <TranslateIcon/>
         </Button>
