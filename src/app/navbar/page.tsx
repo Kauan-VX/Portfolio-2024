@@ -36,7 +36,7 @@ export default function NavbarComponent() {
       onMenuOpenChange={setIsMenuOpen}
       className="shadow-sm"
     >
-      <NavbarContent>
+      <NavbarContent className='!flex-grow-0'>
         <NavbarItem className="z-10 size-10">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -108,7 +108,7 @@ export default function NavbarComponent() {
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent className='flex items-center justify-center gap-0' >
+      <NavbarContent className='flex items-center justify-center gap-0  !flex-grow-0' >
         <NavbarItem>
           <DropDownLanguage></DropDownLanguage>
         </NavbarItem>

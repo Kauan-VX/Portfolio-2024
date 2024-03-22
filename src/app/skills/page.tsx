@@ -99,7 +99,7 @@ export default function Skills() {
         />
       </motion.header>
       <div className="w-full max-w-[80%] m-auto flex justify-center items-center flex-wrap gap-[1rem] my-10  px-4">
-        {SKILLS_FUTURE.map((skill, index) => (
+{SKILLS_FUTURE.map((skill, index) => (
           <CardSkill
             key={skill.id}
             id={skill.id}
