@@ -15,12 +15,15 @@ import ThemeSwitcher from '../theme-switcher'
 
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import dynamic from 'next/dynamic'
 import DropDownLanguage from '../components/language/dropdown-language'
-import { Logo } from './logo'
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const t = useTranslations('Navbar')
+
+const Logo = dynamic(() => import('./logo').then((module) => module.Logo), { ssr: false })
+
 
   const menuItems = [
     { name: `${t('about')}`, link: '#about' },

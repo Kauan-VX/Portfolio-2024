@@ -1,7 +1,6 @@
-'use client'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import CardSkill, { ISkills } from '../card-skills'
-import { Meteors } from '../ui/meteors'
 
 export interface IProject {
   link: string
@@ -10,6 +9,9 @@ export interface IProject {
   description: string
   stacks: ISkills[]
 }
+
+const Meteors = dynamic(() => import('../ui/meteors').then((module) => module.Meteors), { ssr: false })
+
 
 const CardProject = ({ image, title, description, stacks }: IProject) => {
   return (

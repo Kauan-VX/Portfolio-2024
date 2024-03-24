@@ -1,5 +1,4 @@
 'use client'
-import { fadeIn } from '@/utils/motion'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import {
@@ -7,6 +6,7 @@ import {
   SKILLS_FUTURE,
   SKILLS_PRODUCTIVITY,
 } from '../../../public/constants/skills-obj'
+import { fadeIn } from '../../../utils/motion'
 import CardSkill from '../components/card-skills/index'
 import { TypingText } from '../components/ui/custom-texts'
 

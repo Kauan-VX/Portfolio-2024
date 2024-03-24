@@ -1,10 +1,10 @@
 'use client'
-import { fadeIn } from '@/utils/motion';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
+import { fadeIn } from '../../../utils/motion';
 import { TypingText } from '../components/ui/custom-texts';
 
 export default function About() {
@@ -21,7 +21,6 @@ export default function About() {
         );
         const data = await response.json();
         setRepos(data);
-        console.log(data);
       } catch (error) {
         console.error('Error fetching repos:', error);
       }

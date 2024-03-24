@@ -1,5 +1,4 @@
 'use client'
-import { fadeIn, fadeIn2, planetVariants, staggerContainer } from '@/utils/motion';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from '@nextui-org/react';
 import { motion } from 'framer-motion';
@@ -7,6 +6,8 @@ import { useTranslations } from 'next-intl';
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from 'zod';
 import { CONTACT } from '../../../public/constants/contact';
+import { fadeIn, fadeIn2, planetVariants, staggerContainer } from '../../../utils/motion';
+import { sendEmail } from '../api/send/route';
 import CardSkill from '../components/card-skills';
 import { TypingText } from '../components/ui/custom-texts';
 import { MailIcon } from './mail';
@@ -30,7 +31,7 @@ export default function Connect() {
     resolver: zodResolver(validationSchema),
   });
 
-  const onSubmit: SubmitHandler<Person> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Person> = (data) => sendEmail(data);
 
   return (
     <section id="connect">

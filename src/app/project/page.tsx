@@ -10,14 +10,15 @@ import 'swiper/css/pagination'
 import '../../app/[locale]/globals.scss'
 
 // import required modules
-import { fadeIn } from '@/utils/motion'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
 import { translateProject } from '../../../public/constants/projects-obj'
+import { fadeIn } from '../../../utils/motion'
 import { TypingText } from '../components/ui/custom-texts'
 
 export default function Project() {
+
   const [domLoaded, setDomLoaded] = useState(false);
   const t = useTranslations('Projects')
   const constants = useTranslations('Constatants')

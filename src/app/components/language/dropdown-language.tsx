@@ -19,7 +19,7 @@ const DropDownLanguage = () => {
   return (
     <Dropdown>
       <DropdownTrigger className="p-2">
-        <Button disableAnimation className="bg-transparent outline-none" type="button">
+        <Button aria-label={isPortuguese ? 'Selecionar inglês' : 'Selecionar português'} disableAnimation className="bg-transparent outline-none" type="button">
           <TranslateIcon/>
         </Button>
       </DropdownTrigger>
