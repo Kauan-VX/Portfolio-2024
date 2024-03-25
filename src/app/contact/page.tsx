@@ -12,7 +12,7 @@ import {
   planetVariants,
   staggerContainer,
 } from '../../../utils/motion'
-import { sendEmail } from '../api/send/route'
+import { sendEmail } from '../api/send/send-email'
 import CardSkill from '../components/card-skills'
 import { TypingText } from '../components/ui/custom-texts'
 import { MailIcon } from './mail'
