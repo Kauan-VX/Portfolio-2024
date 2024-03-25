@@ -42,12 +42,17 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
       }}
       custom={index}
     >
-      <a className="link-skills whitespace-nowrap" target="_blank" href={link}>
+      <a
+        className="link-skills whitespace-nowrap"
+        target="_blank"
+        href={link}
+        rel="noreferrer"
+      >
         <Image
           className="w-full"
           src={imageSrc}
           alt="icon-skill"
-          loading='lazy'
+          loading="lazy"
           title={skillName}
           width={48}
           height={48}

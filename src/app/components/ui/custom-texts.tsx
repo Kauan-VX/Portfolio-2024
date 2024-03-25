@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion';
-import { textContainer, textVariant2 } from '../../../../utils/motion';
+import { motion } from 'framer-motion'
+import { textContainer, textVariant2 } from '../../../../utils/motion'
 
 interface ICustomTexts {
-  title : string ,
+  title: string
   textStyles: string
 }
-
 
 export const TypingText = ({ title, textStyles }: ICustomTexts) => (
   <motion.p
@@ -18,4 +17,4 @@ export const TypingText = ({ title, textStyles }: ICustomTexts) => (
       </motion.span>
     ))}
   </motion.p>
-);
+)

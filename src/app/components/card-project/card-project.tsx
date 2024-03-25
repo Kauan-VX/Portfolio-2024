@@ -10,8 +10,10 @@ export interface IProject {
   stacks: ISkills[]
 }
 
-const Meteors = dynamic(() => import('../ui/meteors').then((module) => module.Meteors), { ssr: false })
-
+const Meteors = dynamic(
+  () => import('../ui/meteors').then((module) => module.Meteors),
+  { ssr: false },
+)
 
 const CardProject = ({ image, title, description, stacks }: IProject) => {
   return (

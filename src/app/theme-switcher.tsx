@@ -10,15 +10,14 @@ const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
- 
   useEffect(() => {
     setMounted(true)
   }, [])
 
   const handleSwitchChange = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-  };
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+  }
 
   if (!mounted) {
     return null
@@ -26,13 +25,12 @@ const ThemeSwitcher = () => {
 
   return (
     <Button
-    className='outline-0 bg-transparent p-2 rounded-full size-full'
-    onClick={handleSwitchChange}
-    size="sm"
-  >
-    {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-  </Button>
-    
+      className="outline-0 bg-transparent p-2 rounded-full size-full"
+      onClick={handleSwitchChange}
+      size="sm"
+    >
+      {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+    </Button>
   )
 }
 

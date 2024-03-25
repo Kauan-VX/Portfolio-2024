@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <NavbarComponent></NavbarComponent>
       <Presentation></Presentation>
-      <About ></About>
+      <About></About>
       <Education></Education>
       <Skills></Skills>
       <Project></Project>
@@ -19,6 +19,3 @@ export default function Home() {
     </>
   )
 }
-
-
-

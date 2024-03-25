@@ -19,9 +19,7 @@ export default function Education() {
   const translateEducationList = translateEducation(constants)
 
   return (
-    <section
-      id="education"
-    >
+    <section id="education">
       <motion.header
         variants={fadeIn('up', 0.5)}
         initial="hidden"
@@ -30,20 +28,20 @@ export default function Education() {
         className="flex justify-center p-"
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#e81123] to-[#fff100] bg-clip-text animate-gradient my-12">
-     {ed('title')}
+          {ed('title')}
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center ">
-      {translateEducationList.map((education, index) => (
+        {translateEducationList.map((education, index) => (
           <CardEducation
             key={index}
-          finish_date={education.finish_date}
-          initial_date={education.initial_date}
-          higher_education={education.higher_education}
-          institution={education.institution}
-          location={education.location}
-          title={education.title}
-          type={education.type}
+            finish_date={education.finish_date}
+            initial_date={education.initial_date}
+            higher_education={education.higher_education}
+            institution={education.institution}
+            location={education.location}
+            title={education.title}
+            type={education.type}
           />
         ))}
       </div>
@@ -55,8 +53,7 @@ export default function Education() {
         className="flex justify-center "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#737dfe] to-[#ffcac9] bg-clip-text animate-gradient my-12">
-        {ex('title')}
-
+          {ex('title')}
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center ">
@@ -80,8 +77,7 @@ export default function Education() {
         className="flex justify-center "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#df98fa] to-[#9055ff] bg-clip-text animate-gradient my-12">
-        {ce('title')}
-
+          {ce('title')}
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center gap-8 flex-wrap">

@@ -3,15 +3,13 @@ import { motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 
 export const Logo = () => {
-  const { theme, setTheme } = useTheme()
-
-
+  const { theme } = useTheme()
 
   const icon = {
     hidden: {
       opacity: 1,
       pathLength: 0,
-      fill: theme === 'dark' ? 'rgba(255, 255, 255, 0)' : 'rgba(0, 0, 0, 0)' ,
+      fill: theme === 'dark' ? 'rgba(255, 255, 255, 0)' : 'rgba(0, 0, 0, 0)',
       transition: {
         default: {
           duration: 2,
@@ -30,7 +28,7 @@ export const Logo = () => {
     visible: {
       opacity: 1,
       pathLength: 1,
-      fill: theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)' ,
+      fill: theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
       transition: {
         default: {
           duration: 2,

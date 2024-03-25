@@ -1,5 +1,5 @@
 export default function offline() {
-  return(
+  return (
     <div>
       <h1>Offline</h1>
     </div>

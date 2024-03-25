@@ -26,7 +26,7 @@ export default function Skills() {
      "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#FF1BF7] to-[#b249f8]  bg-clip-text animate-gradient ">
-         {t('title')}
+          {t('title')}
         </h1>
         <TypingText
           title={t('subtitle')}
@@ -68,7 +68,7 @@ export default function Skills() {
      "
       >
         <TypingText
-          title={t("productivity_tools")}
+          title={t('productivity_tools')}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -94,12 +94,12 @@ export default function Skills() {
      "
       >
         <TypingText
-          title={t("future_study")}
+          title={t('future_study')}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
       <div className="w-full max-w-[80%] m-auto flex justify-center items-center flex-wrap gap-[1rem] my-10  px-4">
-{SKILLS_FUTURE.map((skill, index) => (
+        {SKILLS_FUTURE.map((skill, index) => (
           <CardSkill
             key={skill.id}
             id={skill.id}

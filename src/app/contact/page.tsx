@@ -1,26 +1,31 @@
 'use client'
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from '@nextui-org/react';
-import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
-import { SubmitHandler, useForm } from "react-hook-form";
-import { z } from 'zod';
-import { CONTACT } from '../../../public/constants/contact';
-import { fadeIn, fadeIn2, planetVariants, staggerContainer } from '../../../utils/motion';
-import { sendEmail } from '../api/send/route';
-import CardSkill from '../components/card-skills';
-import { TypingText } from '../components/ui/custom-texts';
-import { MailIcon } from './mail';
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Button } from '@nextui-org/react'
+import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { CONTACT } from '../../../public/constants/contact'
+import {
+  fadeIn,
+  fadeIn2,
+  planetVariants,
+  staggerContainer,
+} from '../../../utils/motion'
+import { sendEmail } from '../api/send/route'
+import CardSkill from '../components/card-skills'
+import { TypingText } from '../components/ui/custom-texts'
+import { MailIcon } from './mail'
 
 export default function Connect() {
   const validationSchema = z.object({
-    name: z.string().min(1, { message: "Firstname is required" }),
-    message: z.string().min(1, { message: "Lastname is required" }),
-    email: z.string().min(1, { message: "Email is required" }).email({
-      message: "Must be a valid email",
+    name: z.string().min(1, { message: 'Firstname is required' }),
+    message: z.string().min(1, { message: 'Lastname is required' }),
+    email: z.string().min(1, { message: 'Email is required' }).email({
+      message: 'Must be a valid email',
     }),
-  });
-  type Person = z.infer<typeof validationSchema>;
+  })
+  type Person = z.infer<typeof validationSchema>
   const t = useTranslations('Contact')
 
   const {
@@ -29,9 +34,9 @@ export default function Connect() {
     formState: { errors },
   } = useForm<Person>({
     resolver: zodResolver(validationSchema),
-  });
+  })
 
-  const onSubmit: SubmitHandler<Person> = (data) => sendEmail(data);
+  const onSubmit: SubmitHandler<Person> = (data) => sendEmail(data)
 
   return (
     <section id="connect">
@@ -92,20 +97,20 @@ export default function Connect() {
                   className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl smMax:w-full"
                   type="text"
                   placeholder={t('form.name')}
-                  {...register("name")} 
+                  {...register('name')}
                 />
 
                 <input
                   className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl smMax:w-full"
                   type="email"
                   placeholder={t('form.email')}
-                  {...register("email")} 
+                  {...register('email')}
                 />
               </span>
               <textarea
                 placeholder={t('form.message')}
                 className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
-                {...register("message")} 
+                {...register('message')}
               />
               <span className="w-full flex justify-end">
                 <Button

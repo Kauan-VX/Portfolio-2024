@@ -22,8 +22,9 @@ export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const t = useTranslations('Navbar')
 
-const Logo = dynamic(() => import('./logo').then((module) => module.Logo), { ssr: false })
-
+  const Logo = dynamic(() => import('./logo').then((module) => module.Logo), {
+    ssr: false,
+  })
 
   const menuItems = [
     { name: `${t('about')}`, link: '#about' },
@@ -39,7 +40,7 @@ const Logo = dynamic(() => import('./logo').then((module) => module.Logo), { ssr
       onMenuOpenChange={setIsMenuOpen}
       className="shadow-sm"
     >
-      <NavbarContent className='!flex-grow-0'>
+      <NavbarContent className="!flex-grow-0">
         <NavbarItem className="z-10 size-10">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -111,7 +112,7 @@ const Logo = dynamic(() => import('./logo').then((module) => module.Logo), { ssr
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent className='flex items-center justify-center gap-0  !flex-grow-0' >
+      <NavbarContent className="flex items-center justify-center gap-0  !flex-grow-0">
         <NavbarItem>
           <DropDownLanguage></DropDownLanguage>
         </NavbarItem>
