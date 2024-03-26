@@ -12,7 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       height: {
-        heightLessNav: 'h-[calc(100vh-64px)]',
+          heightLessNav: 'h-[calc(100vh-64px)]',
       },
       animation: {
         'meteor-effect': 'meteor 5s linear infinite',
