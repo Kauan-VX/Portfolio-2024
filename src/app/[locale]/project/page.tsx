@@ -1,60 +1,60 @@
-'use client'
-import { motion } from 'framer-motion'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import CardProject from '../components/card-project/card-project'
+"use client";
+import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import CardProject from "../../../components/card-project/card-project";
 
 // Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
-import '../../app/[locale]/globals.scss'
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "../globals.scss";
 
 // import required modules
-import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
-import { translateProject } from '../../../public/constants/projects-obj'
-import { fadeIn } from '../../../utils/motion'
-import { TypingText } from '../components/ui/custom-texts'
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import { translateProject } from "../../../../public/constants/projects-obj";
+import { fadeIn } from "../../../utils/motion";
+import { TypingText } from "../../../components/ui/custom-texts";
 
 export default function Project() {
-  const [domLoaded, setDomLoaded] = useState(false)
-  const t = useTranslations('Projects')
-  const constants = useTranslations('Constatants')
-  const translateProjectList = translateProject(constants)
+  const [domLoaded, setDomLoaded] = useState(false);
+  const t = useTranslations("Projects");
+  const constants = useTranslations("Constatants");
+  const translateProjectList = translateProject(constants);
 
   useEffect(() => {
-    setDomLoaded(true)
-  }, [])
+    setDomLoaded(true);
+  }, []);
   return (
     <section
       id="projects"
       // className="h-heightLessNav  w-full  bg-light-background pt-20 dark:bg-dark-background p-4"
     >
       <motion.header
-        variants={fadeIn('up', 0.5)}
+        variants={fadeIn("up", 0.5)}
         initial="hidden"
-        whileInView={'show'}
+        whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="flex justify-center flex-col items-center"
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient text-center">
-          {t('title')}
+          {t("title")}
         </h1>
         <TypingText
-          title={t('subtitle')}
+          title={t("subtitle")}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
       <div className="w-full h-full flex justify-center mdMax:hidden">
         {domLoaded && (
           <Swiper
-            effect={'coverflow'}
+            effect={"coverflow"}
             spaceBetween={80}
             grabCursor={true}
             centeredSlides={true}
             initialSlide={2}
-            slidesPerView={'auto'}
+            slidesPerView={"auto"}
             freeMode={true}
             coverflowEffect={{
               rotate: 50,
@@ -98,5 +98,5 @@ export default function Project() {
         ))}
       </div>
     </section>
-  )
+  );
 }

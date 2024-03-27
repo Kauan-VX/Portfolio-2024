@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   Link,
@@ -9,30 +9,30 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from '@nextui-org/react'
-import React from 'react'
-import ThemeSwitcher from '../theme-switcher'
+} from "@nextui-org/react";
+import React from "react";
+import ThemeSwitcher from "../../../components/theme/theme-switcher";
 
-import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
-import dynamic from 'next/dynamic'
-import DropDownLanguage from '../components/language/dropdown-language'
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
+import DropDownLanguage from "../../../components/language/dropdown-language";
 
 export default function NavbarComponent() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
-  const t = useTranslations('Navbar')
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const t = useTranslations("Navbar");
 
-  const Logo = dynamic(() => import('./logo').then((module) => module.Logo), {
+  const Logo = dynamic(() => import("./logo").then((module) => module.Logo), {
     ssr: false,
-  })
+  });
 
   const menuItems = [
-    { name: `${t('about')}`, link: '#about' },
-    { name: `${t('education')}`, link: '#education' },
-    { name: `${t('skills')}`, link: '#skills' },
-    { name: `${t('projects')}`, link: '#projects' },
-    { name: `${t('contact')}`, link: '#conect' },
-  ]
+    { name: `${t("about")}`, link: "#about" },
+    { name: `${t("education")}`, link: "#education" },
+    { name: `${t("skills")}`, link: "#skills" },
+    { name: `${t("projects")}`, link: "#projects" },
+    { name: `${t("contact")}`, link: "#conect" },
+  ];
 
   return (
     <Navbar
@@ -43,7 +43,7 @@ export default function NavbarComponent() {
       <NavbarContent className="!flex-grow-0">
         <NavbarItem className="z-10 size-10">
           <NavbarMenuToggle
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
           />
         </NavbarItem>
@@ -71,7 +71,7 @@ export default function NavbarComponent() {
               href="#about"
               aria-current="page"
             >
-              {t('about')}
+              {t("about")}
             </Link>
           </motion.div>
         </NavbarItem>
@@ -81,7 +81,7 @@ export default function NavbarComponent() {
             color="foreground"
             href="#education"
           >
-            {t('education')}
+            {t("education")}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -90,7 +90,7 @@ export default function NavbarComponent() {
             color="foreground"
             href="#skills"
           >
-            {t('skills')}
+            {t("skills")}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -99,7 +99,7 @@ export default function NavbarComponent() {
             color="foreground"
             href="#projects"
           >
-            {t('projects')}
+            {t("projects")}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -108,7 +108,7 @@ export default function NavbarComponent() {
             color="foreground"
             href="#conect"
           >
-            {t('contact')}
+            {t("contact")}
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -135,5 +135,5 @@ export default function NavbarComponent() {
         ))}
       </NavbarMenu>
     </Navbar>
-  )
+  );
 }

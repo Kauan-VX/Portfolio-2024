@@ -29,7 +29,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/contact/page.jsx",
-    "utils/motion.js"
+    "src/utils/motion.js"
   ],
   "exclude": ["node_modules"]
 }

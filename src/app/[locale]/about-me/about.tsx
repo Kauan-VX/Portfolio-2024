@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import { fadeIn } from "../../../utils/motion";
-import { TypingText } from "../components/ui/custom-texts";
+import { TypingText } from "../../../components/ui/custom-texts";
 
 export default function About() {
   const [repos, setRepos] = useState([]);

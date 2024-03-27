@@ -1,20 +1,20 @@
-'use client'
-import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
-import { useState } from 'react'
-import ScrollTrigger from 'react-scroll-trigger'
-import { translate } from '../../../public/constants/words'
-import { scroolAnimation } from '../../../utils/motion'
-import { ScrollIcon } from '../components/icons/presentation/scroll'
-import { Spotlight } from '../components/ui/Spotlight'
-import { TypewriterEffect } from '../components/ui/typewriter-effect'
+"use client";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
+import ScrollTrigger from "react-scroll-trigger";
+import { translate } from "../../../../public/constants/words";
+import { scroolAnimation } from "../../../utils/motion";
+import { ScrollIcon } from "../../../components/icons/presentation/scroll";
+import { Spotlight } from "../../../components/ui/Spotlight";
+import { TypewriterEffect } from "../../../components/ui/typewriter-effect";
 
 export default function Presentation() {
-  const [animation, setAnimation] = useState(false)
-  const t = useTranslations('Presentation')
-  const constants = useTranslations('Constatants')
+  const [animation, setAnimation] = useState(false);
+  const t = useTranslations("Presentation");
+  const constants = useTranslations("Constatants");
 
-  const wordList = translate(constants)
+  const wordList = translate(constants);
   return (
     <ScrollTrigger
       onEnter={() => setAnimation(true)}
@@ -36,7 +36,7 @@ export default function Presentation() {
           )}
           <h2 className="dark:text-dark-text text-light-text text-center">
             <strong className="md:text-5xl smMax:text-3xl ">
-              {t('developer')}
+              {t("developer")}
             </strong>
           </h2>
           <motion.span
@@ -49,5 +49,5 @@ export default function Presentation() {
         </header>
       </section>
     </ScrollTrigger>
-  )
+  );
 }

@@ -1,34 +1,34 @@
-'use client'
-import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
-import { translateCertificate } from '../../../public/constants/certificate'
-import { translateEducation } from '../../../public/constants/education'
-import { translateExperience } from '../../../public/constants/experience'
-import { fadeIn } from '../../../utils/motion'
-import CardCertificate from '../components/card-certificate'
-import CardEducation from '../components/card-education'
-import CardExperience from '../components/card-experience'
+"use client";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { translateCertificate } from "../../../../public/constants/certificate";
+import { translateEducation } from "../../../../public/constants/education";
+import { translateExperience } from "../../../../public/constants/experience";
+import { fadeIn } from "../../../utils/motion";
+import CardCertificate from "../../../components/card-certificate";
+import CardEducation from "../../../components/card-education";
+import CardExperience from "../../../components/card-experience";
 
 export default function Education() {
-  const ed = useTranslations('Education')
-  const ex = useTranslations('Experience')
-  const ce = useTranslations('Certificate')
-  const constants = useTranslations('Constatants')
-  const translateExperienceList = translateExperience(constants)
-  const translateCertificateList = translateCertificate(constants)
-  const translateEducationList = translateEducation(constants)
+  const ed = useTranslations("Education");
+  const ex = useTranslations("Experience");
+  const ce = useTranslations("Certificate");
+  const constants = useTranslations("Constatants");
+  const translateExperienceList = translateExperience(constants);
+  const translateCertificateList = translateCertificate(constants);
+  const translateEducationList = translateEducation(constants);
 
   return (
     <section id="education">
       <motion.header
-        variants={fadeIn('up', 0.5)}
+        variants={fadeIn("up", 0.5)}
         initial="hidden"
-        whileInView={'show'}
+        whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="flex justify-center p-"
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#e81123] to-[#fff100] bg-clip-text animate-gradient my-12">
-          {ed('title')}
+          {ed("title")}
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center ">
@@ -46,14 +46,14 @@ export default function Education() {
         ))}
       </div>
       <motion.header
-        variants={fadeIn('up', 0.5)}
+        variants={fadeIn("up", 0.5)}
         initial="hidden"
-        whileInView={'show'}
+        whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="flex justify-center "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#737dfe] to-[#ffcac9] bg-clip-text animate-gradient my-12">
-          {ex('title')}
+          {ex("title")}
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center ">
@@ -70,14 +70,14 @@ export default function Education() {
         ))}
       </div>
       <motion.header
-        variants={fadeIn('up', 0.5)}
+        variants={fadeIn("up", 0.5)}
         initial="hidden"
-        whileInView={'show'}
+        whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="flex justify-center "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#df98fa] to-[#9055ff] bg-clip-text animate-gradient my-12">
-          {ce('title')}
+          {ce("title")}
         </h1>
       </motion.header>
       <div className="card flex w-full h-full justify-center items-center gap-8 flex-wrap">
@@ -90,5 +90,5 @@ export default function Education() {
         ))}
       </div>
     </section>
-  )
+  );
 }

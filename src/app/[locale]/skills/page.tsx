@@ -1,49 +1,49 @@
-'use client'
-import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+"use client";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   SKILLS_CURRENT,
   SKILLS_FUTURE,
   SKILLS_PRODUCTIVITY,
-} from '../../../public/constants/skills-obj'
-import { fadeIn } from '../../../utils/motion'
-import CardSkill from '../components/card-skills/index'
-import { TypingText } from '../components/ui/custom-texts'
+} from "../../../../public/constants/skills-obj";
+import { fadeIn } from "../../../utils/motion";
+import CardSkill from "../../../components/card-skills/index";
+import { TypingText } from "../../../components/ui/custom-texts";
 
 export default function Skills() {
-  const t = useTranslations('Skills')
+  const t = useTranslations("Skills");
   return (
     <section
       id="skills"
       // className="h-heightLessNav   w-full dark:bg-dark-background bg-light-background p-4"
     >
       <motion.header
-        variants={fadeIn('up', 0.5)}
+        variants={fadeIn("up", 0.5)}
         initial="hidden"
-        whileInView={'show'}
+        whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="flex justify-center flex-col items-center mb-12
      "
       >
         <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#FF1BF7] to-[#b249f8]  bg-clip-text animate-gradient ">
-          {t('title')}
+          {t("title")}
         </h1>
         <TypingText
-          title={t('subtitle')}
+          title={t("subtitle")}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
 
       <motion.header
-        variants={fadeIn('up', 0.5)}
+        variants={fadeIn("up", 0.5)}
         initial="hidden"
-        whileInView={'show'}
+        whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="flex justify-center  flex-col items-center
      "
       >
         <TypingText
-          title={t('technologies_use')}
+          title={t("technologies_use")}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -60,15 +60,15 @@ export default function Skills() {
         ))}
       </div>
       <motion.header
-        variants={fadeIn('up', 0.5)}
+        variants={fadeIn("up", 0.5)}
         initial="hidden"
-        whileInView={'show'}
+        whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="flex justify-center  flex-col items-center
      "
       >
         <TypingText
-          title={t('productivity_tools')}
+          title={t("productivity_tools")}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -86,15 +86,15 @@ export default function Skills() {
       </div>
 
       <motion.header
-        variants={fadeIn('up', 0.5)}
+        variants={fadeIn("up", 0.5)}
         initial="hidden"
-        whileInView={'show'}
+        whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="flex justify-center  flex-col items-center
      "
       >
         <TypingText
-          title={t('future_study')}
+          title={t("future_study")}
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -111,5 +111,5 @@ export default function Skills() {
         ))}
       </div>
     </section>
-  )
+  );
 }

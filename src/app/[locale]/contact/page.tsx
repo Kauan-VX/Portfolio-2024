@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
-import { CONTACT } from "../../../public/constants/contact";
+import { CONTACT } from "../../../../public/constants/contact";
 import {
   fadeIn,
   fadeIn2,
   planetVariants,
   staggerContainer,
 } from "../../../utils/motion";
-import { sendEmail } from "../api/send/send-email";
-import CardSkill from "../components/card-skills";
-import { TypingText } from "../components/ui/custom-texts";
+import { sendEmail } from "../../api/send/send-email";
+import CardSkill from "../../../components/card-skills";
+import { TypingText } from "../../../components/ui/custom-texts";
 import { MailIcon } from "./mail";
 
 export default function Connect() {
