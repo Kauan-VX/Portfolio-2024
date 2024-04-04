@@ -1,21 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import CardProject from "../../../components/card-project/card-project";
+import { useEffect, useState } from "react";
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import { useTranslations } from "next-intl";
+import { fadeIn } from "../../../utils/motion";
+import { TypingText } from "../../../components/ui/custom-texts";
+import { translateProject } from "../../../../public/constants/projects-obj";
+import dynamic from "next/dynamic";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "../globals.scss";
 
-// import required modules
-import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
-import { translateProject } from "../../../../public/constants/projects-obj";
-import { fadeIn } from "../../../utils/motion";
-import { TypingText } from "../../../components/ui/custom-texts";
+const CardProject = dynamic(
+  () => import("../../../components/card-project/card-project")
+);
 
 export default function Project() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -26,11 +27,9 @@ export default function Project() {
   useEffect(() => {
     setDomLoaded(true);
   }, []);
+
   return (
-    <section
-      id="projects"
-      // className="h-heightLessNav  w-full  bg-light-background pt-20 dark:bg-dark-background p-4"
-    >
+    <section id="projects">
       <motion.header
         variants={fadeIn("up", 0.5)}
         initial="hidden"
@@ -46,6 +45,7 @@ export default function Project() {
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
+
       <div className="w-full h-full flex justify-center mdMax:hidden">
         {domLoaded && (
           <Swiper
