@@ -4,8 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { useTranslations } from "next-intl";
-import { fadeIn } from "../../../utils/motion";
-import { TypingText } from "../../../components/ui/custom-texts";
 import { translateProject } from "../../../../public/constants/projects-obj";
 import dynamic from "next/dynamic";
 
@@ -13,6 +11,7 @@ import dynamic from "next/dynamic";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "../globals.scss";
+import HeaderTitle from "@/components/header-title";
 
 const CardProject = dynamic(
   () => import("../../../components/card-project/card-project")
@@ -29,22 +28,15 @@ export default function Project() {
   }, []);
 
   return (
-    <section id="projects">
-      <motion.header
-        variants={fadeIn("up", 0.5)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-        className="flex justify-center flex-col items-center"
-      >
-        <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient text-center">
-          {t("title")}
-        </h1>
-        <TypingText
-          title={t("subtitle")}
-          textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
-        />
-      </motion.header>
+    <section
+      id="projects"
+      className="flex justify-center flex-col items-center"
+    >
+      <HeaderTitle
+        translationMain="Projects"
+        translationTitle="title"
+        translationSubtitle="subtitle"
+      />
 
       <div className="w-full h-full flex justify-center mdMax:hidden">
         {domLoaded && (

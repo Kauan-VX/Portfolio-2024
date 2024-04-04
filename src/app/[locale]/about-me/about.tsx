@@ -4,8 +4,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import { fadeIn } from "../../../utils/motion";
-import { TypingText } from "../../../components/ui/custom-texts";
+import HeaderTitle from "@/components/header-title";
 
 export default function About() {
   const [repos, setRepos] = useState([]);
@@ -43,21 +42,12 @@ export default function About() {
       onExit={() => setCounterOn(false)}
     >
       <section>
-        <motion.header
-          variants={fadeIn("up", 0.5)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-          className="flex justify-center flex-col items-center"
-        >
-          <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#00bcf2] to-[#00b294] bg-clip-text animate-gradient">
-            {t("title")}
-          </h1>
-          <TypingText
-            title={t("subtitle")}
-            textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
-          />
-        </motion.header>
+        <HeaderTitle
+          translationMain="About"
+          translationTitle="title"
+          translationSubtitle="subtitle"
+        />
+
         <div className="w-full justify-center items-center my-8">
           <ul className="flex w-full justify-center gap-6 flex-wrap">
             <li className="dark:bg-dark-background-transparent bg-light-background-transparent shadow-3xl rounded-3xl w-40 p-4">

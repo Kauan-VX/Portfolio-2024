@@ -1,19 +1,19 @@
-'use client'
-import { motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
+"use client";
+import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 export const Logo = () => {
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   const icon = {
     hidden: {
       opacity: 1,
       pathLength: 0,
-      fill: theme === 'dark' ? 'rgba(255, 255, 255, 0)' : 'rgba(0, 0, 0, 0)',
+      fill: theme === "dark" ? "rgba(255, 255, 255, 0)" : "rgba(0, 0, 0, 0)",
       transition: {
         default: {
           duration: 2,
-          ease: 'easeInOut',
+          ease: "easeInOut",
           repeat: Infinity,
           repeatDelay: 15,
         },
@@ -28,11 +28,11 @@ export const Logo = () => {
     visible: {
       opacity: 1,
       pathLength: 1,
-      fill: theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
+      fill: theme === "dark" ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)",
       transition: {
         default: {
           duration: 2,
-          ease: 'easeInOut',
+          ease: "easeInOut",
           repeat: Infinity,
           repeatDelay: 15,
         },
@@ -44,13 +44,13 @@ export const Logo = () => {
         },
       },
     },
-  }
+  };
 
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 55 12"
-      className="item  smMax:size-12 p-2 rounded-md"
+      className="item logo smMax:size-12 p-2 rounded-md w-full max-w-40"
     >
       {/* / */}
       <motion.path
@@ -134,5 +134,5 @@ export const Logo = () => {
         animate="visible"
       />
     </motion.svg>
-  )
-}
+  );
+};

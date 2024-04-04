@@ -1,13 +1,13 @@
-'use client'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export interface ISkills {
-  id?: number
-  imageSrc: string
-  link: string
-  skillName: string
-  index?: number
+  id?: number;
+  imageSrc: string;
+  link: string;
+  skillName: string;
+  index?: number;
 }
 
 const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
@@ -27,8 +27,8 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
       opacity: 0,
       y: 100,
     },
-  }
-  const noAnimations = {}
+  };
+  const noAnimations = {};
 
   return (
     <motion.div
@@ -52,7 +52,6 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
           className="w-full"
           src={imageSrc}
           alt="icon-skill"
-          loading="lazy"
           title={skillName}
           width={48}
           height={48}
@@ -60,7 +59,7 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
         {skillName}
       </a>
     </motion.div>
-  )
-}
+  );
+};
 
-export default CardSkill
+export default CardSkill;

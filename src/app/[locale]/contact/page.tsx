@@ -7,15 +7,14 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { CONTACT } from "../../../../public/constants/contact";
 import {
-  fadeIn,
   fadeIn2,
   planetVariants,
   staggerContainer,
 } from "../../../utils/motion";
 import { sendEmail } from "../../api/send/send-email";
 import CardSkill from "../../../components/card-skills";
-import { TypingText } from "../../../components/ui/custom-texts";
 import { MailIcon } from "./mail";
+import HeaderTitle from "@/components/header-title";
 
 export default function Connect() {
   const validationSchema = z.object({
@@ -40,24 +39,12 @@ export default function Connect() {
 
   return (
     <section id="connect">
-      <motion.header
-        variants={fadeIn("up", 0.5)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-        className="flex justify-center flex-col items-center"
-      >
-        <h1
-          className="animate-gradient bg-gradient-to-b from-[#FF6F5B] to-[#FFB457] bg-clip-text
-         title font-bold text-transparent text-center"
-        >
-          {t("title")}
-        </h1>
-        <TypingText
-          title={t("subtitle")}
-          textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
-        />
-      </motion.header>
+      <HeaderTitle
+        translationMain="Contact"
+        translationTitle="title"
+        translationSubtitle="subtitle"
+      />
+
       <div className="flex flex-row items-center justify-center flex-wrap  gap-10 my-10 w-full">
         {CONTACT.map((skill, index) => (
           <CardSkill

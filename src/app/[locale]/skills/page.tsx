@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import {
   SKILLS_CURRENT,
   SKILLS_FUTURE,
@@ -8,31 +7,17 @@ import {
 } from "../../../../public/constants/skills-obj";
 import { fadeIn } from "../../../utils/motion";
 import CardSkill from "../../../components/card-skills/index";
-import { TypingText } from "../../../components/ui/custom-texts";
+import TypingText from "../../../components/ui/custom-texts";
+import HeaderTitle from "@/components/header-title";
 
 export default function Skills() {
-  const t = useTranslations("Skills");
   return (
-    <section
-      id="skills"
-      // className="h-heightLessNav   w-full dark:bg-dark-background bg-light-background p-4"
-    >
-      <motion.header
-        variants={fadeIn("up", 0.5)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-        className="flex justify-center flex-col items-center mb-12
-     "
-      >
-        <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#FF1BF7] to-[#b249f8]  bg-clip-text animate-gradient ">
-          {t("title")}
-        </h1>
-        <TypingText
-          title={t("subtitle")}
-          textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
-        />
-      </motion.header>
+    <section id="skills" className="flex justify-center flex-col items-center ">
+      <HeaderTitle
+        translationMain="Skills"
+        translationTitle="title"
+        translationSubtitle="subtitle"
+      />
 
       <motion.header
         variants={fadeIn("up", 0.5)}
@@ -43,7 +28,8 @@ export default function Skills() {
      "
       >
         <TypingText
-          title={t("technologies_use")}
+          translateMain="Skills"
+          title="technologies_use"
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
@@ -59,6 +45,7 @@ export default function Skills() {
           />
         ))}
       </div>
+
       <motion.header
         variants={fadeIn("up", 0.5)}
         initial="hidden"
@@ -68,11 +55,12 @@ export default function Skills() {
      "
       >
         <TypingText
-          title={t("productivity_tools")}
+          translateMain="Skills"
+          title="productivity_tools"
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>
-      <div className="w-full flex max-w-[80%] m-auto justify-center items-center flex-wrap gap-[1rem] my-10  px-4">
+      <div className="w-full flex  m-auto justify-center items-center flex-wrap gap-[1rem] my-10  px-4">
         {SKILLS_PRODUCTIVITY.map((skill, index) => (
           <CardSkill
             key={skill.id}
@@ -94,7 +82,8 @@ export default function Skills() {
      "
       >
         <TypingText
-          title={t("future_study")}
+          translateMain="Skills"
+          title="future_study"
           textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
         />
       </motion.header>

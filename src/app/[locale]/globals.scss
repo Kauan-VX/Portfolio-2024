@@ -13,6 +13,10 @@
     .item {
       width: 100%;
       overflow: visible;
+
+      &.logo {
+        width: 8rem;
+      }
       // stroke: #0000006e;
       // strokewidth: 1;
       // strokelinejoin: round;

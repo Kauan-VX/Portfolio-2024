@@ -1,32 +1,45 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { TypingText } from "../ui/custom-texts";
+import TypingText from "../ui/custom-texts";
 import { fadeIn } from "@/utils/motion";
 import { useTranslations } from "next-intl";
 
-export interface ISkills {
-  translationMain:
-    | "Navbar"
-    | "Presentation"
-    | "About"
-    | "Education"
-    | "Experience"
-    | "Certificate"
-    | "Skills"
-    | "Projects"
-    | "Contact"
-    | "Constatants";
+export type translationMainType =
+  | "Navbar"
+  | "Presentation"
+  | "About"
+  | "Education"
+  | "Experience"
+  | "Certificate"
+  | "Skills"
+  | "Projects"
+  | "Contact"
+  | "Constatants";
+
+export interface IHeaderProps {
+  translationMain: translationMainType;
   translationTitle: "title";
   translationSubtitle: "subtitle";
 }
 
-const HeaderTitle: React.FC<ISkills> = ({
+const HeaderTitle: React.FC<IHeaderProps> = ({
   translationMain,
   translationTitle,
   translationSubtitle,
 }) => {
   const t = useTranslations(translationMain);
+
+  const styleMap: { [key: string]: string } = {
+    About: "from-[#00bcf2] to-[#00b294]",
+    Education: "from-[#e81123] to-[#fff100]",
+    Experience: "from-[#737dfe] to-[#ffcac9]",
+    Certificate: "from-[#df98fa] to-[#9055ff]",
+    Skills: "from-[#FF1BF7] to-[#b249f8]",
+    Projects: "from-[#5ea2ef] to-[#0072f5]",
+    Contact: "from-[#FF6F5B] to-[#FFB457]",
+  };
+
+  const titleStyle = styleMap[translationMain];
 
   1;
   return (
@@ -35,13 +48,16 @@ const HeaderTitle: React.FC<ISkills> = ({
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.7 }}
-      className="flex justify-center flex-col items-center"
+      className="flex justify-center flex-col items-center my-8"
     >
-      <h1 className="title text-transparent font-bold bg-gradient-to-b from-[#5ea2ef] to-[#0072f5] bg-clip-text animate-gradient text-center">
+      <h1
+        className={`title text-transparent font-bold bg-gradient-to-b  bg-clip-text animate-gradient text-center ${titleStyle}`}
+      >
         {t(translationTitle)}
       </h1>
       <TypingText
-        title={t(translationSubtitle)}
+        translateMain={translationMain}
+        title={translationSubtitle}
         textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
       />
     </motion.header>
