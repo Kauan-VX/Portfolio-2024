@@ -1,9 +1,8 @@
+import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 import { NextUiProvider } from "./NextUiProvider";
-import { Metadata, Viewport } from "next";
-import styles from "./Header.module.css";
 
 const fira_code = localFont({
   src: "../../../public/font/FiraCode-VariableFont_wght.ttf",
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
+  themeColor: "#000",
 };
 
 interface RootLayoutProps {
