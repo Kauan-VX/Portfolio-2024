@@ -1,17 +1,16 @@
 "use client";
-import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
-import { useTranslations } from "next-intl";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { translateProject } from "../../../../public/constants/projects-obj";
-import dynamic from "next/dynamic";
 
 // Import Swiper styles
+import HeaderTitle from "@/components/header-title";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "../globals.scss";
-import HeaderTitle from "@/components/header-title";
 
 const CardProject = dynamic(
   () => import("../../../components/card-project/card-project")
@@ -30,7 +29,7 @@ export default function Project() {
   return (
     <section
       id="projects"
-      className="flex justify-center flex-col items-center"
+      className="flex justify-center flex-col items-center overflow-x-hidden"
     >
       <HeaderTitle
         translationMain="Projects"

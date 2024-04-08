@@ -1,14 +1,14 @@
 "use client";
+import HeaderTitle from "@/components/header-title";
 import { motion } from "framer-motion";
 import {
   SKILLS_CURRENT,
   SKILLS_FUTURE,
   SKILLS_PRODUCTIVITY,
 } from "../../../../public/constants/skills-obj";
-import { fadeIn } from "../../../utils/motion";
 import CardSkill from "../../../components/card-skills/index";
 import TypingText from "../../../components/ui/custom-texts";
-import HeaderTitle from "@/components/header-title";
+import { fadeIn } from "../../../utils/motion";
 
 export default function Skills() {
   return (

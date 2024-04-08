@@ -1,4 +1,5 @@
 "use client";
+import HeaderTitle from "@/components/header-title";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
@@ -6,15 +7,14 @@ import { useTranslations } from "next-intl";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { CONTACT } from "../../../../public/constants/contact";
+import CardSkill from "../../../components/card-skills";
 import {
   fadeIn2,
   planetVariants,
   staggerContainer,
 } from "../../../utils/motion";
 import { sendEmail } from "../../api/send/send-email";
-import CardSkill from "../../../components/card-skills";
 import { MailIcon } from "./mail";
-import HeaderTitle from "@/components/header-title";
 
 export default function Connect() {
   const validationSchema = z.object({
@@ -38,7 +38,7 @@ export default function Connect() {
   const onSubmit: SubmitHandler<Person> = (data) => sendEmail(data);
 
   return (
-    <section id="connect">
+    <section id="connect" className="overflow-x-hidden">
       <HeaderTitle
         translationMain="Contact"
         translationTitle="title"

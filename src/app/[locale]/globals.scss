@@ -9,7 +9,7 @@
 @layer components {
   body {
     scroll-behavior: smooth;
-    @apply h-full w-full m-0 p-0 transition ease-in-out duration-700  dark:bg-dark-background  bg-light-background scroll-smooth overflow-x-hidden;
+    @apply h-full w-full m-0 p-0 transition ease-in-out duration-700  dark:bg-dark-background  bg-light-background scroll-smooth;
     .item {
       width: 100%;
       overflow: visible;
@@ -28,11 +28,9 @@
       width: 100%;
       margin: 0;
       padding: 0;
-      /* Prevents overflow on the x-axis */
-      overflow-x: hidden;
     }
     section {
-      @apply transition ease-in-out duration-700 h-heightLessNav  w-full  bg-light-background  dark:bg-dark-background p-4 overflow-hidden;
+      @apply transition ease-in-out duration-700  w-full  bg-light-background  dark:bg-dark-background p-4;
 
       header {
         .title {

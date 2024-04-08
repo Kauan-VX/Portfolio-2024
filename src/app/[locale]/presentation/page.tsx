@@ -4,10 +4,10 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import { translate } from "../../../../public/constants/words";
-import { scroolAnimation } from "../../../utils/motion";
 import { ScrollIcon } from "../../../components/icons/presentation/scroll";
 import { Spotlight } from "../../../components/ui/Spotlight";
 import { TypewriterEffect } from "../../../components/ui/typewriter-effect";
+import { scroolAnimation } from "../../../utils/motion";
 
 export default function Presentation() {
   const [animation, setAnimation] = useState(false);
@@ -28,9 +28,9 @@ export default function Presentation() {
           <Spotlight className="-top-40 right-0 md:right-0 md:-top-20" />
         )}
 
-        <header className="px-8 smMax:px-0 smMax:pb-24  header-presentation flex w-full justify-center relative z-10 items-center flex-col">
+        <header className="px-8 smMax:px-0   header-presentation flex w-full justify-center relative z-10 items-center flex-col">
           {animation && (
-            <b className=" flex  items-center gap-2 text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient ml-2 md:text-5xl smMax:text-3xl">
+            <b className=" flex  items-center gap-2 text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient">
               <TypewriterEffect words={wordList} />
             </b>
           )}

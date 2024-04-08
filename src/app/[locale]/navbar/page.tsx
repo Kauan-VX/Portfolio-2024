@@ -113,7 +113,7 @@ export default function NavbarComponent() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent className="flex items-center justify-center gap-0  !flex-grow-0">
-        <NavbarItem>
+        <NavbarItem className="smMax:hidden ">
           <DropDownLanguage></DropDownLanguage>
         </NavbarItem>
         <NavbarItem>
@@ -124,7 +124,7 @@ export default function NavbarComponent() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              className="w-full dark:text-dark-text text-light-text font-semibold text-xl"
+              className="w-full dark:text-dark-text text-light-text font-semibold text-xl text-center"
               href={item.link}
               size="lg"
               onClick={() => setIsMenuOpen(false)}
@@ -133,6 +133,9 @@ export default function NavbarComponent() {
             </Link>
           </NavbarMenuItem>
         ))}
+        <NavbarItem>
+          <DropDownLanguage></DropDownLanguage>
+        </NavbarItem>
       </NavbarMenu>
     </Navbar>
   );
