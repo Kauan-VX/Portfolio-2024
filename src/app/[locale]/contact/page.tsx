@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { CONTACT } from "../../../../public/constants/contact";
 import CardSkill from "../../../components/card-skills";
@@ -14,6 +14,7 @@ import {
   staggerContainer,
 } from "../../../utils/motion";
 import { MailIcon } from "./mail";
+import { sendEmail } from "@/app/api/mail/route";
 
 export default function Connect() {
   const validationSchema = z.object({
@@ -34,15 +35,7 @@ export default function Connect() {
     resolver: zodResolver(validationSchema),
   });
 
-  async function onSubmit() {
-    console.log("teste");
-    await fetch("/api/email", {
-      method: "POST",
-      body: JSON.stringify({
-        firstName: `Teste`,
-      }),
-    });
-  }
+  const onSubmit: SubmitHandler<Person> = (data) => sendEmail(data);
 
   return (
     <section id="connect" className="overflow-x-hidden">
