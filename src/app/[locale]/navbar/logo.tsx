@@ -80,6 +80,7 @@ export const Logo = () => {
       />
       {/* < */}
       <motion.path
+        className="fill-purple"
         // className="dark:fill-dark-fill fill-light-fill transition ease-in-out duration-100"
 
         d="M5.39692 3.59385L4.76308 2.59692L0 5.54462V6.72615L4.72 9.66769L5.39692 8.67692L1.18769 6.13538L5.39692 3.59385Z"

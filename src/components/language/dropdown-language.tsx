@@ -17,7 +17,6 @@ const DropDownLanguage = () => {
     const nextLocale = e;
     router.replace(`/${nextLocale}`);
   };
-  console.log(localActive);
 
   const isPortuguese = localActive === "pt";
 

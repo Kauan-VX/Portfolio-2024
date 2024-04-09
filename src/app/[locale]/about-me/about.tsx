@@ -1,10 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
+import HeaderTitle from "@/components/header-title";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import HeaderTitle from "@/components/header-title";
 
 export default function About() {
   const [repos, setRepos] = useState([]);
@@ -37,10 +36,7 @@ export default function About() {
   }, []);
 
   return (
-    <ScrollTrigger
-      onEnter={() => setCounterOn(true)}
-      onExit={() => setCounterOn(false)}
-    >
+    <ScrollTrigger onEnter={() => setCounterOn(true)}>
       <section>
         <HeaderTitle
           translationMain="About"
@@ -55,7 +51,7 @@ export default function About() {
                 <h1 className="font-bold text-4xl text-[#00b294]">
                   {counterOn && (
                     <CountUp
-                      scrollSpyDelay={0}
+                      scrollSpyDelay={1}
                       start={0}
                       end={1}
                       duration={5}

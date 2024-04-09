@@ -1,10 +1,10 @@
 "use client";
 import HeaderTitle from "@/components/header-title";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@nextui-org/react";
+import { Button, Input, Textarea } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { CONTACT } from "../../../../public/constants/contact";
 import CardSkill from "../../../components/card-skills";
@@ -13,7 +13,6 @@ import {
   planetVariants,
   staggerContainer,
 } from "../../../utils/motion";
-import { sendEmail } from "../../api/send/send-email";
 import { MailIcon } from "./mail";
 
 export default function Connect() {
@@ -35,7 +34,15 @@ export default function Connect() {
     resolver: zodResolver(validationSchema),
   });
 
-  const onSubmit: SubmitHandler<Person> = (data) => sendEmail(data);
+  async function onSubmit() {
+    console.log("teste");
+    await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify({
+        firstName: `Teste`,
+      }),
+    });
+  }
 
   return (
     <section id="connect" className="overflow-x-hidden">
@@ -61,7 +68,7 @@ export default function Connect() {
         variants={staggerContainer(1, 2)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
         className="contact mt-28 flex w-full lgMax:flex-col lgMax:justify-center lgMax:items-center"
       >
         <motion.div
@@ -80,24 +87,27 @@ export default function Connect() {
             </h1>
             <form onSubmit={handleSubmit(onSubmit)}>
               <span className="flex w-full items-center justify-between gap-4 mb-4 smMax:flex-col">
-                <input
+                <Input
                   className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl smMax:w-full"
                   type="text"
                   placeholder={t("form.name")}
                   {...register("name")}
+                  errorMessage={errors.name?.message}
                 />
 
-                <input
+                <Input
                   className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl smMax:w-full"
                   type="email"
                   placeholder={t("form.email")}
                   {...register("email")}
+                  errorMessage={errors.email?.message}
                 />
               </span>
-              <textarea
+              <Textarea
                 placeholder={t("form.message")}
                 className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
                 {...register("message")}
+                errorMessage={errors.message?.message}
               />
               <span className="w-full flex justify-end">
                 <Button

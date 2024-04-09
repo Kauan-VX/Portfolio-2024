@@ -1,8 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
-import TypingText from "../ui/custom-texts";
 import { fadeIn } from "@/utils/motion";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import TypingText from "../ui/custom-texts";
 
 export type translationMainType =
   | "Navbar"
@@ -47,7 +47,7 @@ const HeaderTitle: React.FC<IHeaderProps> = ({
       variants={fadeIn("up", 0.5)}
       initial="hidden"
       whileInView={"show"}
-      viewport={{ once: false, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.7 }}
       className="flex justify-center flex-col items-center my-8"
     >
       <h1

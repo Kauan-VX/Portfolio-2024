@@ -23,7 +23,7 @@ export default function Skills() {
         variants={fadeIn("up", 0.5)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
+        viewport={{ once: true, amount: 0.7 }}
         className="flex justify-center  flex-col items-center
      "
       >
@@ -50,7 +50,7 @@ export default function Skills() {
         variants={fadeIn("up", 0.5)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
+        viewport={{ once: true, amount: 0.7 }}
         className="flex justify-center  flex-col items-center
      "
       >
@@ -77,7 +77,7 @@ export default function Skills() {
         variants={fadeIn("up", 0.5)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
+        viewport={{ once: true, amount: 0.7 }}
         className="flex justify-center  flex-col items-center
      "
       >
