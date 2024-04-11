@@ -1,4 +1,5 @@
 import About from "./about-me/about";
+import Contact from "./contact/page";
 import Connect from "./contact/page";
 import Education from "./education/page";
 import NavbarComponent from "./navbar";
@@ -15,7 +16,7 @@ export default function Home() {
       <Education />
       <Skills />
       <Project />
-      <Connect />
+      <Contact />
     </>
   );
 }

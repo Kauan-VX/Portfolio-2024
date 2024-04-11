@@ -14,9 +14,11 @@ import {
   staggerContainer,
 } from "../../../utils/motion";
 import { MailIcon } from "./mail";
-import { sendEmail } from "@/app/api/mail/route";
+import { Resend } from "resend";
+import { EmailTemplate } from "@/components/email-template/email-template";
+import { sendEmail } from "../../../../actions/sendEmail";
 
-export default function Connect() {
+export default function Contact() {
   const validationSchema = z.object({
     name: z.string().min(1, { message: "Firstname is required" }),
     message: z.string().min(1, { message: "Lastname is required" }),
@@ -34,8 +36,6 @@ export default function Connect() {
   } = useForm<Person>({
     resolver: zodResolver(validationSchema),
   });
-
-  const onSubmit: SubmitHandler<Person> = (data) => sendEmail(data);
 
   return (
     <section id="connect" className="overflow-x-hidden">
@@ -78,27 +78,71 @@ export default function Connect() {
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               {t("form.contact_me")}
             </h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <span className="flex w-full items-center justify-between gap-4 mb-4 smMax:flex-col">
-                <Input
-                  className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4 w-[50%] rounded-2xl smMax:w-full"
-                  type="text"
-                  placeholder={t("form.name")}
-                  {...register("name")}
-                  errorMessage={errors.name?.message}
-                />
+            <form
+              className="flex flex-col gap-4"
+              onSubmit={handleSubmit(async (formData) => {
+                console.log(formData);
 
-                <Input
-                  className="dark:bg-dark-background-transparent bg-light-background-transparent outline-none shadow-3xl p-4  w-[50%] rounded-2xl smMax:w-full"
-                  type="email"
-                  placeholder={t("form.email")}
-                  {...register("email")}
-                  errorMessage={errors.email?.message}
-                />
-              </span>
+                const { data, error } = await sendEmail(formData);
+
+                if (error) {
+                  console.error(error);
+                  return;
+                }
+
+                console.log("Email sent successfully!");
+              })}
+            >
+              <Input
+                classNames={{
+                  label: "text-black/50 dark:text-white/90",
+                  input: [
+                    "bg-transparent",
+                    "text-black/90 dark:text-white/90",
+                    "placeholder:text-default-700/50 dark:placeholder:text-white/60",
+                  ],
+                  innerWrapper: "bg-transparent",
+                  inputWrapper: [
+                    "shadow-xl",
+                    "bg-default-200/50",
+                    "dark:bg-default/60",
+                    "backdrop-blur-xl",
+                    "backdrop-saturate-200",
+                    "hover:bg-default-200/70",
+                    "dark:hover:bg-default/70",
+                    "group-data-[focused=true]:bg-default-200/50",
+                    "dark:group-data-[focused=true]:bg-default/60",
+                    "!cursor-text",
+                  ],
+                }}
+                type="email"
+                placeholder={t("form.email")}
+                {...register("email")}
+                errorMessage={errors.email?.message}
+              />
               <Textarea
                 placeholder={t("form.message")}
-                className="w-full dark:bg-dark-background-transparent bg-light-background-transparent  outline-none shadow-3xl p-4 rounded-2xl resize-none"
+                classNames={{
+                  label: "text-black/50 dark:text-white/90",
+                  input: [
+                    "bg-transparent",
+                    "text-black/90 dark:text-white/90",
+                    "placeholder:text-default-700/50 dark:placeholder:text-white/60",
+                  ],
+                  innerWrapper: "bg-yellow-500",
+                  inputWrapper: [
+                    "shadow-xl",
+                    "bg-default-200/50",
+                    "dark:bg-default/60",
+                    "backdrop-blur-xl",
+                    "backdrop-saturate-200",
+                    "hover:bg-default-200/70",
+                    "dark:hover:bg-default/70",
+                    "group-data-[focused=true]:bg-default-200/50",
+                    "dark:group-data-[focused=true]:bg-default/60",
+                    "!cursor-text",
+                  ],
+                }}
                 {...register("message")}
                 errorMessage={errors.message?.message}
               />
