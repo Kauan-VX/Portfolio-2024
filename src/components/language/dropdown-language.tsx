@@ -1,59 +1,22 @@
-import {
-  Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
-import { TranslateIcon } from "../../../public/translate/translate";
+import { BrazilIcon } from "../icons/BrazilIcon";
+import { EnIcon } from "../icons/EnIcon";
 
 const DropDownLanguage = () => {
   const router = useRouter();
-  const localActive = useLocale();
+  const locale = useLocale();
 
-  const onSelectChange = (e: string) => {
-    const nextLocale = e;
+  const toggleLocale = () => {
+    const nextLocale = locale === "pt" ? "en" : "pt";
     router.replace(`/${nextLocale}`);
   };
 
-  const isPortuguese = localActive === "pt";
-
   return (
-    <Dropdown>
-      <DropdownTrigger className="p-2">
-        <Button
-          aria-label={
-            isPortuguese ? "Selecionar inglês" : "Selecionar português"
-          }
-          disableAnimation
-          className="bg-transparent outline-none"
-          type="button"
-        >
-          <TranslateIcon />
-        </Button>
-      </DropdownTrigger>
-      <DropdownMenu aria-label="Static Actions">
-        {isPortuguese ? (
-          <DropdownItem
-            className="flex items-center justify-center gap-2 flex-row "
-            key="en"
-            onClick={() => onSelectChange("en")}
-          >
-            Inglês
-          </DropdownItem>
-        ) : (
-          <DropdownItem
-            className="flex items-center justify-center gap-2 flex-row"
-            key="pt"
-            onClick={() => onSelectChange("pt")}
-          >
-            Português
-          </DropdownItem>
-        )}
-      </DropdownMenu>
-    </Dropdown>
+    <Button className="bg-transparent p-2 outline-none" onClick={toggleLocale}>
+      {locale === "pt" ? <BrazilIcon /> : <EnIcon />}
+    </Button>
   );
 };
 

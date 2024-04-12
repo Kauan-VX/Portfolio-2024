@@ -69,7 +69,6 @@ export default function NavbarComponent() {
               className="text-lg smMax:text-sm"
               color="foreground"
               href="#about"
-              aria-current="page"
             >
               {t("about")}
             </Link>

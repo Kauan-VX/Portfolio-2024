@@ -1,4 +1,5 @@
 "use client";
+import DropDownLanguage from "@/components/language/dropdown-language";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -22,8 +23,11 @@ export default function Presentation() {
     >
       <section
         id="about"
-        className="h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-4"
+        className="h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-4 relative"
       >
+        <span className="absolute">
+          <DropDownLanguage />
+        </span>
         {animation && (
           <Spotlight className="-top-40 right-0 md:right-0 md:-top-20" />
         )}

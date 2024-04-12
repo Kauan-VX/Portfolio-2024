@@ -1,11 +1,10 @@
 "use client";
 import HeaderTitle from "@/components/header-title";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import { sendEmail } from "../../../../actions/sendEmail";
 import { CONTACT } from "../../../../public/constants/contact";
 import CardSkill from "../../../components/card-skills";
 import {
@@ -14,9 +13,6 @@ import {
   staggerContainer,
 } from "../../../utils/motion";
 import { MailIcon } from "./mail";
-import { Resend } from "resend";
-import { EmailTemplate } from "@/components/email-template/email-template";
-import { sendEmail } from "../../../../actions/sendEmail";
 
 export default function Contact() {
   const validationSchema = z.object({
@@ -29,13 +25,28 @@ export default function Contact() {
   type Person = z.infer<typeof validationSchema>;
   const t = useTranslations("Contact");
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Person>({
-    resolver: zodResolver(validationSchema),
-  });
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm<Person>({
+  //   resolver: zodResolver(validationSchema),
+  // });
+
+  // async function send() {
+  //   "use server";
+  //   const resend = new Resend("re_ffh5Hb2K_BJEvjAfQvYggdHhZgAuLSvnG");
+
+  //   const { data } = await resend.emails.send({
+  //     from: "kauanvieiraxavierdev@gmail.com",
+  //     to: "kauanvieiraxavierk@gmail.com",
+  //     subject: "Hello",
+  //     react: React.createElement(EmailTemplate, {
+  //       firstName: "a",
+  //     }),
+  //   });
+  //   console.log(data);
+  // }
 
   return (
     <section id="connect" className="overflow-x-hidden">
@@ -78,21 +89,7 @@ export default function Contact() {
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               {t("form.contact_me")}
             </h1>
-            <form
-              className="flex flex-col gap-4"
-              onSubmit={handleSubmit(async (formData) => {
-                console.log(formData);
-
-                const { data, error } = await sendEmail(formData);
-
-                if (error) {
-                  console.error(error);
-                  return;
-                }
-
-                console.log("Email sent successfully!");
-              })}
-            >
+            <form className="flex flex-col gap-4" action={sendEmail}>
               <Input
                 classNames={{
                   label: "text-black/50 dark:text-white/90",
@@ -117,8 +114,8 @@ export default function Contact() {
                 }}
                 type="email"
                 placeholder={t("form.email")}
-                {...register("email")}
-                errorMessage={errors.email?.message}
+                // {...register("email")}
+                // errorMessage={errors.email?.message}
               />
               <Textarea
                 placeholder={t("form.message")}
@@ -143,8 +140,8 @@ export default function Contact() {
                     "!cursor-text",
                   ],
                 }}
-                {...register("message")}
-                errorMessage={errors.message?.message}
+                // {...register("message")}
+                // errorMessage={errors.message?.message}
               />
               <span className="w-full flex justify-end">
                 <Button

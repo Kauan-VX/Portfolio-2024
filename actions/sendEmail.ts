@@ -12,7 +12,7 @@ interface IForm {
   name: string;
 }
 
-export const sendEmail = async (formData: IForm) => {
+export const sendEmail = async (formData: any) => {
   const senderEmail = formData.email;
   const message = formData.message;
   const name = formData.name;
@@ -32,10 +32,9 @@ export const sendEmail = async (formData: IForm) => {
   let data;
   try {
     resend.emails.send({
-      from: `${name} <${senderEmail}>`,
-      to: "kauanvieiraxavierdev@gmail.com",
-      reply_to: senderEmail,
-      subject: message,
+      from: "kauanvieiraxavierdev@gmail.com",
+      to: "kauanvieiraxavierk@gmail.com",
+      subject: "teste",
       react: React.createElement(EmailTemplate, {
         firstName: name,
       }),
