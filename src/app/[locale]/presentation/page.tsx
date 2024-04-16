@@ -25,7 +25,7 @@ export default function Presentation() {
         id="about"
         className="h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-4 relative"
       >
-        <span className="absolute">
+        <span className="absolute top-0 right-0">
           <DropDownLanguage />
         </span>
         {animation && (

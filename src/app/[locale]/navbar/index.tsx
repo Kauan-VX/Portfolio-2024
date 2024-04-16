@@ -16,7 +16,6 @@ import ThemeSwitcher from "../../../components/theme/theme-switcher";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
-import DropDownLanguage from "../../../components/language/dropdown-language";
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -112,9 +111,6 @@ export default function NavbarComponent() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent className="flex items-center justify-center gap-0  !flex-grow-0">
-        <NavbarItem className="smMax:hidden ">
-          <DropDownLanguage></DropDownLanguage>
-        </NavbarItem>
         <NavbarItem>
           <ThemeSwitcher></ThemeSwitcher>
         </NavbarItem>
@@ -132,9 +128,6 @@ export default function NavbarComponent() {
             </Link>
           </NavbarMenuItem>
         ))}
-        <NavbarItem>
-          <DropDownLanguage></DropDownLanguage>
-        </NavbarItem>
       </NavbarMenu>
     </Navbar>
   );
