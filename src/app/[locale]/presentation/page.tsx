@@ -39,7 +39,7 @@ export default function Presentation() {
             </b>
           )}
           <h2 className="dark:text-dark-text text-light-text text-center">
-            <strong className="md:text-5xl smMax:text-3xl ">
+            <strong className="text-5xl md:text-5xl smMax:text-4xl ">
               {t("developer")}
             </strong>
           </h2>

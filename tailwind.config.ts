@@ -56,9 +56,11 @@ const config: Config = {
         },
       },
       screens: {
+        navbarCollapseMin: { min: "820px" },
         phoneMax: { max: "500px" },
         smMax: { max: "640px" },
         mdMax: { max: "768px" },
+        navbarCollapseMax: { max: "820px" },
         lgMax: { max: "1024px" },
       },
       maxWidth: {

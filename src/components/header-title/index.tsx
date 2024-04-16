@@ -58,7 +58,7 @@ const HeaderTitle: React.FC<IHeaderProps> = ({
       <TypingText
         translateMain={translationMain}
         title={translationSubtitle}
-        textStyles="dark:text-dark-text text-light-text font-semibold text-2xl text-center"
+        textStyles="dark:text-dark-text text-light-text font-semibold text-2xl phoneMax:text-[1rem] text-center"
       />
     </motion.header>
   );

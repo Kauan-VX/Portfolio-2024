@@ -34,7 +34,7 @@
 
       header {
         .title {
-          @apply text-6xl phoneMax:text-4xl;
+          @apply text-5xl phoneMax:text-[2rem];
         }
       }
     }

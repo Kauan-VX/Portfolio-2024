@@ -43,17 +43,17 @@ export default function NavbarComponent() {
         <NavbarItem className="z-10 size-10">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden"
+            className="navbarCollapseMin:hidden"
           />
         </NavbarItem>
         <NavbarItem>
-          <NavbarBrand className="smMax:hidden  ">
+          <NavbarBrand className="navbarCollapseMax:hidden ">
             <Logo />
           </NavbarBrand>
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden w-full !justify-center">
+      <NavbarContent className="navbarCollapseMin:hidden w-full !justify-center">
         <NavbarItem>
           <NavbarBrand className="!justify-center">
             <Logo />
@@ -61,11 +61,14 @@ export default function NavbarComponent() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent
+        className="hidden sm:flex navbarCollapseMax:hidden gap-4"
+        justify="center"
+      >
         <NavbarItem isActive>
           <motion.div>
             <Link
-              className="text-lg smMax:text-sm"
+              className="text-lg navbarCollapseMax:text-sm"
               color="foreground"
               href="#about"
             >
@@ -75,7 +78,7 @@ export default function NavbarComponent() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-lg smMax:text-sm"
+            className="text-lg navbarCollapseMax:text-sm"
             color="foreground"
             href="#education"
           >
@@ -84,7 +87,7 @@ export default function NavbarComponent() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-lg smMax:text-sm"
+            className="text-lg navbarCollapseMax:text-sm"
             color="foreground"
             href="#skills"
           >
@@ -93,7 +96,7 @@ export default function NavbarComponent() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-lg smMax:text-sm"
+            className="text-lg navbarCollapseMax:text-sm"
             color="foreground"
             href="#projects"
           >
@@ -102,7 +105,7 @@ export default function NavbarComponent() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="text-lg smMax:text-sm"
+            className="text-lg navbarCollapseMax:text-sm"
             color="foreground"
             href="#conect"
           >
