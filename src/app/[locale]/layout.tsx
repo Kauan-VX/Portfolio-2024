@@ -1,8 +1,9 @@
+import BaseLayout from "@/components/base-layout";
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
-import { NextUiProvider } from "./NextUiProvider";
+import { Provider } from "../provider";
 
 const fira_code = localFont({
   src: "../../../public/font/FiraCode-VariableFont_wght.ttf",
@@ -39,9 +40,9 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${fira_code.className}`}>
-        <NextUiProvider messages={messages} locale={locale}>
-          {children}
-        </NextUiProvider>
+        <Provider messages={messages} locale={locale}>
+          <BaseLayout>{children}</BaseLayout>
+        </Provider>
       </body>
     </html>
   );

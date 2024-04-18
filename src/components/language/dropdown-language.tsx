@@ -10,7 +10,7 @@ const DropDownLanguage = () => {
 
   const toggleLocale = () => {
     const nextLocale = locale === "pt" ? "en" : "pt";
-    router.replace(`/${nextLocale}`);
+    router.push(`/${nextLocale}`, { scroll: false });
   };
 
   return (
