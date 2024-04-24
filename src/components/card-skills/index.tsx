@@ -1,6 +1,6 @@
 "use client";
+import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export interface ISkills {
   id?: number;
@@ -49,6 +49,7 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
         rel="noreferrer"
       >
         <Image
+          isBlurred
           className="w-full"
           src={imageSrc}
           alt="icon-skill"
