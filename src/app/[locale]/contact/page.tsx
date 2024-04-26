@@ -1,10 +1,13 @@
 "use client";
 import HeaderTitle from "@/components/header-title";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { z } from "zod";
-import { sendEmail } from "../../../../actions/sendEmail";
 import { CONTACT } from "../../../../public/constants/contact";
 import CardSkill from "../../../components/card-skills";
 import {
@@ -15,8 +18,10 @@ import {
 import { MailIcon } from "./mail";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const notify = () => toast("Here is your toast.");
+
   const validationSchema = z.object({
-    name: z.string().min(1, { message: "Firstname is required" }),
     message: z.string().min(1, { message: "Lastname is required" }),
     email: z.string().min(1, { message: "Email is required" }).email({
       message: "Must be a valid email",
@@ -25,28 +30,43 @@ export default function Contact() {
   type Person = z.infer<typeof validationSchema>;
   const t = useTranslations("Contact");
 
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm<Person>({
-  //   resolver: zodResolver(validationSchema),
-  // });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Person>({
+    resolver: zodResolver(validationSchema),
+  });
 
-  // async function send() {
-  //   "use server";
-  //   const resend = new Resend("re_ffh5Hb2K_BJEvjAfQvYggdHhZgAuLSvnG");
+  const resend = async (data: Person, event?: any) => {
+    setLoading(true);
+    event?.preventDefault();
+    const email = "kauanvieiraxavierk@gmail.com";
+    try {
+      const res = await fetch("/api/mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
 
-  //   const { data } = await resend.emails.send({
-  //     from: "kauanvieiraxavierdev@gmail.com",
-  //     to: "kauanvieiraxavierk@gmail.com",
-  //     subject: "Hello",
-  //     react: React.createElement(EmailTemplate, {
-  //       firstName: "a",
-  //     }),
-  //   });
-  //   console.log(data);
-  // }
+      if (data) {
+        setLoading(false);
+        notify();
+      } else {
+        console.error(data);
+      }
+    } catch (error) {
+      notify();
+    }
+  };
+
+  const onSubmit: SubmitHandler<Person> = (data) => {
+    // Chamada da função resend
+    resend(data);
+  };
 
   return (
     <section id="connect" className="overflow-x-hidden">
@@ -89,7 +109,10 @@ export default function Contact() {
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               {t("form.contact_me")}
             </h1>
-            <form className="flex flex-col gap-4" action={sendEmail}>
+            <form
+              className="flex flex-col gap-4"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <Input
                 classNames={{
                   label: "text-black/50 dark:text-white/90",
@@ -114,8 +137,8 @@ export default function Contact() {
                 }}
                 type="email"
                 placeholder={t("form.email")}
-                // {...register("email")}
-                // errorMessage={errors.email?.message}
+                {...register("email")}
+                errorMessage={errors.email?.message}
               />
               <Textarea
                 placeholder={t("form.message")}
@@ -140,14 +163,15 @@ export default function Contact() {
                     "!cursor-text",
                   ],
                 }}
-                // {...register("message")}
-                // errorMessage={errors.message?.message}
+                {...register("message")}
+                errorMessage={errors.message?.message}
               />
               <span className="w-full flex justify-end">
                 <Button
                   type="submit"
                   className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none"
                   variant="shadow"
+                  isLoading={loading}
                 >
                   {t("form.submit")}
                 </Button>

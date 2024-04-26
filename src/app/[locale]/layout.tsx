@@ -1,4 +1,4 @@
-import BaseLayout from "@/components/base-layout";
+import Home from "@/app/[locale]/page";
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
@@ -41,7 +41,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={`${fira_code.className}`}>
         <Provider messages={messages} locale={locale}>
-          <BaseLayout>{children}</BaseLayout>
+          <Home />
         </Provider>
       </body>
     </html>
