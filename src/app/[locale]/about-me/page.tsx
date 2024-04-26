@@ -1,9 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import HeaderTitle from "@/components/header-title";
 import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import HeaderTitle from "@/components/header-title";
 
 export default function About() {
   const [repos, setRepos] = useState([]);
@@ -31,17 +30,17 @@ export default function About() {
   const age = currentYear - 2003;
   const timeExperience = currentYear - 2023;
   return (
-    <ScrollTrigger
-      onEnter={() => setCounterOn(true)}
-      onExit={() => setCounterOn(false)}
-    >
-      <section className="h-heightLessNav  w-full dark:bg-dark-background bg-light-background p-4">
-        <HeaderTitle
-          translationMain="About"
-          translationTitle="title"
-          translationSubtitle="subtitle"
-        />
+    <section className="h-heightLessNav  w-full dark:bg-dark-background bg-light-background p-4">
+      <HeaderTitle
+        translationMain="About"
+        translationTitle="title"
+        translationSubtitle="subtitle"
+      />
 
+      <ScrollTrigger
+        onEnter={() => setCounterOn(true)}
+        onExit={() => setCounterOn(false)}
+      >
         <div className="w-full justify-center items-center my-8">
           <ul className="flex w-full justify-center gap-6 flex-wrap">
             <li className="dark:bg-dark-background-transparent bg-light-background-transparent shadow-3xl rounded-3xl w-40 p-4">
@@ -77,22 +76,22 @@ export default function About() {
             </li>
           </ul>
         </div>
-        <div className="flex w-full max-w-[60rem] justify-center my-12 mx-auto dark:bg-dark-background-transparent bg-light-background-transparent shadow-3xl p-8 rounded-3xl">
-          <p className=" text-lg">
-            Com {age} anos de idade e uma paixão ardente pela criação de
-            experiências visuais envolventes, sou um desenvolvedor Front-end
-            dedicado com um ano de experiência sólida. Busco incessantemente
-            aprimorar minhas habilidades, sempre mantendo-me atualizado com as
-            últimas tendências e tecnologias do mundo do desenvolvimento web.
-            Meu objetivo final é transcender para o universo Full Stack,
-            combinando minha expertise em design e interatividade para construir
-            soluções web abrangentes e inovadoras. Ao navegar pelo meu
-            portfolio, você encontrará um compilado de projetos que refletem
-            minha paixão pela programação e meu comprometimento em oferecer
-            experiências digitais excepcionais
-          </p>
-        </div>
-      </section>
-    </ScrollTrigger>
+      </ScrollTrigger>
+      <div className="flex w-full max-w-[60rem] justify-center my-12 mx-auto dark:bg-dark-background-transparent bg-light-background-transparent shadow-3xl p-8 rounded-3xl">
+        <p className=" text-lg">
+          Com {age} anos de idade e uma paixão ardente pela criação de
+          experiências visuais envolventes, sou um desenvolvedor Front-end
+          dedicado com um ano de experiência sólida. Busco incessantemente
+          aprimorar minhas habilidades, sempre mantendo-me atualizado com as
+          últimas tendências e tecnologias do mundo do desenvolvimento web. Meu
+          objetivo final é transcender para o universo Full Stack, combinando
+          minha expertise em design e interatividade para construir soluções web
+          abrangentes e inovadoras. Ao navegar pelo meu portfolio, você
+          encontrará um compilado de projetos que refletem minha paixão pela
+          programação e meu comprometimento em oferecer experiências digitais
+          excepcionais
+        </p>
+      </div>
+    </section>
   );
 }

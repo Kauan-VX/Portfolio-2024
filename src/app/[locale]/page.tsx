@@ -1,10 +1,10 @@
-import About from "@/app/[locale]/about-me/about";
-import Contact from "@/app/[locale]/contact/page";
-import Education from "@/app/[locale]/education/page";
-import NavbarComponent from "@/app/[locale]/navbar";
-import Presentation from "@/app/[locale]/presentation/page";
-import Project from "@/app/[locale]/project/page";
-import Skills from "@/app/[locale]/skills/page";
+import About from "./about-me/page";
+import Contact from "./contact/page";
+import Education from "./education/page";
+import NavbarComponent from "./navbar";
+import Presentation from "./presentation/page";
+import Project from "./project/page";
+import Skills from "./skills/page";
 
 export default function Home() {
   return (

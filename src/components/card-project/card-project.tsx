@@ -1,19 +1,19 @@
-import dynamic from 'next/dynamic'
-import Image from 'next/image'
-import CardSkill, { ISkills } from '../card-skills'
+import { Image } from "@nextui-org/react";
+import dynamic from "next/dynamic";
+import CardSkill, { ISkills } from "../card-skills";
 
 export interface IProject {
-  link: string
-  image: string
-  title: string
-  description: string
-  stacks: ISkills[]
+  link: string;
+  image: string;
+  title: string;
+  description: string;
+  stacks: ISkills[];
 }
 
 const Meteors = dynamic(
-  () => import('../ui/meteors').then((module) => module.Meteors),
-  { ssr: false },
-)
+  () => import("../ui/meteors").then((module) => module.Meteors),
+  { ssr: false }
+);
 
 const CardProject = ({ image, title, description, stacks }: IProject) => {
   return (
@@ -21,6 +21,7 @@ const CardProject = ({ image, title, description, stacks }: IProject) => {
       <div className="transition ease-in-out duration-700 absolute inset-0 h-full  w-full bg-gradient-to-r from-blue-500 dark:to-dark-meteors to-light-meteors transform scale-[0.80] dark:bg-dark-meteors bg-light-meteors rounded-full blur-3xl" />
       <div className="transition ease-in-out duration-700 relative shadow-xl mdMax:min-h-[600px]  dark:bg-dark-background bg-light-background border border-slate-200 dark:border-gray-800 px-4 py-8   overflow-hidden rounded-2xl flex flex-col justify-between items-start">
         <Image
+          isBlurred
           src={image}
           width={1000}
           height={1000}
@@ -38,8 +39,8 @@ const CardProject = ({ image, title, description, stacks }: IProject) => {
 
         <div className="flex flex-col mt-2 gap-4">
           <h2 className="dark:text-dark-text text-light-text font-semibold text-xl">
-            {' '}
-            Tecnologias usadas:{' '}
+            {" "}
+            Tecnologias usadas:{" "}
           </h2>
           <div className="w-full  m-auto flex justify-start items-center flex-wrap gap-[1rem] ">
             {stacks.map((stack, index) => (
@@ -60,6 +61,6 @@ const CardProject = ({ image, title, description, stacks }: IProject) => {
         </div>
       </div>
     </div>
-  )
-}
-export default CardProject
+  );
+};
+export default CardProject;
