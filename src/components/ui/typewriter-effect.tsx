@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "@/utils/cn";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
-import { cn } from "../../utils/cn";
 
 export const TypewriterEffect = ({
   words,
@@ -33,6 +33,7 @@ export const TypewriterEffect = ({
         {
           display: "inline-block",
           opacity: 1,
+          width: "fit-content",
         },
         {
           duration: 0.3,
@@ -41,7 +42,7 @@ export const TypewriterEffect = ({
         }
       );
     }
-  }, [animate, isInView]);
+  }, [isInView]);
 
   const renderWords = () => {
     return (
@@ -51,11 +52,6 @@ export const TypewriterEffect = ({
             <div key={`word-${idx}`} className="inline-block">
               {word.text.map((char, index) => (
                 <motion.span
-                  transition={{
-                    duration: 0.8,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                  }}
                   initial={{}}
                   key={`char-${index}`}
                   className={cn(
@@ -94,7 +90,7 @@ export const TypewriterEffect = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-4 z-30 md:h-6 lg:h-10 bg-blue-500",
+          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-pink",
           cursorClassName
         )}
       ></motion.span>
@@ -155,7 +151,6 @@ export const TypewriterEffectSmooth = ({
         }}
         transition={{
           duration: 2,
-          repeat: Infinity,
           ease: "linear",
           delay: 1,
         }}
@@ -178,11 +173,12 @@ export const TypewriterEffectSmooth = ({
         }}
         transition={{
           duration: 0.8,
+
           repeat: Infinity,
           repeatType: "reverse",
         }}
         className={cn(
-          "block rounded-sm w-[4px]  h-4 sm:h-6 xl:h-12 bg-blue-500",
+          "block rounded-sm w-[4px]  h-4 sm:h-6 xl:h-12 bg-pink",
           cursorClassName
         )}
       ></motion.span>
