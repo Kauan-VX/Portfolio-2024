@@ -1,6 +1,6 @@
 "use client";
 import { NextUIProvider } from "@nextui-org/react";
-import { NextIntlClientProvider } from "next-intl";
+import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 export const NextUiProvider = ({
@@ -10,7 +10,7 @@ export const NextUiProvider = ({
 }: {
   children: React.ReactNode;
   locale: string;
-  messages: any;
+  messages: AbstractIntlMessages;
 }) => {
   const timeZone = "America/Brazil";
   return (

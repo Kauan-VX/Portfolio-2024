@@ -16,7 +16,6 @@ export default function About() {
         );
         const data = await response.json();
         setRepos(data);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching repos:", error);
       }

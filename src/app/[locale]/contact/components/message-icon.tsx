@@ -1,4 +1,6 @@
-export const MessageIconInput = (props: any) => (
+import { IconInputProps } from "@/models/icons-input";
+
+export const MessageIconInput = (props: IconInputProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"

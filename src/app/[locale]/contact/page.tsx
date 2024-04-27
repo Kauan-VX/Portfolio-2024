@@ -18,11 +18,13 @@ import {
 import { MailIcon } from "./components/mail";
 import { MailIconInput } from "./components/mail-icon";
 import { MessageIconInput } from "./components/message-icon";
+import { NameIconInput } from "./components/name-icon";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
 
   const validationSchema = z.object({
+    name: z.string().min(1, { message: "Name é obrigatório" }),
     message: z.string().min(1, { message: "Lastname is required" }),
     email: z.string().min(1, { message: "Email is required" }).email({
       message: "Must be a valid email",
@@ -40,17 +42,18 @@ export default function Contact() {
     resolver: zodResolver(validationSchema),
   });
 
-  const resend = async (data: Person, event?: any) => {
+  const resend = async (form: Person, event?: Event) => {
     setLoading(true);
     event?.preventDefault();
     const email = "kauanvieiraxavierk@gmail.com";
     try {
       const res = await fetch("/api/mail", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
       });
       const data = await res.json();
 
@@ -61,18 +64,17 @@ export default function Contact() {
       } else {
         toast.error("Ops, tivemos um erro");
       }
-    } catch (error: any) {
+    } catch (error) {
       toast.error("Nem chegamos a tentar enviar");
     }
   };
 
   const onSubmit: SubmitHandler<Person> = (data) => {
-    // Chamada da função resend
     resend(data);
   };
 
   return (
-    <section id="connect" className="overflow-x-hidden">
+    <section id="connect" className="overflow-x-hidden p-4">
       <HeaderTitle
         translationMain="Contact"
         translationTitle="title"
@@ -108,7 +110,7 @@ export default function Contact() {
           variants={fadeIn2("left", "tween", 0.2, 1)}
           className="right flex w-1/2 justify-center p-8 lgMax:w-full lgMax:p-0"
         >
-          <div className="card-mail w-full max-w-[40rem] h-full max-h-[300px] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent flex flex-col">
+          <div className="card-mail w-full max-w-[40rem] h-full  rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent flex flex-col">
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               {t("form.contact_me")}
             </h1>
@@ -116,6 +118,16 @@ export default function Contact() {
               className="flex flex-col h-full gap-4"
               onSubmit={handleSubmit(onSubmit)}
             >
+              <Input
+                type="name"
+                placeholder={t("form.name")}
+                {...register("name")}
+                errorMessage={errors.name?.message}
+                startContent={
+                  <NameIconInput className="text-2xl text-default-400 pointer-events-none flex-shrink-0 mr-1" />
+                }
+              />
+
               <Input
                 type="email"
                 placeholder={t("form.email")}

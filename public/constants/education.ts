@@ -2,7 +2,7 @@
 
 import { IEducation } from "../../src/components/card-education";
 
-export const translateEducation = (t: any): IEducation[] => {
+export const translateEducation = (t: Function): IEducation[] => {
   return [
     {
       initial_date: t("education.computer_science.initial_date"),

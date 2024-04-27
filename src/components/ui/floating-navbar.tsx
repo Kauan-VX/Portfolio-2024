@@ -62,23 +62,24 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 phoneMax:space-x-0 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 "
-            )}
-          >
-            {/* Remova a classe sm:hidden para manter os ícones visíveis em telas pequenas */}
-            <span>{navItem.icon}</span>
-            <span className=" sm:block text-sm">{navItem.name}</span>
-          </Link>
-        ))}
-        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-1 py-1 rounded-full">
+        {navItems.map(
+          (navItem: { name: string; link: string }, idx: number) => (
+            <Link
+              key={idx}
+              href={navItem.link}
+              className={cn(
+                "relative dark:text-neutral-50 items-center flex space-x-1 phoneMax:space-x-0 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 "
+              )}
+            >
+              {/* Remova a classe sm:hidden para manter os ícones visíveis em telas pequenas */}
+              <span className=" sm:block text-sm">{navItem.name}</span>
+            </Link>
+          )
+        )}
+        <div className="floatNavbar:mt-2 floatNavbar:ml-[-1rem]! border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-1 py-1 rounded-full">
           <ThemeSwitcher />
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px  bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button>
+        </div>
       </motion.div>
     </AnimatePresence>
   );

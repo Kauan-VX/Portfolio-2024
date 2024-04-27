@@ -4,7 +4,7 @@ interface IWord {
   className?: string;
 }
 
-export const translate = (t: any): IWord[] => {
+export const translate = (t: Function): IWord[] => {
   return [
     {
       text: t("words.hello"),

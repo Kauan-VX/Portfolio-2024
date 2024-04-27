@@ -2,7 +2,7 @@
 
 import { IExperience } from "../../src/components/card-experience";
 
-export const translateExperience = (t: any): IExperience[] => {
+export const translateExperience = (t: Function): IExperience[] => {
   return [
     {
       company_name: `Noclaf`,

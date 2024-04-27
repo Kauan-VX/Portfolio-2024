@@ -1,14 +1,12 @@
 "use client";
-import { motion } from "framer-motion";
+import HeaderTitle from "@/components/header-title";
 import { useTranslations } from "next-intl";
 import { translateCertificate } from "../../../../public/constants/certificate";
 import { translateEducation } from "../../../../public/constants/education";
 import { translateExperience } from "../../../../public/constants/experience";
-import { fadeIn } from "../../../utils/motion";
 import CardCertificate from "../../../components/card-certificate";
 import CardEducation from "../../../components/card-education";
 import CardExperience from "../../../components/card-experience";
-import HeaderTitle from "@/components/header-title";
 
 export default function Education() {
   const ed = useTranslations("Education");
@@ -20,7 +18,7 @@ export default function Education() {
   const translateEducationList = translateEducation(constants);
 
   return (
-    <section id="education">
+    <section id="education" className="p-4">
       <HeaderTitle
         translationMain="Education"
         translationTitle="title"

@@ -7,64 +7,40 @@
 }
 
 @layer components {
-  body {
+  html {
     scroll-behavior: smooth;
-    @apply h-full w-full m-0 p-0 transition ease-in-out duration-700  dark:bg-dark-background  bg-light-background scroll-smooth;
-    .item {
-      width: 100%;
-      overflow: visible;
-
-      &.logo {
-        width: 8rem;
+    body {
+      #root {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
       }
-      // stroke: #0000006e;
-      // strokewidth: 1;
-      // strokelinejoin: round;
-      // strokelinecap: round;
-      @apply dark:stroke-[#ffffff4b] light:stroke-[#0000006e];
-    }
-    #root {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    section {
-      @apply transition ease-in-out duration-700  w-full  bg-light-background  dark:bg-dark-background p-4;
+      .item {
+        width: 100%;
+        overflow: visible;
 
-      header {
-        .title {
-          @apply text-5xl phoneMax:text-[2rem];
+        &.logo {
+          width: 8rem;
+        }
+        // stroke: #0000006e;
+        // strokewidth: 1;
+        // strokelinejoin: round;
+        // strokelinecap: round;
+        @apply dark:stroke-[#ffffff4b] light:stroke-[#0000006e];
+      }
+
+      section {
+        header {
+          .title {
+            @apply text-5xl phoneMax:text-[2rem];
+          }
         }
       }
-    }
 
-    .animation-text {
-      @apply transition ease-in-out duration-700;
-    }
-
-    svg {
-      .animation-100 {
-        @apply transition ease-in-out duration-1000 delay-100;
-      }
-
-      .animation-300 {
-        @apply transition ease-in-out duration-1000 delay-300;
-      }
-
-      .animation-500 {
-        @apply transition ease-in-out duration-1000 delay-500;
+      .icon-skill {
+        @apply w-full max-w-6;
       }
     }
-  }
-  .link-skills {
-    @apply flex items-center rounded-3xl py-[0.5rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl;
-    Image {
-      @apply w-full max-w-[48px];
-    }
-  }
-
-  .icon-skill {
-    @apply w-full max-w-6;
   }
 }

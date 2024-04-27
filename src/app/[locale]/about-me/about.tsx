@@ -37,7 +37,10 @@ export default function About() {
 
   return (
     <ScrollTrigger onEnter={() => setCounterOn(true)}>
-      <section>
+      <section
+        id="about"
+        className="h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-4 relative"
+      >
         <HeaderTitle
           translationMain="About"
           translationTitle="title"

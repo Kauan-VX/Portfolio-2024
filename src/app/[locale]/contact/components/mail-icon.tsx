@@ -1,4 +1,6 @@
-export const MailIconInput = (props: any) => (
+import { IconInputProps } from "@/models/icons-input";
+
+export const MailIconInput = (props: IconInputProps) => (
   <svg
     aria-hidden="true"
     fill="none"

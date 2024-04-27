@@ -29,7 +29,7 @@ export default function Project() {
   return (
     <section
       id="projects"
-      className="flex justify-center flex-col items-center overflow-x-hidden"
+      className="flex justify-center flex-col items-center overflow-x-hidden p-4"
     >
       <HeaderTitle
         translationMain="Projects"

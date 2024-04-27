@@ -43,14 +43,14 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
       custom={index}
     >
       <a
-        className="link-skills whitespace-nowrap"
+        className="flex items-center rounded-3xl py-[0.5rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl whitespace-nowrap"
         target="_blank"
         href={link}
         rel="noreferrer"
       >
         <Image
           isBlurred
-          className="w-full"
+          className=" w-full max-w-[48px]"
           src={imageSrc}
           alt="icon-skill"
           title={skillName}

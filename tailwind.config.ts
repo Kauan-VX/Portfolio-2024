@@ -57,8 +57,8 @@ const config: Config = {
       },
       screens: {
         navbarCollapseMin: { min: "820px" },
+        floatNavbar: { max: "474px" },
         phoneMax: { max: "500px" },
-        floatNavbar: { min: "525px" },
         smMax: { max: "640px" },
         mdMax: { max: "768px" },
         navbarCollapseMax: { max: "820px" },
