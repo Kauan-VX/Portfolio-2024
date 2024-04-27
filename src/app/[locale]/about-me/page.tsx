@@ -1,12 +1,20 @@
 "use client";
 import HeaderTitle from "@/components/header-title";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
+import { translateAboutMe } from "../../../../public/constants/about";
 
 export default function About() {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const age = currentYear - 2003;
+  const timeExperience = currentYear - 2023;
   const [repos, setRepos] = useState([]);
   const [counterOn, setCounterOn] = useState(false);
+  const t = useTranslations("About");
+  const aboutMe = translateAboutMe(t, age);
 
   useEffect(() => {
     async function fetchRepos() {
@@ -24,10 +32,6 @@ export default function About() {
     fetchRepos();
   }, []); // Empty dependency array ensures this effect runs only once, similar to componentDidMount
 
-  const currentDate = new Date();
-  const currentYear = currentDate.getFullYear();
-  const age = currentYear - 2003;
-  const timeExperience = currentYear - 2023;
   return (
     <section className="h-heightLessNav  w-full dark:bg-dark-background bg-light-background p-4">
       <HeaderTitle
@@ -77,19 +81,7 @@ export default function About() {
         </div>
       </ScrollTrigger>
       <div className="flex w-full max-w-[60rem] justify-center my-12 mx-auto dark:bg-dark-background-transparent bg-light-background-transparent shadow-3xl p-8 rounded-3xl">
-        <p className=" text-lg">
-          Com {age} anos de idade e uma paixão ardente pela criação de
-          experiências visuais envolventes, sou um desenvolvedor Front-end
-          dedicado com um ano de experiência sólida. Busco incessantemente
-          aprimorar minhas habilidades, sempre mantendo-me atualizado com as
-          últimas tendências e tecnologias do mundo do desenvolvimento web. Meu
-          objetivo final é transcender para o universo Full Stack, combinando
-          minha expertise em design e interatividade para construir soluções web
-          abrangentes e inovadoras. Ao navegar pelo meu portfolio, você
-          encontrará um compilado de projetos que refletem minha paixão pela
-          programação e meu comprometimento em oferecer experiências digitais
-          excepcionais
-        </p>
+        <p className=" text-lg">{aboutMe}</p>
       </div>
     </section>
   );

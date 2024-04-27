@@ -1,4 +1,5 @@
 import { Image } from "@nextui-org/react";
+import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import CardSkill, { ISkills } from "../card-skills";
 
@@ -16,6 +17,7 @@ const Meteors = dynamic(
 );
 
 const CardProject = ({ image, title, description, stacks }: IProject) => {
+  const t = useTranslations("Projects");
   return (
     <div className=" w-full relative max-w-xl ">
       <div className="transition ease-in-out duration-700 absolute inset-0 h-full  w-full bg-gradient-to-r from-blue-500 dark:to-dark-meteors to-light-meteors transform scale-[0.80] dark:bg-dark-meteors bg-light-meteors rounded-full blur-3xl" />
@@ -39,8 +41,7 @@ const CardProject = ({ image, title, description, stacks }: IProject) => {
 
         <div className="flex flex-col mt-2 gap-4">
           <h2 className="dark:text-dark-text text-light-text font-semibold text-xl">
-            {" "}
-            Tecnologias usadas:{" "}
+            {t("technologies_used")}
           </h2>
           <div className="w-full  m-auto flex justify-start items-center flex-wrap gap-[1rem] ">
             {stacks.map((stack, index) => (

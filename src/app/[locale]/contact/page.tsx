@@ -22,16 +22,19 @@ import { NameIconInput } from "./components/name-icon";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
+  const t = useTranslations("Contact");
 
   const validationSchema = z.object({
-    name: z.string().min(1, { message: "Name é obrigatório" }),
-    message: z.string().min(1, { message: "Lastname is required" }),
-    email: z.string().min(1, { message: "Email is required" }).email({
-      message: "Must be a valid email",
-    }),
+    name: z.string().min(1, { message: t("form.messages_errors.name") }),
+    message: z.string(),
+    email: z
+      .string()
+      .min(1, { message: t("form.messages_errors.email.required") })
+      .email({
+        message: t("form.messages_errors.email.valid"),
+      }),
   });
   type Person = z.infer<typeof validationSchema>;
-  const t = useTranslations("Contact");
 
   const {
     register,
@@ -45,7 +48,6 @@ export default function Contact() {
   const resend = async (form: Person, event?: Event) => {
     setLoading(true);
     event?.preventDefault();
-    const email = "kauanvieiraxavierk@gmail.com";
     try {
       const res = await fetch("/api/mail", {
         method: "POST",
@@ -58,14 +60,14 @@ export default function Contact() {
       const data = await res.json();
 
       if (data) {
-        toast.success("Email enviado com sucesso");
-        reset();
+        toast.success(t("toast.success"));
+        // reset();
         setLoading(false);
       } else {
-        toast.error("Ops, tivemos um erro");
+        toast.error(t("toast.error_1"));
       }
     } catch (error) {
-      toast.error("Nem chegamos a tentar enviar");
+      toast.error(t("toast.error_2"));
     }
   };
 

@@ -1,111 +1,123 @@
 {
-  "Navbar" : {
-    "about" : "About",
+  "Navbar": {
+    "about": "About",
     "education": "Education",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"
   },
   "Presentation": {
-    "i_am" : "Hello, I'm",
-    "developer" : "Front-End Developer"
+    "i_am": "Hello, I'm",
+    "developer": "Front-End Developer"
   },
   "About": {
-    "title" : "About me",
-    "text" : "At {age} years old and with a burning passion for creating immersive visual experiences, I m a dedicated Front-end developer developer with a year of solid experience. I'm constantly improve my skills, always keeping up to date with the latest trends and technologies in the world of web development. My ultimate goal is to transcend into the Full Stack universe, combining my expertise in design and interactivity to build comprehensive and innovative web solutions. As you browse through my portfolio, you'll find a compilation of projects that reflect my passion for programming and my commitment to offering exceptional digital experiences.",
-    "subtitle" : "| A brief summary of me |",
-    "years_experience" : "Year(s) of experience",
-    "finished_projects" : "Finished projects"
+    "title": "About me",
+    "about_me": "At {age} years old and with a burning passion for creating immersive visual experiences, I m a dedicated Front-end developer developer with a year of solid experience. I'm constantly improve my skills, always keeping up to date with the latest trends and technologies in the world of web development. My ultimate goal is to transcend into the Full Stack universe, combining my expertise in design and interactivity to build comprehensive and innovative web solutions. As you browse through my portfolio, you'll find a compilation of projects that reflect my passion for programming and my commitment to offering exceptional digital experiences.",
+    "subtitle": "| A brief summary of me |",
+    "years_experience": "Year(s) of experience",
+    "finished_projects": "Finished projects"
   },
-  "Education" : {
-    "title" : "Education",
-    "subtitle" : ""
+  "Education": {
+    "title": "Education",
+    "subtitle": ""
   },
-  "Experience" : {
-    "title" : "Experience",
-    "subtitle" : ""
+  "Experience": {
+    "title": "Experience",
+    "subtitle": ""
   },
-  "Certificate" : {
-    "title" : "Certificate(s)",
-    "subtitle" : ""
+  "Certificate": {
+    "title": "Certificate(s)",
+    "subtitle": ""
   },
-  "Skills" : {
-    "title" : "Skills",
-    "subtitle" : "| My Stacks |",
+  "Skills": {
+    "title": "Skills",
+    "subtitle": "| My Stacks |",
     "technologies_use": "Technologies I use:",
     "productivity_tools": "Productivity tools:",
     "future_study": "Future study plans:"
   },
-  "Projects":{
-    "title" : "Projects",
-    "subtitle": "| Fun projects |"
+  "Projects": {
+    "title": "Projects",
+    "subtitle": "| Fun projects |",
+    "technologies_used": "Technologies used :"
   },
-  "Contact":{
-    "title" : "Contact",
+  "Contact": {
+    "title": "Contact",
     "subtitle": "| Connect |",
-    "form" : {
-      "contact_me" : "Contact me",
-      "name" : "Name",
-      "email" : "Contact email address",
-      "message" : "Write a message here",
-      "submit" : "Send"
+    "form": {
+      "contact_me": "Contact me",
+      "name": "Name",
+      "email": "Contact email address",
+      "message": "Write a message here",
+      "submit": "Send",
+      "messages_errors": {
+        "name": "Name required",
+        "email": {
+          "required": "Email is a must!",
+          "valid": "Invalid email"
+        }
+      }
+    },
+    "toast": {
+      "success": "Email sent successfully!",
+      "error_1": "Unfortunately we had a problem with the server response, please try again",
+      "error_2": "Unfortunately we had a communication problem between Front and Back"
     }
   },
-  "Constatants" : {
-    "experience" : {
-      "noclaf" :{
-        "initial_date" : "2023/05",
-        "finish_date" : "Present",
-      "job_title" : "Junior Front-End Developer",
-      "job_description_1" : "Recreating interfaces created by the UX/UI team, whether in Figma or XdAdobe.",
-      "job_description_2" : "Using the Angular10+ framework with SCSS, RxJs and Angular Material."
-    }
-  },
-  "education" :{
-    "computer_science" : {
-      "initial_date" : "2022",
-    "finish_date" : "2025",
-    "higher_education" : "Graduation",
-    "institution" : "Unifeso",
-    "location" : "Teresópolis ,RJ",
-    "title" : "Computer Science",
-    "type" : "Bachelor"
-  }
-  },
-    "certificate" :{
-      "react_native" : {
-      "title" : "React native: Creating applications from scratch to advanced"
-    }
+  "Constatants": {
+    "experience": {
+      "noclaf": {
+        "initial_date": "2023/05",
+        "finish_date": "Present",
+        "job_title": "Junior Front-End Developer",
+        "job_description_1": "Recreating interfaces created by the UX/UI team, whether in Figma or XdAdobe.",
+        "job_description_2": "Using the Angular10+ framework with SCSS, RxJs and Angular Material."
+      }
     },
-    "projects" : {
-     "personal_finance" : {
-      "title" :"Personal Finance Panel",
-      "description" : "Website offers financial control with clear graphs and summaries."
+    "education": {
+      "computer_science": {
+        "initial_date": "2022",
+        "finish_date": "2025",
+        "higher_education": "Graduation",
+        "institution": "Unifeso",
+        "location": "Teresópolis ,RJ",
+        "title": "Computer Science",
+        "type": "Bachelor"
+      }
     },
-    "church" :  {
-      "title" :"Church administration",
-      "description" : "Church app simplifies management, strengthens connections."
+    "certificate": {
+      "react_native": {
+        "title": "React native: Creating applications from scratch to advanced"
+      }
     },
-    "faculty_hiring" : {
-      "title" :"Faculty Hiring",
-      "description" : "Website simplifies the hiring of teachers, promoting efficiency."
+    "projects": {
+      "personal_finance": {
+        "title": "Personal Finance Panel",
+        "description": "Website offers financial control with clear graphs and summaries."
+      },
+      "church": {
+        "title": "Church administration",
+        "description": "Church app simplifies management, strengthens connections."
+      },
+      "faculty_hiring": {
+        "title": "Faculty Hiring",
+        "description": "Website simplifies the hiring of teachers, promoting efficiency."
+      },
+      "animated_login": {
+        "title": "Animated Login Screen",
+        "description": "This login screen has an animated and harmonious design, making it more attractive to the user."
+      },
+      "polvi": {
+        "title": "Polvi",
+        "description": "During a hackathon, the idea arose to make it easier for companies to identify and locate problems efficiently."
+      }
     },
-   "animated_login" : {
-      "title" :"Animated Login Screen",
-      "description" : "This login screen has an animated and harmonious design, making it more attractive to the user."
-    },
-   "polvi" : {
-      "title" :"Polvi",
-      "description" : "During a hackathon, the idea arose to make it easier for companies to identify and locate problems efficiently."
-    }
-  },
-  "words" : 
-    {
-      "hello" : "Hello,",
-      "i_m" : "I'm",
-      "first_name" : "Kauan",
-      "last_name" : "Vieira",
-      "second_last_name" : "Xavier"
+    "words": {
+      "hello": "Hello,",
+      "i_m": "I'm",
+      "first_name": "Kauan",
+      "last_name": "Vieira",
+      "second_last_name": "Xavier"
     }
   }
 }

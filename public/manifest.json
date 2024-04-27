@@ -1,38 +1,47 @@
 {
-  "theme_color": "#ec35f6",
-  "orientation" : "portrait",
-  "background_color": "#000000",
+  "media_overrides": {
+    "(prefers-color-scheme: dark)": {
+      "theme_color": "#fff",
+      "background_color": "#000"
+    },
+    "(prefers-color-scheme: light)": {
+      "theme_color": "#000",
+      "background_color": "#fff"
+    }
+  },
+
+  "orientation": "portrait",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "name": "portfolio kauan",
   "short_name": "portfolio",
   "icons": [
-      {
-          "src": "/icon-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "maskable"
-      },
-      {
-          "src": "/icon-256x256.png",
-          "sizes": "256x256",
-          "type": "image/png"
-      },
-      {
-          "src": "/icon-384x384.png",
-          "sizes": "384x384",
-          "type": "image/png"
-      },
-      {
-          "src": "/icon-512x512.png",
-          "sizes": "512x512",
-          "type": "image/png"
-      },
-      {
-          "src": "/icon-192x192.png", 
-          "sizes": "192x192",
-          "type": "image/png"
-      }
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
   ]
 }
