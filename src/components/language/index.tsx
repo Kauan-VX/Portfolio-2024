@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { BrazilIcon } from "../icons/BrazilIcon";
 import { EnIcon } from "../icons/EnIcon";
 
-const DropDownLanguage = () => {
+const LangSelect = () => {
   const router = useRouter();
   const locale = useLocale();
 
@@ -20,4 +20,4 @@ const DropDownLanguage = () => {
   );
 };
 
-export default DropDownLanguage;
+export default LangSelect;

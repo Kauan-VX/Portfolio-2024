@@ -15,11 +15,12 @@ import {
   planetVariants,
   staggerContainer,
 } from "../../../utils/motion";
-import { MailIcon } from "./mail";
+import { MailIcon } from "./components/mail";
+import { MailIconInput } from "./components/mail-icon";
+import { MessageIconInput } from "./components/message-icon";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
-  const notify = () => toast("Here is your toast.");
 
   const validationSchema = z.object({
     message: z.string().min(1, { message: "Lastname is required" }),
@@ -33,6 +34,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Person>({
     resolver: zodResolver(validationSchema),
@@ -53,13 +55,14 @@ export default function Contact() {
       const data = await res.json();
 
       if (data) {
+        toast.success("Email enviado com sucesso");
+        reset();
         setLoading(false);
-        notify();
       } else {
-        console.error(data);
+        toast.error("Ops, tivemos um erro");
       }
-    } catch (error) {
-      notify();
+    } catch (error: any) {
+      toast.error("Nem chegamos a tentar enviar");
     }
   };
 
@@ -105,71 +108,37 @@ export default function Contact() {
           variants={fadeIn2("left", "tween", 0.2, 1)}
           className="right flex w-1/2 justify-center p-8 lgMax:w-full lgMax:p-0"
         >
-          <div className="card-mail w-full max-w-[40rem] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent ">
+          <div className="card-mail w-full max-w-[40rem] h-full max-h-[300px] rounded-3xl bg-light-background-transparent  p-3 shadow-3xl dark:bg-dark-background-transparent flex flex-col">
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               {t("form.contact_me")}
             </h1>
             <form
-              className="flex flex-col gap-4"
+              className="flex flex-col h-full gap-4"
               onSubmit={handleSubmit(onSubmit)}
             >
               <Input
-                classNames={{
-                  label: "text-black/50 dark:text-white/90",
-                  input: [
-                    "bg-transparent",
-                    "text-black/90 dark:text-white/90",
-                    "placeholder:text-default-700/50 dark:placeholder:text-white/60",
-                  ],
-                  innerWrapper: "bg-transparent",
-                  inputWrapper: [
-                    "shadow-xl",
-                    "bg-default-200/50",
-                    "dark:bg-default/60",
-                    "backdrop-blur-xl",
-                    "backdrop-saturate-200",
-                    "hover:bg-default-200/70",
-                    "dark:hover:bg-default/70",
-                    "group-data-[focused=true]:bg-default-200/50",
-                    "dark:group-data-[focused=true]:bg-default/60",
-                    "!cursor-text",
-                  ],
-                }}
                 type="email"
                 placeholder={t("form.email")}
                 {...register("email")}
                 errorMessage={errors.email?.message}
+                startContent={
+                  <MailIconInput className="text-2xl text-default-400 pointer-events-none flex-shrink-0 mr-1" />
+                }
               />
+
               <Textarea
                 placeholder={t("form.message")}
-                classNames={{
-                  label: "text-black/50 dark:text-white/90",
-                  input: [
-                    "bg-transparent",
-                    "text-black/90 dark:text-white/90",
-                    "placeholder:text-default-700/50 dark:placeholder:text-white/60",
-                  ],
-                  innerWrapper: "bg-yellow-500",
-                  inputWrapper: [
-                    "shadow-xl",
-                    "bg-default-200/50",
-                    "dark:bg-default/60",
-                    "backdrop-blur-xl",
-                    "backdrop-saturate-200",
-                    "hover:bg-default-200/70",
-                    "dark:hover:bg-default/70",
-                    "group-data-[focused=true]:bg-default-200/50",
-                    "dark:group-data-[focused=true]:bg-default/60",
-                    "!cursor-text",
-                  ],
-                }}
+                className="h-32! "
                 {...register("message")}
                 errorMessage={errors.message?.message}
+                startContent={
+                  <MessageIconInput className="text-2xl text-default-400 pointer-events-none flex-shrink-0 mr-1" />
+                }
               />
               <span className="w-full flex justify-end">
                 <Button
                   type="submit"
-                  className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none"
+                  className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none font-semibold text-base"
                   variant="shadow"
                   isLoading={loading}
                 >

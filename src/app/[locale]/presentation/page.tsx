@@ -1,7 +1,8 @@
 "use client";
-import DropDownLanguage from "@/components/language/dropdown-language";
+import LangSelect from "@/components/language";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 import { useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import { translate } from "../../../../public/constants/words";
@@ -12,6 +13,8 @@ import { scroolAnimation } from "../../../utils/motion";
 
 export default function Presentation() {
   const [animation, setAnimation] = useState(false);
+  const { theme } = useTheme();
+
   const t = useTranslations("Presentation");
   const constants = useTranslations("Constatants");
 
@@ -25,11 +28,14 @@ export default function Presentation() {
         id="about"
         className="h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-4 relative"
       >
-        <span className="absolute top-0 right-0">
-          <DropDownLanguage />
+        <span className="absolute top-2 right-0">
+          <LangSelect />
         </span>
         {animation && (
-          <Spotlight className="-top-40 right-0 md:right-0 md:-top-20" />
+          <Spotlight
+            className="-top-40 right-0 md:right-0 md:-top-20 "
+            fill={theme === "dark" ? "rgba(255, 255, 255, 1)" : "#6000bf"}
+          />
         )}
 
         <header className="px-8 smMax:px-0   header-presentation flex w-full justify-center relative z-10 items-center flex-col">
