@@ -5,8 +5,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "portfolio kauan",
-  "short_name": "portfolio",
+  "name": "Portfólio Kauan Xavier",
+  "short_name": "Portfólio KVX",
   "icons": [
     {
       "src": "/icon-192x192.png",
