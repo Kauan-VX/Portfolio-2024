@@ -2,6 +2,7 @@
 import { NextUIProvider } from "@nextui-org/react";
 import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { Toaster } from "react-hot-toast";
 
 export const Provider = ({
   children,
@@ -21,6 +22,7 @@ export const Provider = ({
         locale={locale}
         messages={messages}
       >
+        <Toaster position="top-right" />
         <NextThemesProvider attribute="class" defaultTheme="dark">
           {children}
         </NextThemesProvider>

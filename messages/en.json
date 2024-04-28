@@ -45,6 +45,7 @@
     "title": "Contact",
     "subtitle": "| Connect |",
     "form": {
+      "text": "Contact me directly or via this form, at ",
       "contact_me": "Contact me",
       "name": "Name",
       "email": "Contact email address",
@@ -60,8 +61,8 @@
     },
     "toast": {
       "success": "Email sent successfully!",
-      "error_1": "Unfortunately we had a problem with the server response, please try again",
-      "error_2": "Unfortunately we had a communication problem between Front and Back"
+      "error_1": "Unfortunately we had a problem with the server response, please try again.",
+      "error_2": "Unfortunately we had a communication problem between Front and Back."
     }
   },
   "Constatants": {

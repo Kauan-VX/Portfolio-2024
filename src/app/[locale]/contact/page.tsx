@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
+import Head from "next/head";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -19,9 +21,12 @@ import { MailIcon } from "./components/mail";
 import { MailIconInput } from "./components/mail-icon";
 import { MessageIconInput } from "./components/message-icon";
 import { NameIconInput } from "./components/name-icon";
+import { SendIcon } from "./components/send-icon";
+import { SendLoading } from "./components/send-loading";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
+  const { theme } = useTheme();
   const t = useTranslations("Contact");
 
   const validationSchema = z.object({
@@ -60,14 +65,35 @@ export default function Contact() {
       const data = await res.json();
 
       if (data) {
-        toast.success(t("toast.success"));
+        toast.success(t("toast.success"), {
+          style: {
+            borderRadius: "10px",
+            background: theme === "dark" ? "#000000" : "#ffffff",
+            border: `1.5px solid ${theme === "dark" ? "#ffffff" : "#000000"}`,
+            color: theme === "dark" ? "#ffffff" : "#000000",
+          },
+        });
         // reset();
         setLoading(false);
       } else {
-        toast.error(t("toast.error_1"));
+        toast.error(t("toast.error_1"), {
+          style: {
+            borderRadius: "10px",
+            background: theme === "dark" ? "#000000" : "#ffffff",
+            border: `1.5px solid ${theme === "dark" ? "#ffffff" : "#000000"}`,
+            color: theme === "dark" ? "#ffffff" : "#000000",
+          },
+        });
       }
     } catch (error) {
-      toast.error(t("toast.error_2"));
+      toast.error(t("toast.error_2"), {
+        style: {
+          borderRadius: "10px",
+          background: theme === "dark" ? "#000000" : "#ffffff",
+          border: `1.5px solid ${theme === "dark" ? "#ffffff" : "#000000"}`,
+          color: theme === "dark" ? "#ffffff" : "#000000",
+        },
+      });
     }
   };
 
@@ -76,7 +102,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="connect" className="overflow-x-hidden p-4">
+    <section id="contact" className="overflow-x-hidden p-4">
+      <Head>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+      </Head>
       <HeaderTitle
         translationMain="Contact"
         translationTitle="title"
@@ -116,8 +145,19 @@ export default function Contact() {
             <h1 className="text-2xl font-semibold text-center my-4 text-light-text dark:text-dark-text">
               {t("form.contact_me")}
             </h1>
+
+            <p className=" text-light-text dark:text-dark-text text-center">
+              {t("form.text")}
+              <a
+                className="dark:text-dark-mail-color text-light-mail-color"
+                href="mailto:kauanvieiraxavierdev@gmail.com?subject=Vim através do seu Portfólio"
+              >
+                kauanvieiraxavierdev@gmail.com
+              </a>
+              .
+            </p>
             <form
-              className="flex flex-col h-full gap-4"
+              className="flex flex-col h-full gap-4 mt-4"
               onSubmit={handleSubmit(onSubmit)}
             >
               <Input
@@ -152,9 +192,15 @@ export default function Contact() {
               <span className="w-full flex justify-end">
                 <Button
                   type="submit"
-                  className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none font-semibold text-base"
+                  className="dark:bg-dark-mail-color bg-light-mail-color py-2 px-6 rounded-2xl shadow-none font-semibold text-base flex items-center"
                   variant="shadow"
-                  isLoading={loading}
+                  endContent={
+                    loading ? (
+                      <SendLoading className="animate-spin h-5 w-5 text-current" />
+                    ) : (
+                      <SendIcon className="text-2xl  pointer-events-none flex-shrink-0 mr-1 dark:fill-dark-text fill-light-text" />
+                    )
+                  }
                 >
                   {t("form.submit")}
                 </Button>

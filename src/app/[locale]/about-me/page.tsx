@@ -33,7 +33,10 @@ export default function About() {
   }, []); // Empty dependency array ensures this effect runs only once, similar to componentDidMount
 
   return (
-    <section className="h-heightLessNav  w-full dark:bg-dark-background bg-light-background p-4">
+    <section
+      id="about"
+      className="h-heightLessNav  w-full dark:bg-dark-background bg-light-background p-4"
+    >
       <HeaderTitle
         translationMain="About"
         translationTitle="title"

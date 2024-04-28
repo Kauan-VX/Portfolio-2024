@@ -2,7 +2,6 @@ import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
-import { Toaster } from "react-hot-toast";
 import { Provider } from "../provider";
 
 const fira_code = localFont({
@@ -41,7 +40,6 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={`${fira_code.className}`}>
         <Provider messages={messages} locale={locale}>
-          <Toaster position="top-right" />
           {children}
         </Provider>
       </body>

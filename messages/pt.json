@@ -45,6 +45,7 @@
     "title": "Contato",
     "subtitle": "| Conecte-se |",
     "form": {
+      "text": "Contate-me diretamente ou via formulário em ",
       "contact_me": "Entre em contato comigo",
       "name": "Nome",
       "email": "E-mail para contato",
@@ -60,8 +61,8 @@
     },
     "toast": {
       "success": "E-mail enviado com sucesso!",
-      "error_1": "Infelizmente tivemos um problema na resposta do servidor, tente novamente",
-      "error_2": "Infelizmente tivemos um problema de comunicação entre o Front e o Back"
+      "error_1": "Infelizmente tivemos um problema na resposta do servidor, tente novamente.",
+      "error_2": "Infelizmente tivemos um problema de comunicação entre o Front e o Back."
     }
   },
   "Constatants": {
@@ -93,7 +94,7 @@
     "projects": {
       "personal_finance": {
         "title": "Painel de Finanças Pessoais",
-        "description": "Website oferece controle financeiro com gráficos e resumos claros"
+        "description": "Website oferece controle financeiro com gráficos e resumos claros."
       },
       "church": {
         "title": "Administração na Igreja",

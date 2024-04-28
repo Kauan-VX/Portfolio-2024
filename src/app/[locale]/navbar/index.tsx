@@ -19,7 +19,7 @@ export default function NavbarComponent() {
     { name: `${t("education")}`, link: "#education" },
     { name: `${t("skills")}`, link: "#skills" },
     { name: `${t("projects")}`, link: "#projects" },
-    { name: `${t("contact")}`, link: "#conect" },
+    { name: `${t("contact")}`, link: "#contact" },
   ];
 
   return <FloatingNav navItems={menuItems} />;
