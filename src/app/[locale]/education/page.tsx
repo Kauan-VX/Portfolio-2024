@@ -9,9 +9,6 @@ import CardEducation from "../../../components/card-education";
 import CardExperience from "../../../components/card-experience";
 
 export default function Education() {
-  const ed = useTranslations("Education");
-  const ex = useTranslations("Experience");
-  const ce = useTranslations("Certificate");
   const constants = useTranslations("Constatants");
   const translateExperienceList = translateExperience(constants);
   const translateCertificateList = translateCertificate(constants);

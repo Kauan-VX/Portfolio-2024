@@ -1,4 +1,5 @@
 "use client";
+import HeaderTitle from "@/components/header-title";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
@@ -7,10 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { translateProject } from "../../../../public/constants/projects-obj";
 
 // Import Swiper styles
-import HeaderTitle from "@/components/header-title";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "../globals.scss";
 
 const CardProject = dynamic(
   () => import("../../../components/card-project/card-project")

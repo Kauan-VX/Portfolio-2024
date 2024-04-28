@@ -1,15 +1,6 @@
 {
-  "media_overrides": {
-    "(prefers-color-scheme: dark)": {
-      "theme_color": "#fff",
-      "background_color": "#000"
-    },
-    "(prefers-color-scheme: light)": {
-      "theme_color": "#000",
-      "background_color": "#fff"
-    }
-  },
-
+  "theme_color": "#000",
+  "background_color": "#fff",
   "orientation": "portrait",
   "display": "standalone",
   "scope": "/",

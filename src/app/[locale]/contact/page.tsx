@@ -5,7 +5,6 @@ import { Button, Input, Textarea } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-import Head from "next/head";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -73,7 +72,7 @@ export default function Contact() {
             color: theme === "dark" ? "#ffffff" : "#000000",
           },
         });
-        // reset();
+        reset();
         setLoading(false);
       } else {
         toast.error(t("toast.error_1"), {
@@ -103,9 +102,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="overflow-x-hidden p-4">
-      <Head>
-        <meta name="viewport" content="width=device-width, user-scalable=no" />
-      </Head>
       <HeaderTitle
         translationMain="Contact"
         translationTitle="title"
