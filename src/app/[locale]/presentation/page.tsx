@@ -36,11 +36,13 @@ export default function Presentation() {
         )}
 
         <header className="px-8 smMax:px-0   header-presentation flex w-full justify-center relative z-10 items-center flex-col">
-          {animation && (
-            <b className=" flex  items-center gap-2 text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient">
-              <TypewriterEffect words={wordList} />
-            </b>
-          )}
+          <span className="w-fit h-fit">
+            {animation && (
+              <b className=" flex  items-center gap-2 text-transparent font-bold bg-gradient-to-r from-purple via-pink to-yellow bg-clip-text animate-gradient">
+                <TypewriterEffect words={wordList} />
+              </b>
+            )}
+          </span>
           <h2 className="dark:text-dark-text text-light-text text-center">
             <strong className="text-5xl md:text-5xl smMax:text-4xl ">
               {t("developer")}

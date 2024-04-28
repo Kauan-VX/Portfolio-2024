@@ -30,7 +30,7 @@ export default function About() {
     }
 
     fetchRepos();
-  }, []); // Empty dependency array ensures this effect runs only once, similar to componentDidMount
+  }, []);
 
   return (
     <section
@@ -43,10 +43,7 @@ export default function About() {
         translationSubtitle="subtitle"
       />
 
-      <ScrollTrigger
-        onEnter={() => setCounterOn(true)}
-        onExit={() => setCounterOn(false)}
-      >
+      <ScrollTrigger onEnter={() => setCounterOn(true)}>
         <div className="w-full justify-center items-center my-8">
           <ul className="flex w-full justify-center gap-6 flex-wrap">
             <li className="dark:bg-dark-background-transparent bg-light-background-transparent shadow-3xl rounded-3xl w-40 p-4">
