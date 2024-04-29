@@ -1,12 +1,22 @@
 "use client";
 import HeaderTitle from "@/components/header-title";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 import { translateCertificate } from "../../../../public/constants/certificate";
 import { translateEducation } from "../../../../public/constants/education";
 import { translateExperience } from "../../../../public/constants/experience";
-import CardCertificate from "../../../components/card-certificate";
-import CardEducation from "../../../components/card-education";
-import CardExperience from "../../../components/card-experience";
+
+const CardExperience = dynamic(
+  () => import("../../../components/card-experience")
+);
+
+const CardEducation = dynamic(
+  () => import("../../../components/card-education")
+);
+
+const CardCertificate = dynamic(
+  () => import("../../../components/card-certificate")
+);
 
 export default function Education() {
   const constants = useTranslations("Constatants");

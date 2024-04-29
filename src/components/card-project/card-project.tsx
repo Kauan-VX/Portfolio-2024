@@ -1,7 +1,9 @@
 import { Image } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
-import CardSkill, { ISkills } from "../card-skills";
+import { ISkills } from "../card-skills";
+
+const CardSkill = dynamic(() => import("../card-skills"));
 
 export interface IProject {
   link: string;

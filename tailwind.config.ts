@@ -54,6 +54,17 @@ const config: Config = {
             transform: "translate(-50%,-40%) scale(1.8)",
           },
         },
+
+        spotlight_table: {
+          "0%": {
+            opacity: "0",
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
       },
       screens: {
         navbarCollapseMin: { min: "820px" },

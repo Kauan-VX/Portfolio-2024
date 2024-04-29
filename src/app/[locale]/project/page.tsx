@@ -1,13 +1,13 @@
 "use client";
 import HeaderTitle from "@/components/header-title";
 import { useTranslations } from "next-intl";
-import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { translateProject } from "../../../../public/constants/projects-obj";
 
 // Import Swiper styles
+import dynamic from "next/dynamic";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
@@ -37,6 +37,7 @@ export default function Project() {
       />
 
       <div className="w-full h-full flex justify-center mdMax:hidden">
+        <Suspense fallback={<div>Loading...</div>}></Suspense>
         {domLoaded && (
           <Swiper
             effect={"coverflow"}

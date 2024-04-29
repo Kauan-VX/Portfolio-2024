@@ -42,18 +42,18 @@ export default function CardExperience({
         </span>
       </div>
       <div className="my-4">
-        <span className=" dark:text-dark-text text-light-text gap-2  dark:bg-dark-background  bg-light-background-transparent shadow-3xl rounded-2xl p-1">
+        <span className=" dark:text-dark-text text-light-text gap-2  dark:bg-dark-background  bg-light-background-transparent shadow-3xl rounded-2xl p-2">
           {job_title}
         </span>
       </div>
       <div className="flex justify-center flex-col gap-3 mt-2">
         <ul className="flex items-center flex-col gap-4">
           <li className="flex items-center gap-4">
-            <CaretRightIcon />
+            <CaretRightIcon className="dark:fill-dark-text fill-light-text" />
             {job_description1}
           </li>
           <li className="flex items-center gap-4">
-            <CaretRightIcon />
+            <CaretRightIcon className="dark:fill-dark-text fill-light-text" />
             {job_description2}
           </li>
         </ul>

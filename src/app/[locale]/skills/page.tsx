@@ -1,14 +1,16 @@
 "use client";
 import HeaderTitle from "@/components/header-title";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import {
   SKILLS_CURRENT,
   SKILLS_FUTURE,
   SKILLS_PRODUCTIVITY,
 } from "../../../../public/constants/skills-obj";
-import CardSkill from "../../../components/card-skills/index";
 import TypingText from "../../../components/ui/custom-texts";
 import { fadeIn } from "../../../utils/motion";
+
+const CardSkill = dynamic(() => import("../../../components/card-skills"));
 
 export default function Skills() {
   return (

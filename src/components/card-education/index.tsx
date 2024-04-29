@@ -1,16 +1,16 @@
-import { CalendarIcon } from '../../components/icons/card-education/calendar'
-import { GraduationIcon } from '../../components/icons/card-education/graduation'
-import { LocationIcon } from '../../components/icons/card-education/location'
-import { UnivercityIcon } from '../../components/icons/card-education/univercity'
+import { CalendarIcon } from "../../components/icons/card-education/calendar";
+import { GraduationIcon } from "../../components/icons/card-education/graduation";
+import { LocationIcon } from "../../components/icons/card-education/location";
+import { UnivercityIcon } from "../../components/icons/card-education/univercity";
 
 export interface IEducation {
-  initial_date: string
-  finish_date: string
-  higher_education: string
-  type: string
-  title: string
-  institution: string
-  location: string
+  initial_date: string;
+  finish_date: string;
+  higher_education: string;
+  type: string;
+  title: string;
+  institution: string;
+  location: string;
 }
 
 export default function CardEducation({
@@ -24,7 +24,6 @@ export default function CardEducation({
 }: IEducation) {
   return (
     <div className="relative w-[30rem] dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl p-3 rounded-3xl ">
-      {/* <span className="h-16 w-4 bg-blue-600 shadow right-[50%] top-[50%] absolute shadow-cyan-500/100"></span> */}
       <div className="flex justify-between items-center flex-wrap gap-2">
         <span className="flex items-center gap-2 dark:text-dark-text text-light-text dark:bg-dark-background  bg-light-background-transparent shadow-3xl rounded-2xl p-2">
           <CalendarIcon />
@@ -36,7 +35,7 @@ export default function CardEducation({
         </span>
       </div>
       <div className="my-4">
-        <span className=" dark:text-dark-text text-light-text gap-2  dark:bg-dark-background  bg-light-background-transparent shadow-3xl rounded-2xl p-1">
+        <span className=" dark:text-dark-text text-light-text gap-2  dark:bg-dark-background  bg-light-background-transparent shadow-3xl rounded-2xl p-2">
           {type}
         </span>
       </div>
@@ -45,15 +44,15 @@ export default function CardEducation({
       </header>
       <div className="flex justify-center flex-col gap-3 mt-2">
         <span className="flex items-center gap-2">
-          {' '}
+          {" "}
           <UnivercityIcon />
-          {institution}{' '}
+          {institution}{" "}
         </span>
         <span className="flex items-center gap-2">
-          {' '}
+          {" "}
           <LocationIcon /> {location}
         </span>
       </div>
     </div>
-  )
+  );
 }

@@ -5,12 +5,12 @@ import { Button, Input, Textarea } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
 import { CONTACT } from "../../../../public/constants/contact";
-import CardSkill from "../../../components/card-skills";
 import {
   fadeIn2,
   planetVariants,
@@ -22,6 +22,8 @@ import { MessageIconInput } from "./components/message-icon";
 import { NameIconInput } from "./components/name-icon";
 import { SendIcon } from "./components/send-icon";
 import { SendLoading } from "./components/send-loading";
+
+const CardSkill = dynamic(() => import("../../../components/card-skills"));
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -142,10 +144,10 @@ export default function Contact() {
               {t("form.contact_me")}
             </h1>
 
-            <p className=" text-light-text dark:text-dark-text text-center">
+            <p className=" text-light-text dark:text-dark-text text-center text-lg">
               {t("form.text")}
               <a
-                className="dark:text-dark-mail-color text-light-mail-color"
+                className="dark:text-dark-mail-color text-light-mail-color font-medium text-lg"
                 href="mailto:kauanvieiraxavierdev@gmail.com?subject=Vim através do seu Portfólio"
               >
                 kauanvieiraxavierdev@gmail.com
