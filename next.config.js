@@ -12,6 +12,11 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    nextScriptWorkers: true,
+  },
+  reactStrictMode: true,
+
   // async headers() {
   //   return [
   //     {

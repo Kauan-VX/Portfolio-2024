@@ -6,9 +6,11 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
-import ThemeSwitcher from "../theme/theme-switcher";
+
+const ThemeSwitcher = dynamic(() => import("../theme/theme-switcher"));
 
 export const FloatingNav = ({
   navItems,
@@ -65,6 +67,7 @@ export const FloatingNav = ({
         {navItems.map(
           (navItem: { name: string; link: string }, idx: number) => (
             <Link
+              rel="preload"
               key={idx}
               href={navItem.link}
               className={cn(

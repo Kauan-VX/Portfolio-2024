@@ -1,8 +1,8 @@
 "use client";
-import LangSelect from "@/components/language";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import { translate } from "../../../../public/constants/words";
@@ -10,6 +10,8 @@ import { ScrollIcon } from "../../../components/icons/presentation/scroll";
 import { Spotlight } from "../../../components/ui/Spotlight";
 import { TypewriterEffect } from "../../../components/ui/typewriter-effect";
 import { scroolAnimation } from "../../../utils/motion";
+
+const LangSelect = dynamic(() => import("@/components/language"));
 
 export default function Presentation() {
   const [animation, setAnimation] = useState(false);

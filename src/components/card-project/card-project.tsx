@@ -1,6 +1,6 @@
-import { Image } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { ISkills } from "../card-skills";
 
 const CardSkill = dynamic(() => import("../card-skills"));
@@ -25,7 +25,6 @@ const CardProject = ({ image, title, description, stacks }: IProject) => {
       <div className="transition ease-in-out duration-700 absolute inset-0 h-full  w-full bg-gradient-to-r from-blue-500 dark:to-dark-meteors to-light-meteors transform scale-[0.80] dark:bg-dark-meteors bg-light-meteors rounded-full blur-3xl" />
       <div className="transition ease-in-out duration-700 relative shadow-xl mdMax:min-h-[600px]  dark:bg-dark-background bg-light-background border border-slate-200 dark:border-gray-800 px-4 py-8   overflow-hidden rounded-2xl flex flex-col justify-between items-start">
         <Image
-          isBlurred
           src={image}
           width={1000}
           height={1000}

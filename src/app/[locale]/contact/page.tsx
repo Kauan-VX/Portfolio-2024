@@ -147,6 +147,7 @@ export default function Contact() {
             <p className=" text-light-text dark:text-dark-text text-center text-lg">
               {t("form.text")}
               <a
+                rel="preload"
                 className="dark:text-dark-mail-color text-light-mail-color font-medium text-lg"
                 href="mailto:kauanvieiraxavierdev@gmail.com?subject=Vim através do seu Portfólio"
               >

@@ -1,6 +1,6 @@
 "use client";
-import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export interface ISkills {
   id?: number;
@@ -43,14 +43,21 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
       custom={index}
     >
       <a
+        rel="preload"
         className="flex items-center rounded-3xl py-[0.5rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl whitespace-nowrap"
         target="_blank"
         href={link}
-        rel="noreferrer"
       >
         <Image
-          isBlurred
-          className=" w-full max-w-[48px]"
+          className="relative z-10 opacity-1 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
+          src={imageSrc}
+          alt="icon-skill"
+          title={skillName}
+          width={48}
+          height={48}
+        />
+        <Image
+          className="absolute z-0 inset-0 backdrop:object-cover filter blur-lg scale-105 saturate-150 opacity-30 translate-y-1 rounded-large"
           src={imageSrc}
           alt="icon-skill"
           title={skillName}
