@@ -32,7 +32,7 @@ export default function Presentation() {
         </span>
         {animation && (
           <Spotlight
-            className="-top-40 right-0 md:right-0 md:-top-20 "
+            className="-top-6 smallPhoneMax:-top-[11rem] mdMax:-top-[20rem] right-0 md:right-0 md:-top-20 navbarCollapseMax:-top-[23rem]"
             fill={theme === "dark" ? "rgba(255, 255, 255, 1)" : "#6000bf"}
           />
         )}

@@ -18,7 +18,10 @@ const config: Config = {
         "meteor-effect": "meteor 5s linear infinite",
         gradient: "gradient 6s linear infinite",
         spotlight: "spotlight 2s ease .75s 1 forwards",
+        spotlight_tablet: "spotlight_tablet 2s ease .75s 1 forwards",
+        spotlight_big_tablet: "spotlight_big_tablet 2s ease .75s 1 forwards",
         spotlight_phone: "spotlight_phone 2s ease .75s 1 forwards",
+        spotlight_small_phone: "spotlight_small_phone 2s ease .75s 1 forwards",
       },
       keyframes: {
         meteor: {
@@ -44,6 +47,28 @@ const config: Config = {
           },
         },
 
+        spotlight_big_tablet: {
+          "0%": {
+            opacity: "0",
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translate(-50%,-40%) scale(2)",
+          },
+        },
+
+        spotlight_tablet: {
+          "0%": {
+            opacity: "0",
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translate(-50%,-40%) scale(2)",
+          },
+        },
+
         spotlight_phone: {
           "0%": {
             opacity: "0",
@@ -55,20 +80,21 @@ const config: Config = {
           },
         },
 
-        spotlight_table: {
+        spotlight_small_phone: {
           "0%": {
             opacity: "0",
             transform: "translate(-72%, -62%) scale(0.5)",
           },
           "100%": {
             opacity: "1",
-            transform: "translate(-50%,-40%) scale(1)",
+            transform: "translate(-50%,-40%) scale(3)",
           },
         },
       },
       screens: {
         navbarCollapseMin: { min: "820px" },
         floatNavbar: { max: "474px" },
+        smallPhoneMax: { max: "390px" },
         phoneMax: { max: "500px" },
         smMax: { max: "640px" },
         mdMax: { max: "768px" },
