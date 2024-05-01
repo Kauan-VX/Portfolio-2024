@@ -94,7 +94,7 @@ const config: Config = {
       screens: {
         navbarCollapseMin: { min: "820px" },
         floatNavbar: { max: "474px" },
-        smallPhoneMax: { max: "390px" },
+        smallPhoneMax: { max: "400px" },
         phoneMax: { max: "500px" },
         smMax: { max: "640px" },
         mdMax: { max: "768px" },
