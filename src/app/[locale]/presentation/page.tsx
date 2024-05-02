@@ -1,4 +1,5 @@
 "use client";
+import { Spotlight } from "@/components/ui/Spotlight";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
@@ -7,7 +8,6 @@ import { useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import { translate } from "../../../../public/constants/words";
 import { ScrollIcon } from "../../../components/icons/presentation/scroll";
-import { Spotlight } from "../../../components/ui/Spotlight";
 import { TypewriterEffect } from "../../../components/ui/typewriter-effect";
 import { scroolAnimation } from "../../../utils/motion";
 
@@ -27,7 +27,7 @@ export default function Presentation() {
       onExit={() => setAnimation(false)}
     >
       <section className="h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-4 relative">
-        <span className="absolute top-2 right-0">
+        <span className="absolute top-14 right-0 z-20">
           <LangSelect />
         </span>
         {animation && (

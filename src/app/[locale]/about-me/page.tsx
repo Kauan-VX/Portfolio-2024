@@ -39,7 +39,7 @@ export default function About() {
                   +
                 </h1>
                 <h2 className="text-center font-semibold">
-                  Ano(s) de experiência
+                  {t("years_experience")}
                 </h2>
               </span>
             </li>
@@ -49,7 +49,7 @@ export default function About() {
                   {counterOn && <CountUp start={0} end={10} duration={5} />}+
                 </h1>
                 <h2 className="text-center font-semibold">
-                  Projetos concluídos
+                  {t("finished_projects")}
                 </h2>
               </span>
             </li>
