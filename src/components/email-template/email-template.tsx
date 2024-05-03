@@ -26,9 +26,13 @@ const EmailTemplate = ({
               className="mx-auto w-32 p-4 object-cover"
               src="https://i.postimg.cc/v82FtPc6/logo-portfolio.png"
             />
-            <Text className="text-xl font-medium text-white">{name}</Text>
+            <Text className="text-xl font-medium text-white">
+              {" "}
+              Nome: {name}
+            </Text>
             <Text className="text-lg  text-white">
-              {message || "Usuário não escreveu nenhuma mensagem"}
+              {" "}
+              Mensagem: {message || "Usuário não escreveu nenhuma mensagem"}
             </Text>
 
             <Container className="text-center ">
