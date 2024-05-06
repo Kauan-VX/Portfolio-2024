@@ -1,4 +1,4 @@
-Portfolio 2024
+<h1>Portfolio 2024</h1>
 Este é o meu novo portfólio, desenvolvido com Next.js 14, Framer Motion para animações e tradução com Next-Intl. Ele foi projetado para destacar minhas habilidades, projetos e experiências de uma forma interativa e atraente.
 
 Visão Geral
