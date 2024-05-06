@@ -6,13 +6,8 @@ interface IContact {
 
 export const CONTACT: IContact[] = [
   {
-    imageSrc: "/contact/mail.svg",
-    link: "https://nodejs.org/en",
-    skillName: "E-mail",
-  },
-  {
     imageSrc: "/contact/linkedin.svg",
-    link: "https://www.mysql.com/",
+    link: "https://www.linkedin.com/in/kauan-vx/",
     skillName: "Linkedin",
   },
   {

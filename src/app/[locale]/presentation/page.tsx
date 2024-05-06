@@ -27,7 +27,7 @@ export default function Presentation() {
       onExit={() => setAnimation(false)}
     >
       <section className="h-[100vh] flex flex-col justify-center dark:bg-dark-background bg-light-background p-4 relative">
-        <span className="absolute top-14 right-0 z-20">
+        <span className="fixed top-14 right-0 z-20">
           <LangSelect />
         </span>
         {animation && (

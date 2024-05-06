@@ -6,7 +6,7 @@ export const BrazilIcon = () => {
       src={"/translate/pt-br.svg"}
       width={32}
       height={32}
-      alt="Moon"
+      alt="pt-BR"
       className="size-full"
     />
   );

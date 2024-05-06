@@ -6,7 +6,7 @@ export const EnIcon = () => {
       src={"/translate/en.svg"}
       width={32}
       height={32}
-      alt="Moon"
+      alt="en"
       className="size-full"
     />
   );
