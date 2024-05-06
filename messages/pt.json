@@ -72,7 +72,7 @@
         "finish_date": "Presente",
         "job_title": "Desenvolvedor Front-End Júnior",
         "job_description_1": "Recriando interfaces criadas pelo time de UX/UI, seja no Figma ou XdAdobe.",
-        "job_description_2": "Usando o framework Angular10+ com SCSS , RxJs e Angular Material."
+        "job_description_2": "Usando o framework Angular10+ com SCSS, RxJs e Angular Material."
       }
     },
     "education": {
@@ -81,7 +81,7 @@
         "finish_date": "2025",
         "higher_education": "Graduação",
         "institution": "Unifeso",
-        "location": "Teresópolis ,RJ",
+        "location": "Teresópolis, RJ",
         "title": "Ciências da Computação",
         "type": "Bacharelado"
       }
