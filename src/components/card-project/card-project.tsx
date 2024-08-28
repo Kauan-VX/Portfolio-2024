@@ -2,15 +2,16 @@ import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ISkills } from "../card-skills";
+import { LinkPreview } from "../ui/link-preview";
 
 const CardSkill = dynamic(() => import("../card-skills"));
 
 export interface IProject {
-  link: string;
   image: string;
   title: string;
   description: string;
   stacks: ISkills[];
+  link?: string;
 }
 
 const Meteors = dynamic(
@@ -18,12 +19,12 @@ const Meteors = dynamic(
   { ssr: false }
 );
 
-const CardProject = ({ image, title, description, stacks }: IProject) => {
+const CardProject = ({ image, title, description, stacks, link }: IProject) => {
   const t = useTranslations("Projects");
   return (
     <div className=" w-full relative max-w-xl ">
       <div className="transition ease-in-out duration-700 absolute inset-0 h-full  w-full bg-gradient-to-r from-blue-500 dark:to-dark-meteors to-light-meteors transform scale-[0.80] dark:bg-dark-meteors bg-light-meteors rounded-full blur-3xl" />
-      <div className="transition ease-in-out duration-700 relative shadow-xl mdMax:min-h-[600px]  dark:bg-dark-background bg-light-background border border-slate-200 dark:border-gray-800 px-4 py-8   overflow-hidden rounded-2xl flex flex-col justify-between items-start">
+      <div className="transition ease-in-out duration-700 relative shadow-xl mdMax:min-h-[600px]  dark:bg-dark-background bg-light-background border border-slate-200 dark:border-gray-800 px-4 py-8   overflow-hidden rounded-2xl flex flex-col justify-between items-start z-10">
         <Image
           src={image}
           width={1000}
@@ -32,9 +33,18 @@ const CardProject = ({ image, title, description, stacks }: IProject) => {
           className="object-cover w-full z-10"
         />
 
-        <h1 className="dark:text-dark-text t600xt-light-text font-semibold text-3xl z-10">
-          {title}
-        </h1>
+        {link ? (
+          <LinkPreview
+            url={link}
+            className="dark:text-dark-text t600xt-light-text font-semibold text-3xl z-10 "
+          >
+            {title}
+          </LinkPreview>
+        ) : (
+          <h1 className="dark:text-dark-text t600xt-light-text font-semibold text-3xl z-10">
+            {title}
+          </h1>
+        )}
 
         <p className="text-base font-medium text-neutral-600 dark:text-neutral-400">
           {description}

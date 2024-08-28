@@ -111,6 +111,18 @@
       "polvi": {
         "title": "Polvi",
         "description": "Durante um hackathon, surgiu a ideia de facilitar às empresas identificar e localizar problemas de forma eficiente."
+      },
+      "sell_my_farm": {
+        "title": "Casa Green Vender Minha Fazenda",
+        "description": "Criação de uma landing page para a Casa Green, focada em alta conversão e vendas de propriedades rurais."
+      },
+      "buy_my_farm": {
+        "title": "Casa Green Comprar Minha Fazenda",
+        "description": "Desenvolvimento de uma landing page para a Casa Green, voltada para a compra de fazendas, com design envolvente e SEO otimizado."
+      },
+      "odontology": {
+        "title": "Landing Page Odonto",
+        "description": "Desenvolvimento de uma landing page para profissionais da área odontológica, focada em SEO e otimizada para captar leads qualificados."
       }
     },
     "words": {

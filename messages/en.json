@@ -111,6 +111,18 @@
       "polvi": {
         "title": "Polvi",
         "description": "During a hackathon, the idea arose to make it easier for companies to identify and locate problems efficiently."
+      },
+      "sell_my_farm": {
+        "title": "Selling My Farm",
+        "description": "Creation of a landing page for Casa Green, focused on high conversion and sales of rural properties."
+      },
+      "buy_my_farm": {
+        "title": "Buy My Farm",
+        "description": "Development of a landing page for Casa Green, aimed at buying farms, with an engaging design and optimized SEO."
+      },
+      "odontology": {
+        "title": "Dental Landing Page",
+        "description": "Development of a landing page for dental professionals, focused on SEO and optimized to capture qualified leads."
       }
     },
     "words": {

@@ -2,7 +2,6 @@ export const translateProject = (t: Function) => {
   return [
     {
       image: "/project/mockup-dashboard.svg",
-      link: "https://nodejs.org/en",
       title: t("projects.personal_finance.title"),
       description: t("projects.personal_finance.description"),
       stacks: [
@@ -18,9 +17,64 @@ export const translateProject = (t: Function) => {
         },
       ],
     },
+
+    {
+      image: "/project/mackup-casa-green-sell.svg",
+      link: "https://venderminhafazenda.com.br",
+      title: t("projects.sell_my_farm.title"),
+      description: t("projects.sell_my_farm.description"),
+      stacks: [
+        {
+          imageSrc: "/skills/nextjs.svg",
+          link: "https://nextjs.org/",
+          skillName: "",
+        },
+        {
+          imageSrc: "/skills/tailwind.svg",
+          link: "https://tailwindcss.com/",
+          skillName: "",
+        },
+      ],
+    },
+
+    {
+      image: "/project/mackup-casa-green-buy.svg",
+      link: "https://fazendasavendanoms.com.br",
+      title: t("projects.buy_my_farm.title"),
+      description: t("projects.buy_my_farm.description"),
+      stacks: [
+        {
+          imageSrc: "/skills/nextjs.svg",
+          link: "https://nextjs.org/",
+          skillName: "",
+        },
+        {
+          imageSrc: "/skills/tailwind.svg",
+          link: "https://tailwindcss.com/",
+          skillName: "",
+        },
+      ],
+    },
+    {
+      image: "/project/mackup-odontology.svg",
+      link: "https://odonto.kauanxavier.dev",
+      title: t("projects.odontology.title"),
+      description: t("projects.odontology.description"),
+      stacks: [
+        {
+          imageSrc: "/skills/nextjs.svg",
+          link: "https://nextjs.org/",
+          skillName: "",
+        },
+        {
+          imageSrc: "/skills/tailwind.svg",
+          link: "https://tailwindcss.com/",
+          skillName: "",
+        },
+      ],
+    },
     {
       image: "/project/mackup-church-app.svg",
-      link: "https://nodejs.org/en",
       title: t("projects.church.title"),
       description: t("projects.church.description"),
       stacks: [
@@ -44,7 +98,6 @@ export const translateProject = (t: Function) => {
 
     {
       image: "/project/mockup-docente.svg",
-      link: "https://nodejs.org/en",
       title: t("projects.faculty_hiring.title"),
       description: t("projects.faculty_hiring.description"),
       stacks: [
@@ -63,7 +116,6 @@ export const translateProject = (t: Function) => {
 
     {
       image: "/project/mackup-login-animate.svg",
-      link: "https://nodejs.org/en",
       title: t("projects.animated_login.title"),
       description: t("projects.animated_login.description"),
       stacks: [
@@ -82,7 +134,6 @@ export const translateProject = (t: Function) => {
 
     {
       image: "/project/mackup-polvi.svg",
-      link: "https://nodejs.org/en",
       title: t("projects.polvi.title"),
       description: t("projects.polvi.description"),
       stacks: [

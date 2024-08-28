@@ -15,6 +15,12 @@ const nextConfig = {
   experimental: {
     nextScriptWorkers: true,
   },
+
+  images: {
+    domains: [
+      "api.microlink.io", // Microlink Image Preview
+    ],
+  },
   reactStrictMode: true,
 
   // async headers() {
