@@ -121,7 +121,7 @@ export const translateProject = (t: Function) => {
       stacks: [
         {
           imageSrc: "/skills/angular.svg",
-          link: "https://angular.io/",
+          link: "https://angular.dev/",
           skillName: "",
         },
         {
@@ -138,10 +138,11 @@ export const translateProject = (t: Function) => {
       description: t("projects.polvi.description"),
       stacks: [
         {
-          imageSrc: "/skills/nextjs.svg",
-          link: "https://nextjs.org/",
+          imageSrc: "/skills/angular.svg",
+          link: "https://angular.dev/",
           skillName: "",
         },
+
         {
           imageSrc: "/skills/tailwind.svg",
           link: "https://tailwindcss.com/",

@@ -50,7 +50,7 @@ export const SKILLS_CURRENT = [
   {
     id: 9,
     imageSrc: "/skills/angular.svg",
-    link: "https://angular.io/",
+    link: "https://angular.dev/",
     skillName: "Angular",
   },
   {
@@ -64,6 +64,24 @@ export const SKILLS_CURRENT = [
     imageSrc: "/skills/git.svg",
     link: "https://git-scm.com/",
     skillName: "Git",
+  },
+  {
+    id: 12,
+    imageSrc: "/skills/docker.svg",
+    link: "https://docker.com",
+    skillName: "Docker",
+  },
+  {
+    id: 13,
+    imageSrc: "/skills/node.svg",
+    link: "https://nodejs.org/en",
+    skillName: "Node",
+  },
+  {
+    id: 14,
+    imageSrc: "/skills/framer.svg",
+    link: "https://nodejs.org/en",
+    skillName: "Framer Motion",
   },
 ];
 
@@ -113,24 +131,14 @@ export const SKILLS_FUTURE = [
     link: "https://www.swift.org/",
     skillName: "Swift",
   },
-  {
-    id: 18,
-    imageSrc: "/skills/node.svg",
-    link: "https://nodejs.org/en",
-    skillName: "Node",
-  },
+
   {
     id: 19,
     imageSrc: "/skills/mysql.svg",
     link: "https://www.mysql.com/",
     skillName: "MySql",
   },
-  {
-    id: 20,
-    imageSrc: "/skills/docker.svg",
-    link: "https://docker.com",
-    skillName: "Docker",
-  },
+
   {
     id: 21,
     imageSrc: "/skills/figma.svg",
