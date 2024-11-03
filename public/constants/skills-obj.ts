@@ -80,8 +80,14 @@ export const SKILLS_CURRENT = [
   {
     id: 14,
     imageSrc: "/skills/framer.svg",
-    link: "https://nodejs.org/en",
+    link: "https://www.framer.com/motion/",
     skillName: "Framer Motion",
+  },
+  {
+    id: 15,
+    imageSrc: "/skills/nestjs.svg",
+    link: "https://nestjs.com/",
+    skillName: "NestJs",
   },
 ];
 
@@ -122,25 +128,9 @@ export const SKILLS_PRODUCTIVITY = [
     link: "https://www.atlassian.com/br/software/jira",
     skillName: "Jira",
   },
-];
-
-export const SKILLS_FUTURE = [
-  {
-    id: 23,
-    imageSrc: "/skills/swift.svg",
-    link: "https://www.swift.org/",
-    skillName: "Swift",
-  },
 
   {
-    id: 19,
-    imageSrc: "/skills/mysql.svg",
-    link: "https://www.mysql.com/",
-    skillName: "MySql",
-  },
-
-  {
-    id: 21,
+    id: 18,
     imageSrc: "/skills/figma.svg",
     link: "https://www.figma.com/",
     skillName: "Figma",

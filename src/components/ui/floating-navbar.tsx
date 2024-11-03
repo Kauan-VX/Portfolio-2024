@@ -79,7 +79,7 @@ export const FloatingNav = ({
             </Link>
           )
         )}
-        <div className="floatNavbar:mt-2 floatNavbar:ml-[-1rem]! border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-1 py-1 rounded-full">
+        <div className="floatNavbar:mt-2  border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-1 py-1 rounded-full flex items-center">
           <ThemeSwitcher />
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px  bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </div>
