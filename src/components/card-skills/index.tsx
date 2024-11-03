@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { LinkPreview } from "../ui/link-preview";
 
 export interface ISkills {
   id?: number;
@@ -42,11 +43,9 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
       }}
       custom={index}
     >
-      <a
-        rel="preload"
+      <LinkPreview
         className="flex relative items-center rounded-3xl py-[0.5rem] px-[0.7rem] font-medium gap-2 dark:text-dark-text text-light-text dark:bg-dark-background-transparent bg-light-background-transparent  shadow-3xl whitespace-nowrap"
-        target="_blank"
-        href={link}
+        url={link}
       >
         <Image
           className=" z-10 opacity-1 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
@@ -65,7 +64,7 @@ const CardSkill: React.FC<ISkills> = ({ imageSrc, link, skillName, index }) => {
           height={48}
         />
         {skillName}
-      </a>
+      </LinkPreview>
     </motion.div>
   );
 };

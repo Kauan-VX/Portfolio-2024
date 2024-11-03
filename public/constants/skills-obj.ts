@@ -107,7 +107,7 @@ export const SKILLS_PRODUCTIVITY = [
   {
     id: 14,
     imageSrc: "/skills/github.svg",
-    link: "https://github.com/Kauan-VX",
+    link: "https://github.com/",
     skillName: "GitHub",
   },
   {
