@@ -89,6 +89,12 @@
     "certificate": {
       "react_native": {
         "title": "React native: Creating applications from scratch to advanced"
+      },
+      "java_script": {
+        "title": "JavaScript and TypeScript: From Basics to Advanced"
+      },
+      "nest_js": {
+        "title": "NestJS: From Scratch with TypeORM, Mongoose, Prisma, and Swagger"
       }
     },
     "projects": {
